@@ -1,0 +1,23 @@
+﻿.form {
+    background-color: bisque;
+    border: 2px solid black;
+    width: 350px;
+    min-height: 300px;
+    position: absolute;
+    left: calc(50% - 48px);
+    top: 10%;
+    border-radius: 10px;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.form h3{
+    padding: 20px;
+    width: 100%;
+    text-align:center;
+}
+
+pre{
+    padding: 10px;
+    text-align: left;
+}

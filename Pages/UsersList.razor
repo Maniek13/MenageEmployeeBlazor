@@ -1,0 +1,91 @@
+﻿@page "/userslist"
+@using System
+@using System.IO;
+
+
+<h1>Users</h1>
+
+
+@if (@Error)
+{
+    <div class="error">
+        Server error.
+    </div>
+}
+
+
+
+<table class="emp-tbl" id="Employees">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Surname</th>
+            <th>Contact Nr</th>
+            <th>Email</th>
+            <th>Street</th>
+            <th>Street Nr</th>
+            <th>House Nr</th>
+            <th>City</th>
+            <th>ZIP Code</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var emp in Employees)
+        {
+            <tr id="@emp.ID" @key="@emp">
+                <td>@emp.ID</td>
+                <td><input type="text" class="form-control" @bind="@emp.FirstName" readonly ondblclick="this.readOnly='';" /></td>
+                <td><input type="text" class="form-control" @bind="@emp.LastName" readonly ondblclick="this.readOnly='';" /></td>
+                <td><input type="text" class="form-control" @bind="@emp.ContactNo" readonly ondblclick="this.readOnly='';" /></td>
+                <td><input type="text" class="form-control" @bind="@emp.Email" readonly ondblclick="this.readOnly='';" /></td>
+                <td><input type="text" class="form-control" @bind="@emp.Address.Street" readonly ondblclick="this.readOnly='';" /></td>
+                <td><input type="text" class="form-control" @bind="@emp.Address.StreetNr" readonly ondblclick="this.readOnly='';" /></td>
+                <td><input type="text" class="form-control" @bind="@emp.Address.HouseNr" readonly ondblclick="this.readOnly='';" /></td>
+                <td><input type="text" class="form-control" @bind="@emp.Address.City" readonly ondblclick="this.readOnly='';" /></td>
+                <td><input type="text" class="form-control" @bind="@emp.Address.Zip" readonly ondblclick="this.readOnly='';" /></td>
+                <th><button class="btn-delete" @onclick="@((e) => { Delete(emp); })"></button><button class="btn-save" @onclick="@((e) => { Save(emp); })"></button></th>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+
+
+
+
+@code {
+    public List<Objects.Employee> Employees { get; set; } = Controllers.EmployeesController.GetFromDB();
+    public bool Error { get; set; }
+
+    void Delete(Objects.Employee employee)
+    {
+        if (Controllers.EmployeesController.DeleteFromDB(employee) == 1)
+        {
+            Employees.Remove(employee);
+            Error = false;
+        }
+        else
+        {
+            Error = true;
+        }
+        this.StateHasChanged();
+    }
+
+
+    void Save(Objects.Employee employee)
+    {
+        if (Controllers.EmployeesController.UpdateInDb(employee) == 1)
+        {
+            Error = false;
+        }
+        else
+        {
+            Error = true;
+        }
+
+        this.StateHasChanged();
+    }
+}
