@@ -1,4 +1,6 @@
-# MenageEmployeeBlazor
+# Aplikacja do zarządzanina proacownikami 
+
+Przeglądanie i dodawania pracowników z pliku xml
 
 1. Copy and run update-database
 2. Enjoy
