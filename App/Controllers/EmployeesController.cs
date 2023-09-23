@@ -26,7 +26,6 @@ namespace FabricAPP.Controllers
             }
         }
 
-
         public static List<Models.Employee> GetFromXML(string xml)
         {
 
@@ -60,9 +59,9 @@ namespace FabricAPP.Controllers
                     EmployeesList.Add(emp);
                 }
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                throw new Exception("Save data from xml error: " + e.Message);
+                throw new Exception(ex.Message, ex);
             }
 
             return EmployeesList;
@@ -76,19 +75,12 @@ namespace FabricAPP.Controllers
                 {
                     CheckIsCorrectListOfEmployee(EmployeesList);
 
-                    int res = fabric.Set(EmployeesList);
-
-                    if (res > 0)
-                    {
-                        return res;
-                    }
+                    return fabric.Set(EmployeesList);
                 }
                 else
                 {
-                    throw new Exception("Number of new employers is 0");
+                    throw new Exception("No employee");
                 }
-
-                return -1;
 
             }
             catch (IncorectValueOfUserException ex)
@@ -99,8 +91,6 @@ namespace FabricAPP.Controllers
             {
                 throw new Exception(ex.Message, ex);
             }
-
-
         }
 
         public static int Edit(Models.Employee employee)

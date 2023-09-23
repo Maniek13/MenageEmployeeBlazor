@@ -1,5 +1,9 @@
 ﻿@using System
 @using System.IO;
+@using FabricAPP.Models;
+@using FabricAPP.ViewModels;
+@using FabricAPP.Interfaces;
+@inject IUsersDataViewModel userDataViewModel
 
 <div class="users-info">
     <h1>Add users with addresses from XML</h1>
@@ -8,7 +12,7 @@
             <InputFile class="btn btn-primary" OnChange="SetData">Chose file</InputFile>
         </div>
 
-        <div class="info-btn" @onmouseover="ShowInfo" @onmouseout="ShowInfo"></div>
+        <div class="info-btn" @onmouseover="userDataViewModel.ShowInfo" @onmouseout="userDataViewModel.ShowInfo"></div>
     </div>
 
     @if (Loaded)
@@ -30,7 +34,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (var emp in Employees)
+                @foreach (var emp in userDataViewModel.Employees)
                 {
                     <tr id="@emp.ID" @key="@emp">
                         <td>@emp.ID</td>
@@ -55,17 +59,10 @@
             </div>
         </div>
     }
-    else if (Error)
-    {
-        <div class="error">
-            @ErrorMsg
-        </div>
-    }
-
 </div>
 
 
-@if (ShowedInfo)
+@if (userDataViewModel.ShowedInfo)
 {
     <ImportInfo />
 }
@@ -73,7 +70,7 @@
 @if (Saved)
 {
     <div class="saved-info">
-        @SavedEls elements was saved
+        @userDataViewModel.Employees.Count elements was saved
     </div>
 }
 
@@ -87,48 +84,25 @@
 
 
 @code {
-    public bool Loaded { get; set; } = false;
-    public bool Saved { get; set; } = false;
-    public int SavedEls { get; set; }
+    bool Loaded { get; set; } = false;
+    bool Saved { get; set; } = false;
+
     bool SaveBtnDisabled = false;
-    public bool Error { get; set; } = false;
-    public string ErrorMsg { get; set; }
 
-    public List<Models.Employee> Employees { get; set; }
+    bool Error { get; set; } = false;
+    string ErrorMsg { get; set; }
 
-    private async void SetData(InputFileChangeEventArgs e)
+    async void SetData(InputFileChangeEventArgs e)
     {
         try
         {
-            string xml = "";
             Loaded = false;
             Error = false;
 
-            foreach (var file in e.GetMultipleFiles(1))
-            {
-                using (var stream = file.OpenReadStream())
-                using (var reader = new StreamReader(stream))
-                {
-                    xml = await reader.ReadToEndAsync();
-                }
-            }
+            _ = await userDataViewModel.SetData(e.GetMultipleFiles(1));
 
-            if (!Error)
-            {
-                Employees = Controllers.EmployeesController.GetFromXML(xml);
-                if (Employees.Count == 0)
-                {
-                    ErrorMsg = "Error with loaded, a data from file. Please check the file.";
-                    Error = true;
-                }
-                else
-                {
-                    SaveBtnDisabled = false;
-                    Loaded = true;
-                    Saved = false;
-                }
-
-            }
+            SaveBtnDisabled = false;
+            Loaded = true;
         }
         catch (Exception ex)
         {
@@ -139,13 +113,6 @@
         this.StateHasChanged();
     }
 
-    public bool ShowedInfo { get; set; }
-
-    public void ShowInfo()
-    {
-        ShowedInfo = !ShowedInfo;
-    }
-
     void Save()
     {
         try
@@ -154,12 +121,7 @@
             Saved = false;
             SaveBtnDisabled = true;
 
-            SavedEls = Controllers.EmployeesController.Save();
-
-            if (SavedEls == -1)
-            {
-                throw new Exception("Save in db error");
-            }
+            userDataViewModel.Save();
 
             Saved = true;
             
@@ -177,7 +139,7 @@
         try
         {
             Error = false;
-            Employees.Remove(employee);
+            userDataViewModel.Delete(employee);
         }
         catch(Exception ex)
         {

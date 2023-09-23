@@ -2,6 +2,9 @@
 @using System
 @using System.IO;
 @using FabricAPP.Exceptions;
+@using FabricAPP.ViewModels;
+@using FabricAPP.Interfaces;
+@inject IUsersListViewModel usersListViewModel
 
 <h1>Users</h1>
 
@@ -29,7 +32,7 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var emp in Employees)
+        @foreach (var emp in usersListViewModel.Employees)
         {
             <tr id="@emp.ID" @key="@emp">
                 <td>@emp.ID</td>
@@ -49,23 +52,15 @@
 </table>
 
 @code {
-    public List<Models.Employee> Employees { get; set; } = Controllers.EmployeesController.GetFromDB();
     public bool Error { get; set; }
     public string ErrorMsg { get; set; }
 
     void Delete(Models.Employee employee)
     {
-        Error = false;
-
         try
         {
-            if (Controllers.EmployeesController.DeleteFromDB(employee) == 1)
-                Employees.Remove(employee);
-            else
-            {
-                ErrorMsg = "Server error";
-                Error = true;
-            }
+            Error = false;
+            usersListViewModel.Delete(employee);
         }
         catch(Exception ex)
         {
@@ -76,20 +71,10 @@
 
     void Save(Models.Employee employee)
     {
-        Error = false;
-
         try
         {
-            if (Controllers.EmployeesController.UpdateInDb(employee) != 1)
-            {
-                ErrorMsg = "Server error";
-                Error = true;
-            }
-        }
-        catch (IncorectValueOfUserException ex)
-        {
-            ErrorMsg = $"Employe on id:{employee.ID}: {ex.Message}";
-            Error = true;
+            Error = false;
+            usersListViewModel.Save(employee);
         }
         catch (Exception ex)
         {

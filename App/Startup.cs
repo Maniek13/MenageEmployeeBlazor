@@ -1,3 +1,5 @@
+using FabricAPP.Interfaces;
+using FabricAPP.ViewModels;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -19,6 +21,8 @@ namespace FabricAPP
         {
             services.AddRazorPages();
             services.AddServerSideBlazor();
+            services.AddTransient<IUsersDataViewModel, UsersDataViewModel>();
+            services.AddTransient<IUsersListViewModel, UsersListViewModel>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
