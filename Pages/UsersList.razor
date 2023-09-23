@@ -1,19 +1,16 @@
 ﻿@page "/userslist"
 @using System
 @using System.IO;
-
+@using FabricAPP.Exceptions;
 
 <h1>Users</h1>
-
 
 @if (@Error)
 {
     <div class="error">
-        Server error.
+        @ErrorMsg
     </div>
 }
-
-
 
 <table class="emp-tbl" id="Employees">
     <thead>
@@ -51,41 +48,53 @@
     </tbody>
 </table>
 
-
-
-
-
-
 @code {
-    public List<Objects.Employee> Employees { get; set; } = Controllers.EmployeesController.GetFromDB();
+    public List<Models.Employee> Employees { get; set; } = Controllers.EmployeesController.GetFromDB();
     public bool Error { get; set; }
+    public string ErrorMsg { get; set; }
 
-    void Delete(Objects.Employee employee)
+    void Delete(Models.Employee employee)
     {
-        if (Controllers.EmployeesController.DeleteFromDB(employee) == 1)
+        Error = false;
+
+        try
         {
-            Employees.Remove(employee);
-            Error = false;
+            if (Controllers.EmployeesController.DeleteFromDB(employee) == 1)
+                Employees.Remove(employee);
+            else
+            {
+                ErrorMsg = "Server error";
+                Error = true;
+            }
         }
-        else
+        catch(Exception ex)
         {
+            ErrorMsg = ex.Message;
             Error = true;
         }
-        this.StateHasChanged();
     }
 
-
-    void Save(Objects.Employee employee)
+    void Save(Models.Employee employee)
     {
-        if (Controllers.EmployeesController.UpdateInDb(employee) == 1)
+        Error = false;
+
+        try
         {
-            Error = false;
+            if (Controllers.EmployeesController.UpdateInDb(employee) != 1)
+            {
+                ErrorMsg = "Server error";
+                Error = true;
+            }
         }
-        else
+        catch (IncorectValueOfUserException ex)
         {
+            ErrorMsg = $"Employe on id:{employee.ID}: {ex.Message}";
             Error = true;
         }
-
-        this.StateHasChanged();
+        catch (Exception ex)
+        {
+            ErrorMsg = ex.Message;
+            Error = true;
+        }
     }
 }

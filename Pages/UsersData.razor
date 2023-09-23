@@ -11,7 +11,7 @@
         <div class="info-btn" @onmouseover="ShowInfo" @onmouseout="ShowInfo"></div>
     </div>
 
-    @if (Loaded && !Error)
+    @if (Loaded)
     {
         <table class="emp-tbl" id="Employees">
             <thead>
@@ -43,7 +43,7 @@
                         <td><input type="text" class="form-control" @bind="@emp.Address.HouseNr" readonly ondblclick="this.readOnly='';"/></td>
                         <td><input type="text" class="form-control" @bind="@emp.Address.City" readonly ondblclick="this.readOnly='';"/></td>
                         <td><input type="text" class="form-control" @bind="@emp.Address.Zip" readonly ondblclick="this.readOnly='';"/></td>
-                        <th><button class="btn-delete" @onclick="@((e) => { Delete(emp); })"></button></th>
+                        <th><button class="btn-delete" @onclick="@((e) => { Delete(emp); })" disabled=@Saved></button></th>
                     </tr>
                 }
             </tbody>
@@ -51,20 +51,18 @@
 
         <div class="btn_container">
             <div class="save-container">
-                <button class="btn btn-primary" disabled=@Saving @onclick="Save">Save</button>
+                <button class="btn btn-primary" disabled=@SaveBtnDisabled @onclick="Save">Save</button>
             </div>
         </div>
     }
-    else if (Loaded && Error)
+    else if (Error)
     {
         <div class="error">
-            Error with loaded, a data from file. Please check the file.
+            @ErrorMsg
         </div>
     }
 
 </div>
-
-
 
 
 @if (ShowedInfo)
@@ -72,68 +70,72 @@
     <ImportInfo />
 }
 
-@if (Saved && !Error)
+@if (Saved)
 {
     <div class="saved-info">
         @SavedEls elements was saved
     </div>
 }
-else if (!Saved && DBError)
+
+
+@if (Error)
 {
     <div class="error">
-        Error with save data in db.
+        @ErrorMsg
     </div>
 }
 
+
 @code {
     public bool Loaded { get; set; } = false;
+    public bool Saved { get; set; } = false;
+    public int SavedEls { get; set; }
+    bool SaveBtnDisabled = false;
     public bool Error { get; set; } = false;
-    public List<Objects.Employee> Employees { get; set; }
+    public string ErrorMsg { get; set; }
+
+    public List<Models.Employee> Employees { get; set; }
 
     private async void SetData(InputFileChangeEventArgs e)
     {
-        string xml = "";
-        Loaded = false;
-        Saved = false;
-
-        foreach (var file in e.GetMultipleFiles(1))
+        try
         {
-            try
+            string xml = "";
+            Loaded = false;
+            Error = false;
+
+            foreach (var file in e.GetMultipleFiles(1))
             {
                 using (var stream = file.OpenReadStream())
                 using (var reader = new StreamReader(stream))
                 {
                     xml = await reader.ReadToEndAsync();
                 }
-                Error = false;
             }
-            catch (Exception ex)
+
+            if (!Error)
             {
-                Console.WriteLine(ex.Message);
-                Error = true;
+                Employees = Controllers.EmployeesController.GetFromXML(xml);
+                if (Employees.Count == 0)
+                {
+                    ErrorMsg = "Error with loaded, a data from file. Please check the file.";
+                    Error = true;
+                }
+                else
+                {
+                    SaveBtnDisabled = false;
+                    Loaded = true;
+                    Saved = false;
+                }
+
             }
+        }
+        catch (Exception ex)
+        {
+            ErrorMsg = ex.Message;
+            Error = true;
         }
 
-        if (!Error)
-        {
-            Employees = Controllers.EmployeesController.GetFromXML(xml);
-            if (Employees.Count != 0)
-            {
-                Error = false;
-                Loaded = true;
-            }
-            else
-            {
-                Error = true;
-                Loaded = true;
-            }
-        }
-        else
-        {
-            Loaded = true;
-        }
-
-        Saving = false;
         this.StateHasChanged();
     }
 
@@ -144,32 +146,43 @@ else if (!Saved && DBError)
         ShowedInfo = !ShowedInfo;
     }
 
-
-    public bool Saved { get; set; }
-    public bool DBError { get; set; }
-    public int SavedEls { get; set; }
-    bool Saving = false;
-
     void Save()
     {
-        Saving = true;
-
-        SavedEls = Controllers.EmployeesController.Save();
-
-        if (SavedEls > 0)
+        try
         {
-            Saved = true;
-        }
-        else
-        {
+            Error = false;
             Saved = false;
-            DBError = true;
+            SaveBtnDisabled = true;
+
+            SavedEls = Controllers.EmployeesController.Save();
+
+            if (SavedEls == -1)
+            {
+                throw new Exception("Save in db error");
+            }
+
+            Saved = true;
+            
+        }
+        catch(Exception ex)
+        {
+            ErrorMsg = ex.Message;
+            Error = true;
+            SaveBtnDisabled = false;
         }
     }
 
-    void Delete(Objects.Employee employee)
+    void Delete(Models.Employee employee)
     {
-        Employees.Remove(employee);
-        this.StateHasChanged();
+        try
+        {
+            Error = false;
+            Employees.Remove(employee);
+        }
+        catch(Exception ex)
+        {
+            ErrorMsg = ex.Message;
+            Error = true;
+        }
     }
 }

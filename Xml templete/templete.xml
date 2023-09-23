@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Employees>
+    <Employee>
+        <FirstName>string</FirstName>
+        <LastName>string</LastName>
+        <ContactNo>int</ContactNo>
+        <Email>string</Email>
+        <Address>
+            <City>string</City>
+            <Street>string</Street>
+            <StreetNr>string</StreetNr>
+            <HouseNr>string</HouseNr>
+            <Zip>int</Zip>
+        </Address>
+    </Employee>
+</Employees>
