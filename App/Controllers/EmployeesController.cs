@@ -1,7 +1,7 @@
 ﻿using FabricAPP.Data;
 using FabricAPP.DBControllers;
 using FabricAPP.Exceptions;
-using FabricAPP.XMLObjects;
+using FabricAPP.XMLModels;
 using System;
 using System.Collections.Generic;
 using System.IO;

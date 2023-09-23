@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Xml.Serialization;
 
-namespace FabricAPP.XMLObjects
+namespace FabricAPP.XMLModels
 {
     [XmlRoot(ElementName = "Address")]
     public class Address
