@@ -57,7 +57,7 @@ namespace FabricAPP.DBControllers
 
         }
 
-        public int Set(List<Models.Employee> employees)
+        public async void Set(List<Models.Employee> employees)
         {
             try
             {
@@ -70,9 +70,23 @@ namespace FabricAPP.DBControllers
                 });
 
                 _context.AddRange(emps);
-                int numberOf = _context.SaveChangesAsync().Result / 2;
+                await _context.SaveChangesAsync();;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message, ex);
+            }
+        }
 
-                return numberOf;
+        public async Task<int> Add(Models.Employee employee)
+        {
+            try
+            {
+                Employee emp = GetDBEmployee(employee);
+                _context.Add(emp);
+                await _context.SaveChangesAsync();
+
+                return emp.ID;
             }
             catch (Exception ex)
             {

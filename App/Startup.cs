@@ -23,6 +23,7 @@ namespace FabricAPP
             services.AddServerSideBlazor();
             services.AddTransient<IUsersDataViewModel, UsersDataViewModel>();
             services.AddTransient<IUsersListViewModel, UsersListViewModel>();
+            services.AddTransient<IAddUserViewModel, AddUserViewModel>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

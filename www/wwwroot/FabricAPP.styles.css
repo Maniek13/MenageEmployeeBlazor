@@ -1,3 +1,49 @@
+/* _content/FabricAPP/Pages/AddUser.razor.rz.scp.css */
+.error[b-jpwgryckt4] {
+    width: 100%;
+    padding: 10px;
+    color: red;
+    text-align: center;
+}
+
+h1[b-jpwgryckt4]{
+    width:100%;
+    text-align: center;
+}
+
+.emloyee-add-form[b-jpwgryckt4] {
+    width: 300px;
+    margin: 0;
+    position: absolute;
+    left: 50%;
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+.emloyee-add-form.div[b-jpwgryckt4] {
+    width: 100%;
+}
+
+.input-value[b-jpwgryckt4] {
+    float: right;
+    width: 200px
+}
+
+.btn-container[b-jpwgryckt4] {
+    position: relative;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 20px;
+}
+
+.add-user-btn[b-jpwgryckt4] {
+    margin: 0;
+    position: absolute;
+    left: 50%;
+    width:max-content;
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
 /* _content/FabricAPP/Pages/ImportInfo.razor.rz.scp.css */
 .form[b-9elh40l9j9] {
     background-color: bisque;

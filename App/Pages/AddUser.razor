@@ -1,0 +1,139 @@
+﻿@page "/adduser"
+@using System
+@using System.IO;
+@using FabricAPP.Models;
+@using FabricAPP.ViewModels;
+@using FabricAPP.Interfaces;
+@inject IAddUserViewModel addUserViewModel
+@inject NavigationManager NavManager
+
+<h1>Add user</h1>
+
+
+<EditForm Model="@addUserViewModel" OnSubmit="@AddEmloyee" style="position: relative">
+    <div class="emloyee-add-form">
+        <div>
+            <label for="FirstName">Name: </label>
+            <div class="input-value">
+                <InputText @bind-Value="addUserViewModel.Employee.FirstName" name="FirstName" id="FirstName" />
+            </div>
+        </div>
+        <div>
+            <label for="LastName">Last name: </label>
+            <div class="input-value">
+                <InputText @bind-Value="addUserViewModel.Employee.LastName" name="LastName" id="LastName" />
+            </div>
+        </div>
+        <div>
+            <label for="GetPhoneNr">Phone nr: </label>
+            <div class="input-value">
+                <InputText @bind-Value="GetPhoneNr"name="GetPhoneNr" id="GetPhoneNr" />
+            </div>
+        </div>
+        <div>
+            <label for="Email">Email: </label>
+            <div class="input-value">
+                <InputText @bind-Value="addUserViewModel.Employee.Email" name="Email" id="Email" />
+            </div>
+        </div>
+        <div>
+            <label for="City">City: </label>
+            <div class="input-value">
+                <InputText @bind-Value="addUserViewModel.Employee.Address.City" name="City" id="City" />
+            </div>
+        </div>
+        <div>
+            <label for="Street">Street: </label>
+            <div class="input-value">
+                <InputText @bind-Value="addUserViewModel.Employee.Address.Street" name="Street" id="Street" />
+            </div>
+        </div>
+        <div>
+            <label for="StreetNr">Street nr: </label>
+            <div class="input-value">
+                <InputText @bind-Value="addUserViewModel.Employee.Address.StreetNr"  name="StreetNr" id="StreetNr" />
+            </div>
+        </div>
+        <div>
+            <label for="HouseNr">House nr: </label>
+            <div class="input-value">
+                <InputText @bind-Value="addUserViewModel.Employee.Address.HouseNr" name="HouseNr" id="HouseNr" />
+            </div>
+        </div>
+        <div>
+            <label for="GetZipCode">Zip code: </label>
+            <div class="input-value">
+                <InputText @bind-Value="GetZipCode" name="GetZipCode" id="GetZipCode" />
+            </div>
+        </div>
+        <div class="btn-container">
+            <div class="add-user-btn">
+                <button type="submit">Submit</button>
+            </div>
+        </div>
+        @if (@Error)
+        {
+            <div class="error" id="error">
+                @ErrorMsg
+            </div>
+        }
+        @if (@Succes)
+        {
+            <div style="text-align: center">
+                Employee: @addUserViewModel.Employee.FirstName @addUserViewModel.Employee.LastName added succesfully
+            </div>
+        }
+    </div>
+    
+    
+</EditForm>
+
+
+
+@code {
+        bool Error;
+        bool Succes;
+        string ErrorMsg = "";
+
+        string GetPhoneNr
+    {
+            get
+    {
+                return addUserViewModel.Employee.ContactNo.ToString();
+            }
+            set
+    {
+                int.TryParse(value, out int nr);
+                addUserViewModel.Employee.ContactNo = nr;
+            }
+        }
+
+        string GetZipCode
+    {
+            get
+    {
+                return addUserViewModel.Employee.Address.Zip.ToString();
+            }
+            set
+    {
+                int.TryParse(value, out int nr);
+                addUserViewModel.Employee.Address.Zip = nr;
+            }
+        }
+
+        void AddEmloyee()
+        {
+            try
+            {
+                Succes = false;
+                Error = false;
+                addUserViewModel.AddUser();
+                Succes = true;
+        }
+        catch(Exception ex)
+        {
+            ErrorMsg = ex.Message;
+            Error = true;
+        }
+    }
+}

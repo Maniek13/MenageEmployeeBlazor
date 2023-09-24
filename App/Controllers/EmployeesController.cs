@@ -5,6 +5,7 @@ using FabricAPP.XMLModels;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Threading.Tasks;
 using System.Xml.Serialization;
 
 namespace FabricAPP.Controllers
@@ -67,7 +68,7 @@ namespace FabricAPP.Controllers
             return EmployeesList;
         }
 
-        public static int Save()
+        public static void Save()
         {
             try
             {
@@ -75,13 +76,31 @@ namespace FabricAPP.Controllers
                 {
                     CheckIsCorrectListOfEmployee(EmployeesList);
 
-                    return fabric.Set(EmployeesList);
+                    fabric.Set(EmployeesList);
                 }
                 else
                 {
                     throw new Exception("No employee");
                 }
 
+            }
+            catch (IncorectValueOfUserException ex)
+            {
+                throw new IncorectValueOfUserException(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message, ex);
+            }
+        }
+
+        public static async void Add(Models.Employee employee)
+        {
+            try
+            {
+                CheckIsCorrectEmployee(employee);
+
+                await fabric.Add(employee);
             }
             catch (IncorectValueOfUserException ex)
             {

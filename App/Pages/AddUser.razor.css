@@ -1,0 +1,45 @@
+﻿.error {
+    width: 100%;
+    padding: 10px;
+    color: red;
+    text-align: center;
+}
+
+h1{
+    width:100%;
+    text-align: center;
+}
+
+.emloyee-add-form {
+    width: 300px;
+    margin: 0;
+    position: absolute;
+    left: 50%;
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+.emloyee-add-form.div {
+    width: 100%;
+}
+
+.input-value {
+    float: right;
+    width: 200px
+}
+
+.btn-container {
+    position: relative;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 20px;
+}
+
+.add-user-btn {
+    margin: 0;
+    position: absolute;
+    left: 50%;
+    width:max-content;
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
