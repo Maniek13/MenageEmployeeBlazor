@@ -4,23 +4,22 @@
 @using FabricAPP.Models;
 @using FabricAPP.ViewModels;
 @using FabricAPP.Interfaces;
-@inject IAddUserViewModel addUserViewModel
-@inject NavigationManager NavManager
+@inject IAddEmployeeViewModel addEmployeeViewModel
 
 <h1>Add user</h1>
 
-<EditForm Model="@addUserViewModel" OnSubmit="@AddEmloyee" style="position: relative">
+<EditForm Model="@addEmployeeViewModel" OnSubmit="@AddEmloyee" style="position: relative">
     <div class="emloyee-add-form">
         <div>
             <label for="FirstName">Name: </label>
             <div class="input-value">
-                <InputText @bind-Value="addUserViewModel.Employee.FirstName" name="FirstName" id="FirstName" />
+                <InputText @bind-Value="addEmployeeViewModel.Employee.FirstName" name="FirstName" id="FirstName" />
             </div>
         </div>
         <div>
             <label for="LastName">Last name: </label>
             <div class="input-value">
-                <InputText @bind-Value="addUserViewModel.Employee.LastName" name="LastName" id="LastName" />
+                <InputText @bind-Value="addEmployeeViewModel.Employee.LastName" name="LastName" id="LastName" />
             </div>
         </div>
         <div>
@@ -32,31 +31,31 @@
         <div>
             <label for="Email">Email: </label>
             <div class="input-value">
-                <InputText @bind-Value="addUserViewModel.Employee.Email" name="Email" id="Email" />
+                <InputText @bind-Value="addEmployeeViewModel.Employee.Email" name="Email" id="Email" />
             </div>
         </div>
         <div>
             <label for="City">City: </label>
             <div class="input-value">
-                <InputText @bind-Value="addUserViewModel.Employee.Address.City" name="City" id="City" />
+                <InputText @bind-Value="addEmployeeViewModel.Employee.Address.City" name="City" id="City" />
             </div>
         </div>
         <div>
             <label for="Street">Street: </label>
             <div class="input-value">
-                <InputText @bind-Value="addUserViewModel.Employee.Address.Street" name="Street" id="Street" />
+                <InputText @bind-Value="addEmployeeViewModel.Employee.Address.Street" name="Street" id="Street" />
             </div>
         </div>
         <div>
             <label for="StreetNr">Street nr: </label>
             <div class="input-value">
-                <InputText @bind-Value="addUserViewModel.Employee.Address.StreetNr"  name="StreetNr" id="StreetNr" />
+                <InputText @bind-Value="addEmployeeViewModel.Employee.Address.StreetNr" name="StreetNr" id="StreetNr" />
             </div>
         </div>
         <div>
             <label for="HouseNr">House nr: </label>
             <div class="input-value">
-                <InputText @bind-Value="addUserViewModel.Employee.Address.HouseNr" name="HouseNr" id="HouseNr" />
+                <InputText @bind-Value="addEmployeeViewModel.Employee.Address.HouseNr" name="HouseNr" id="HouseNr" />
             </div>
         </div>
         <div>
@@ -79,7 +78,7 @@
         @if (@Succes)
         {
             <div style="text-align: center">
-                Employee: @addUserViewModel.Employee.FirstName @addUserViewModel.Employee.LastName added succesfully
+                Employee: @addEmployeeViewModel.Employee.FirstName @addEmployeeViewModel.Employee.LastName added succesfully
             </div>
         }
     </div>
@@ -93,28 +92,28 @@
         string ErrorMsg = "";
 
         string GetPhoneNr
-    {
+        {
             get
-    {
-                return addUserViewModel.Employee.ContactNo.ToString();
+            {
+            return addEmployeeViewModel.Employee.ContactNo.ToString();
             }
             set
-    {
+            {   
                 int.TryParse(value, out int nr);
-                addUserViewModel.Employee.ContactNo = nr;
+            addEmployeeViewModel.Employee.ContactNo = nr;
             }
         }
 
         string GetZipCode
-    {
+        {
             get
-    {
-                return addUserViewModel.Employee.Address.Zip.ToString();
+            {
+            return addEmployeeViewModel.Employee.Address.Zip.ToString();
             }
             set
-    {
+            {
                 int.TryParse(value, out int nr);
-                addUserViewModel.Employee.Address.Zip = nr;
+            addEmployeeViewModel.Employee.Address.Zip = nr;
             }
         }
 
@@ -124,7 +123,7 @@
             {
                 Succes = false;
                 Error = false;
-                addUserViewModel.AddUser();
+            addEmployeeViewModel.AddUser();
                 Succes = true;
         }
         catch(Exception ex)

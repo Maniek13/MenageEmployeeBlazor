@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace FabricAPP.Interfaces
 {
-    public interface IUsersDataViewModel
+    public interface IListOfEmployeesFromDbViewModel
     {
         public List<Models.Employee> Employees { get; set; }
         public bool ShowedInfo { get; set; }

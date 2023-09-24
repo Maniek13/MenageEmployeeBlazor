@@ -1,17 +1,17 @@
-/* _content/FabricAPP/Pages/AddUser.razor.rz.scp.css */
-.error[b-jpwgryckt4] {
+/* _content/FabricAPP/Pages/AddEmployee.razor.rz.scp.css */
+.error[b-br35er81o3] {
     width: 100%;
     padding: 10px;
     color: red;
     text-align: center;
 }
 
-h1[b-jpwgryckt4]{
+h1[b-br35er81o3]{
     width:100%;
     text-align: center;
 }
 
-.emloyee-add-form[b-jpwgryckt4] {
+.emloyee-add-form[b-br35er81o3] {
     width: 300px;
     margin: 0;
     position: absolute;
@@ -20,29 +20,78 @@ h1[b-jpwgryckt4]{
     transform: translateX(-50%);
 }
 
-.emloyee-add-form.div[b-jpwgryckt4] {
+.emloyee-add-form.div[b-br35er81o3] {
     width: 100%;
 }
 
-.input-value[b-jpwgryckt4] {
+.input-value[b-br35er81o3] {
     float: right;
     width: 200px
 }
 
-.btn-container[b-jpwgryckt4] {
+.btn-container[b-br35er81o3] {
     position: relative;
     margin-top: 10px;
     margin-bottom: 10px;
     height: 20px;
 }
 
-.add-user-btn[b-jpwgryckt4] {
+.add-user-btn[b-br35er81o3] {
     margin: 0;
     position: absolute;
     left: 50%;
     width:max-content;
     -ms-transform: translateX(-50%);
     transform: translateX(-50%);
+}
+/* _content/FabricAPP/Pages/AddEmployeesFromXML.razor.rz.scp.css */
+h1[b-helv2cseh8] {
+    text-align: center;
+    width: 100%;
+}
+
+.input-file[b-helv2cseh8], .info-btn[b-helv2cseh8], .save-container[b-helv2cseh8] {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: calc(50% - 165px);
+    width: 330px;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.error[b-helv2cseh8] {
+    width: 100%;
+    padding: 10px;
+    color: red;
+    text-align: center;
+}
+
+.emp-tbl[b-helv2cseh8] {
+    width: 100%;
+    position: relative;
+    margin-bottom: 150px;
+}
+
+.emp-tbl[b-helv2cseh8], th[b-helv2cseh8], td[b-helv2cseh8] {
+    border: 1px solid black;
+}
+
+.btn-delete[b-helv2cseh8], .btn-save[b-helv2cseh8] {
+    background-repeat: no-repeat;
+    background-size: 15px, 15px;
+    height: 15px;
+    width: 15px;
+    background-color: transparent;
+    border: 0px;
+}
+
+.btn-delete[b-helv2cseh8] {
+    background-image: url('icons/remove.png') !important;
+}
+
+.btn-save[b-helv2cseh8] {
+    background-image: url('icons/check.png') !important;
 }
 /* _content/FabricAPP/Pages/ImportInfo.razor.rz.scp.css */
 .form[b-9elh40l9j9] {
@@ -74,19 +123,19 @@ h1[b-nz0h1xvgyr] {
     text-align: center;
     padding: 20px;
 }
-/* _content/FabricAPP/Pages/UsersData.razor.rz.scp.css */
-h1[b-461ke5euhy]{
+/* _content/FabricAPP/Pages/ListOfEmployeesFromDb.razor.rz.scp.css */
+h1[b-qi98im2og4]{
     text-align: center;
     width: 100%;
 }
 
-.btn_container[b-461ke5euhy] {
+.btn_container[b-qi98im2og4] {
     width: 100%;
     height: 100px;
     position: relative;
 }
 
-.input-file[b-461ke5euhy], .info-btn[b-461ke5euhy], .save-container[b-461ke5euhy] {
+.input-file[b-qi98im2og4], .info-btn[b-qi98im2og4], .save-container[b-qi98im2og4] {
     margin: 0;
     position: absolute;
     top: 50%;
@@ -96,7 +145,7 @@ h1[b-461ke5euhy]{
     transform: translateY(-50%);
 }
 
-.info-btn[b-461ke5euhy] {
+.info-btn[b-qi98im2og4] {
     background-image: url('icons/information-button.png');
     background-repeat: no-repeat;
     background-size: 15px, 15px;
@@ -108,33 +157,33 @@ h1[b-461ke5euhy]{
     top: 41%;
 }
 
-.save-container[b-461ke5euhy] {
+.save-container[b-qi98im2og4] {
     left: calc(50% - 30px)!important;
 }
-.saved-info[b-461ke5euhy]{
+.saved-info[b-qi98im2og4]{
     width: 100%;
     padding: 10px;
     text-align: center;
 }
 
-.error[b-461ke5euhy]{
+.error[b-qi98im2og4]{
     width: 100%;
     padding: 10px;
     color: red;
     text-align: center;
 }
 
-.emp-tbl[b-461ke5euhy] {
+.emp-tbl[b-qi98im2og4] {
     width: 100%;
     position: relative;
     margin-bottom: 20px;
 }
 
-.emp-tbl[b-461ke5euhy], th[b-461ke5euhy], td[b-461ke5euhy]{
+.emp-tbl[b-qi98im2og4], th[b-qi98im2og4], td[b-qi98im2og4]{
     border: 1px solid black;
 }
 
-.btn-delete[b-461ke5euhy] {
+.btn-delete[b-qi98im2og4] {
     background-image: url('icons/remove.png') !important;
     background-repeat: no-repeat;
     background-size: 15px, 15px;
@@ -144,55 +193,6 @@ h1[b-461ke5euhy]{
     border: 0px;
 }
 
-/* _content/FabricAPP/Pages/UsersList.razor.rz.scp.css */
-h1[b-mq73gpen4y] {
-    text-align: center;
-    width: 100%;
-}
-
-.input-file[b-mq73gpen4y], .info-btn[b-mq73gpen4y], .save-container[b-mq73gpen4y] {
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: calc(50% - 165px);
-    width: 330px;
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
-}
-
-.error[b-mq73gpen4y] {
-    width: 100%;
-    padding: 10px;
-    color: red;
-    text-align: center;
-}
-
-.emp-tbl[b-mq73gpen4y] {
-    width: 100%;
-    position: relative;
-    margin-bottom: 150px;
-}
-
-.emp-tbl[b-mq73gpen4y], th[b-mq73gpen4y], td[b-mq73gpen4y] {
-    border: 1px solid black;
-}
-
-.btn-delete[b-mq73gpen4y], .btn-save[b-mq73gpen4y] {
-    background-repeat: no-repeat;
-    background-size: 15px, 15px;
-    height: 15px;
-    width: 15px;
-    background-color: transparent;
-    border: 0px;
-}
-
-.btn-delete[b-mq73gpen4y] {
-    background-image: url('icons/remove.png') !important;
-}
-
-.btn-save[b-mq73gpen4y] {
-    background-image: url('icons/check.png') !important;
-}
 /* _content/FabricAPP/Shared/MainLayout.razor.rz.scp.css */
 .page[b-ac5dwbje1b] {
     position: relative;

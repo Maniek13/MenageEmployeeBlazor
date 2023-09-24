@@ -3,7 +3,7 @@
 @using FabricAPP.Models;
 @using FabricAPP.ViewModels;
 @using FabricAPP.Interfaces;
-@inject IUsersDataViewModel userDataViewModel
+@inject IListOfEmployeesFromDbViewModel listOfEmployeesFromDbViewModel
 
 <div class="users-info">
     <h1>Add users with addresses from XML</h1>
@@ -12,7 +12,7 @@
             <InputFile class="btn btn-primary" OnChange="SetData">Chose file</InputFile>
         </div>
 
-        <div class="info-btn" @onmouseover="userDataViewModel.ShowInfo" @onmouseout="userDataViewModel.ShowInfo"></div>
+        <div class="info-btn" @onmouseover="listOfEmployeesFromDbViewModel.ShowInfo" @onmouseout="listOfEmployeesFromDbViewModel.ShowInfo"></div>
     </div>
 
     @if (Loaded)
@@ -34,7 +34,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (var emp in userDataViewModel.Employees)
+                @foreach (var emp in listOfEmployeesFromDbViewModel.Employees)
                 {
                     <tr id="@emp.ID" @key="@emp">
                         <td>@emp.ID</td>
@@ -62,7 +62,7 @@
 </div>
 
 
-@if (userDataViewModel.ShowedInfo)
+@if (listOfEmployeesFromDbViewModel.ShowedInfo)
 {
     <ImportInfo />
 }
@@ -70,7 +70,7 @@
 @if (Saved)
 {
     <div class="saved-info">
-        @userDataViewModel.Employees.Count elements was saved
+        @listOfEmployeesFromDbViewModel.Employees.Count elements was saved
     </div>
 }
 
@@ -100,7 +100,7 @@
             Error = false;
             Saved = false;
 
-            _ = await userDataViewModel.SetData(e.GetMultipleFiles(1));
+            _ = await listOfEmployeesFromDbViewModel.SetData(e.GetMultipleFiles(1));
 
             SaveBtnDisabled = false;
             Loaded = true;
@@ -122,7 +122,7 @@
             Saved = false;
             SaveBtnDisabled = true;
 
-            userDataViewModel.Save();
+            listOfEmployeesFromDbViewModel.Save();
 
             Saved = true;
             
@@ -140,7 +140,7 @@
         try
         {
             Error = false;
-            userDataViewModel.Delete(employee);
+            listOfEmployeesFromDbViewModel.Delete(employee);
         }
         catch(Exception ex)
         {

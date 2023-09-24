@@ -1,4 +1,5 @@
-﻿using FabricAPP.Interfaces;
+﻿using FabricAPP.Controllers;
+using FabricAPP.Interfaces;
 using Microsoft.AspNetCore.Components.Forms;
 using System;
 using System.Collections.Generic;
@@ -7,12 +8,13 @@ using System.Threading.Tasks;
 
 namespace FabricAPP.ViewModels
 {
-    public class UsersDataViewModel : IUsersDataViewModel
+    public class ListOfEmployeesFromDbViewModel : IListOfEmployeesFromDbViewModel
     {
+        readonly IEmployeesController employeesController = new EmployeesController();
         public bool ShowedInfo { get; set; }
         public List<Models.Employee> Employees { get; set; }
 
-        public UsersDataViewModel()
+        public ListOfEmployeesFromDbViewModel()
         {
             Employees = new List<Models.Employee>();
         }
@@ -32,7 +34,7 @@ namespace FabricAPP.ViewModels
                     using var reader = new StreamReader(stream);
                     xml = await reader.ReadToEndAsync();
                 }
-                Employees = Controllers.EmployeesController.GetFromXML(xml);
+                Employees = employeesController.GetFromXML(xml);
                 return true;
             }
             catch (Exception ex)
@@ -44,7 +46,7 @@ namespace FabricAPP.ViewModels
         {
             try
             {
-                Controllers.EmployeesController.Save();
+                employeesController.Save();
             }
             catch (Exception ex)
             {

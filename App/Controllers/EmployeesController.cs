@@ -1,21 +1,21 @@
 ﻿using FabricAPP.Data;
 using FabricAPP.DBControllers;
 using FabricAPP.Exceptions;
+using FabricAPP.Interfaces;
 using FabricAPP.XMLModels;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Threading.Tasks;
 using System.Xml.Serialization;
 
 namespace FabricAPP.Controllers
 {
-    public class EmployeesController
+    public class EmployeesController : IEmployeesController
     {
-        private static readonly List<Models.Employee> EmployeesList = new();
-        private readonly static FabricController fabric = new(new FabricContext());
+        private readonly List<Models.Employee> EmployeesList = new();
+        private readonly FabricController fabric = new(new FabricContext());
 
-        public static List<Models.Employee> GetFromDB()
+        public List<Models.Employee> GetFromDB()
         {
             try
             {
@@ -27,7 +27,7 @@ namespace FabricAPP.Controllers
             }
         }
 
-        public static List<Models.Employee> GetFromXML(string xml)
+        public List<Models.Employee> GetFromXML(string xml)
         {
 
             XmlSerializer serializer = new(typeof(Employees));
@@ -68,7 +68,7 @@ namespace FabricAPP.Controllers
             return EmployeesList;
         }
 
-        public static void Save()
+        public void Save()
         {
             try
             {
@@ -94,7 +94,7 @@ namespace FabricAPP.Controllers
             }
         }
 
-        public static async void Add(Models.Employee employee)
+        public async void Add(Models.Employee employee)
         {
             try
             {
@@ -112,7 +112,7 @@ namespace FabricAPP.Controllers
             }
         }
 
-        public static int Edit(Models.Employee employee)
+        public int Edit(Models.Employee employee)
         {
             try
             {
@@ -144,7 +144,7 @@ namespace FabricAPP.Controllers
 
         }
 
-        public static int DeleteFromDB(Models.Employee employee)
+        public int DeleteFromDB(Models.Employee employee)
         {
             try
             {
@@ -157,7 +157,7 @@ namespace FabricAPP.Controllers
 
         }
 
-        public static int UpdateInDb(Models.Employee employee)
+        public int UpdateInDb(Models.Employee employee)
         {
             try
             {

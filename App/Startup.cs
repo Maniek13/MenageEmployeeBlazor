@@ -21,9 +21,9 @@ namespace FabricAPP
         {
             services.AddRazorPages();
             services.AddServerSideBlazor();
-            services.AddTransient<IUsersDataViewModel, UsersDataViewModel>();
-            services.AddTransient<IUsersListViewModel, UsersListViewModel>();
-            services.AddTransient<IAddUserViewModel, AddUserViewModel>();
+            services.AddTransient<IListOfEmployeesFromDbViewModel, ListOfEmployeesFromDbViewModel>();
+            services.AddTransient<IAddEmployeesFromXMLViewModel, AddEmployeesFromXMLViewModel>();
+            services.AddTransient<IAddEmployeeViewModel, AddEmployeeViewModel>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

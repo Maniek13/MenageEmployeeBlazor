@@ -70,7 +70,7 @@ namespace FabricAPP.DBControllers
                 });
 
                 _context.AddRange(emps);
-                await _context.SaveChangesAsync();;
+                await _context.SaveChangesAsync(); ;
             }
             catch (Exception ex)
             {

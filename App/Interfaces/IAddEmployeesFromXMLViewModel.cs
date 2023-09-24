@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace FabricAPP.Interfaces
 {
-    public interface IUsersListViewModel
+    public interface IAddEmployeesFromXMLViewModel
     {
         public List<Employee> Employees { get; set; }
         public void Delete(Employee employee);

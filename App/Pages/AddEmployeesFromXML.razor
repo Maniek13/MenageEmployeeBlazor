@@ -4,7 +4,7 @@
 @using FabricAPP.Exceptions;
 @using FabricAPP.ViewModels;
 @using FabricAPP.Interfaces;
-@inject IUsersListViewModel usersListViewModel
+@inject IAddEmployeesFromXMLViewModel addEmployeesFromXMLViewModel
 
 <h1>Users</h1>
 
@@ -32,7 +32,7 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var emp in usersListViewModel.Employees)
+        @foreach (var emp in addEmployeesFromXMLViewModel.Employees)
         {
             <tr id="@emp.ID" @key="@emp">
                 <td>@emp.ID</td>
@@ -60,7 +60,7 @@
         try
         {
             Error = false;
-            usersListViewModel.Delete(employee);
+            addEmployeesFromXMLViewModel.Delete(employee);
         }
         catch(Exception ex)
         {
@@ -74,7 +74,7 @@
         try
         {
             Error = false;
-            usersListViewModel.Save(employee);
+            addEmployeesFromXMLViewModel.Save(employee);
         }
         catch (Exception ex)
         {

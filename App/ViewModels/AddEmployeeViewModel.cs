@@ -1,11 +1,13 @@
-﻿using FabricAPP.DBModels;
+﻿using FabricAPP.Controllers;
+using FabricAPP.DBModels;
 using FabricAPP.Interfaces;
 using System;
 
 namespace FabricAPP.ViewModels
 {
-    public class AddUserViewModel : IAddUserViewModel
+    public class AddEmployeeViewModel : IAddEmployeeViewModel
     {
+        readonly IEmployeesController employeesController = new EmployeesController();
         public Models.Employee Employee { get; set; } = new Models.Employee()
         {
             FirstName = "",
@@ -27,9 +29,9 @@ namespace FabricAPP.ViewModels
             try
             {
                 SetIsValueOk();
-                Controllers.EmployeesController.Add(Employee);
+                employeesController.Add(Employee);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 throw new Exception(ex.Message, ex);
             }
