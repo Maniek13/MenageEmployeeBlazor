@@ -10,11 +10,13 @@ Przeglądanie i dodawania pracowników z pliku xml
 2. Enjoy
 
 
+<img width="800" alt="image" src="https://github.com/Maniek13/MenageEmployeeBlazor/assets/47826375/eb5a3c02-509c-42b5-8ad5-239e9f36c6ac">
 
-![image](https://user-images.githubusercontent.com/47826375/140814345-4c774038-adb7-455a-b6a5-1e4b69aa7c1f.png)
 
-![image](https://user-images.githubusercontent.com/47826375/140814440-25418fdd-56d5-4671-8733-caee75d473d4.png)
+<img width="800" alt="image" src="https://github.com/Maniek13/MenageEmployeeBlazor/assets/47826375/5c3ec3e6-bb02-42c0-98af-07c17e93a703">
 
-![image](https://user-images.githubusercontent.com/47826375/140814471-9d938a6e-0c09-4c41-ae6f-86db3e36908e.png)
 
-![image](https://user-images.githubusercontent.com/47826375/140814501-abae655b-a2e7-42e6-af5c-43a73d018198.png)
+<img width="800" alt="image" src="https://github.com/Maniek13/MenageEmployeeBlazor/assets/47826375/6bd7008a-9088-43ed-88e6-0292e20d8d0d">
+
+
+<img width="800" alt="image" src="https://github.com/Maniek13/MenageEmployeeBlazor/assets/47826375/aae7d000-a915-43dc-8f08-0210ada4437c">
