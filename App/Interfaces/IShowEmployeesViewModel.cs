@@ -1,4 +1,5 @@
 ﻿using FabricAPP.Models;
+using System;
 using System.Collections.Generic;
 
 namespace FabricAPP.Interfaces
@@ -6,8 +7,9 @@ namespace FabricAPP.Interfaces
     public interface IShowEmployeesViewModel
     {
         public List<Employee> Employees { get; set; }
-        public void Delete(Employee employee);
+#pragma warning disable CS1998
+        public void Delete(Employee employee) => throw new NotImplementedException();
 
-        public void Save(Models.Employee employee);
+        public async void Save(Models.Employee employee) => throw new NotImplementedException();
     }
 }

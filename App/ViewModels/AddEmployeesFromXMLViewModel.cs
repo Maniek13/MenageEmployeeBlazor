@@ -46,7 +46,7 @@ namespace FabricAPP.ViewModels
         {
             try
             {
-                employeesController.Save();
+                employeesController.SaveFromXML();
             }
             catch (Exception ex)
             {

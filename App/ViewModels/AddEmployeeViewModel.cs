@@ -2,6 +2,7 @@
 using FabricAPP.DBModels;
 using FabricAPP.Interfaces;
 using System;
+using System.Threading.Tasks;
 
 namespace FabricAPP.ViewModels
 {
@@ -24,12 +25,12 @@ namespace FabricAPP.ViewModels
             }
         };
 
-        public void AddUser()
+        public async Task<int> AddUser()
         {
             try
             {
                 SetIsValueOk();
-                employeesController.Add(Employee);
+                return await employeesController.AddToDb(Employee);
             }
             catch (Exception ex)
             {

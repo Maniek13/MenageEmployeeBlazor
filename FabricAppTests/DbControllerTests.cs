@@ -8,7 +8,7 @@ namespace FabricAppTests
 {
     public class DbControllerTests : TestContext
 	{
-		FabricController fb = new(new FabricContext());
+        readonly FabricController fb = new(new FabricContext());
 		[Fact]
 		public async void AddEmployeeTests()
 		{
@@ -34,12 +34,7 @@ namespace FabricAppTests
 				
 
 				Assert.True(emp.ID > 0 && id > 0 && emp.ID == id);
-
-				fb.Dispose();
-				fb = new(new FabricContext());
-				fb.Delete(emp);
-
-				fb.Dispose();
+				fb.Delete(emp.ID);
 			}
 			catch (Exception ex)
 			{
@@ -73,11 +68,7 @@ namespace FabricAppTests
 
 				Assert.True(list.Count > 0 && list.Select(el => el).Where(el => el.FirstName == "testget").ToList().Count != 0);
 
-                fb.Dispose();
-                fb = new(new FabricContext());
-                fb.Delete(emp);
-
-                fb.Dispose();
+                fb.Delete(emp.ID);
 
             }
 			catch (Exception ex)

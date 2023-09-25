@@ -11,7 +11,7 @@ namespace FabricAPP.DBControllers
 {
     public class FabricController : Controller
     {
-        private FabricContext _context;
+        private readonly FabricContext _context;
 
         public FabricController(FabricContext context)
         {
@@ -41,8 +41,8 @@ namespace FabricAPP.DBControllers
                                 }
                             };
 
-
-                return query.ToList();
+                  return query.ToList();
+                    
             }
             catch (Exception ex)
             {
@@ -54,16 +54,17 @@ namespace FabricAPP.DBControllers
         {
             try
             {
-                List<Employee> emps = new();
-                int nrOfEmp = _context.Employees.Count();
+                    List<Employee> emps = new();
+                    int nrOfEmp = _context.Employees.Count();
 
-                employees.ForEach(delegate (Models.Employee emp)
-                {
-                    emps.Add(GetDBEmployee(emp));
-                });
+                    employees.ForEach(delegate (Models.Employee emp)
+                    {
+                        emps.Add(GetDBEmployee(emp));
+                    });
 
-                _context.AddRange(emps);
-                await _context.SaveChangesAsync(); ;
+                    _context.AddRange(emps);
+                    await _context.SaveChangesAsync(); ;
+                    
             }
             catch (Exception ex)
             {
@@ -82,6 +83,7 @@ namespace FabricAPP.DBControllers
                 employee.ID = emp.ID;
 
                 return employee.ID;
+                    
             }
             catch (Exception ex)
             {
@@ -90,14 +92,14 @@ namespace FabricAPP.DBControllers
         }
 
 
-        public int Delete(Models.Employee employee)
+        public int Delete(int id)
         {
             try
             {
-                Employee emp = GetDBEmployee(employee);
-                emp.ID = employee.ID;
+                var emp = _context.Employees.FirstOrDefault(x => x.ID == id);
                 _context.Remove(emp);
-                _context.SaveChangesAsync();
+                _context.SaveChanges();
+
                 return 1;
             }
             catch (Exception ex)
@@ -106,18 +108,18 @@ namespace FabricAPP.DBControllers
             }
         }
 
-        public int Update(Models.Employee employee)
+        public async Task<int> Update(Models.Employee employee)
         {
             try
             {
-                Employee emp = _context.Employees.Where(el => el.ID == employee.ID).First();
+                Employee emp = _context.Employees.Where(el => el.ID == employee.ID).FirstOrDefault();
 
                 emp.FirstName = employee.FirstName;
                 emp.LastName = employee.LastName;
                 emp.ContactNo = employee.ContactNo;
                 emp.Email = employee.Email;
 
-                Address adr = _context.Addresses.Where(el => el.EmployeeID == employee.ID).First();
+                Address adr = _context.Addresses.Where(el => el.EmployeeID == employee.ID).FirstOrDefault();
 
                 adr.Street = employee.Address.Street;
                 adr.StreetNr = employee.Address.StreetNr;
@@ -128,7 +130,8 @@ namespace FabricAPP.DBControllers
                 emp.Address = adr;
 
                 _context.Update(emp);
-                _context.SaveChangesAsync();
+                await _context.SaveChangesAsync();
+                   
                 return 1;
             }
             catch (Exception ex)

@@ -104,13 +104,13 @@
             }
         }
 
-        void AddEmloyee()
+        async void AddEmloyee()
         {
             try
             {
                 Succes = false;
                 Error = false;
-            addEmployeeViewModel.AddUser();
+                _ = await addEmployeeViewModel.AddUser();
                 Succes = true;
         }
         catch(Exception ex)

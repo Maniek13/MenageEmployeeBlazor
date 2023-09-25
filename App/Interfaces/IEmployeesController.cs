@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace FabricAPP.Interfaces
 {
@@ -9,13 +10,12 @@ namespace FabricAPP.Interfaces
 
         public List<Models.Employee> GetFromXML(string xml);
 
-        public void Save();
-        public int Edit(Models.Employee employee);
+        public void SaveFromXML();
+#pragma warning disable CS1998
+        public int DeleteFromDB(int id);
+        public async Task<int> UpdateInDb(Models.Employee employee) => throw new NotImplementedException();
 
-        public int DeleteFromDB(Models.Employee employee) => throw new NotImplementedException();
-        public int UpdateInDb(Models.Employee employee);
-
-        public void Add(Models.Employee employee);
+        public async Task<int> AddToDb(Models.Employee employee) => throw new NotImplementedException();
     }
 }
 

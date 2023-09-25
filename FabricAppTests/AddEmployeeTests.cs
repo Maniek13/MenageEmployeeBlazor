@@ -49,7 +49,6 @@ namespace FabricAppTests
 
             cut.Find("input[id=GetZipCode]").Change("12345");
             cut.Find("form").Submit();
-
         }
     }
 }

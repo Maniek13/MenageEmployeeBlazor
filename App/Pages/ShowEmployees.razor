@@ -61,6 +61,7 @@
         {
             Error = false;
             showEmployeesViewModel.Delete(employee);
+            this.StateHasChanged();
         }
         catch(Exception ex)
         {

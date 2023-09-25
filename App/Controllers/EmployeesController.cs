@@ -6,6 +6,7 @@ using FabricAPP.XMLModels;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Threading.Tasks;
 using System.Xml.Serialization;
 
 namespace FabricAPP.Controllers
@@ -19,7 +20,8 @@ namespace FabricAPP.Controllers
         {
             try
             {
-                return fabric.Get();
+                var list = fabric.Get();
+                return list;
             }
             catch (Exception ex)
             {
@@ -68,7 +70,7 @@ namespace FabricAPP.Controllers
             return EmployeesList;
         }
 
-        public void Save()
+        public void SaveFromXML()
         {
             try
             {
@@ -94,13 +96,15 @@ namespace FabricAPP.Controllers
             }
         }
 
-        public async void Add(Models.Employee employee)
+        public async Task<int> AddToDb(Models.Employee employee)
         {
             try
             {
                 CheckIsCorrectEmployee(employee);
 
-                await fabric.Add(employee);
+                int id = await fabric.Add(employee);
+                employee.ID = id;
+                return id;
             }
             catch (IncorectValueOfUserException ex)
             {
@@ -112,30 +116,13 @@ namespace FabricAPP.Controllers
             }
         }
 
-        public int Edit(Models.Employee employee)
+
+
+        public int DeleteFromDB(int id)
         {
             try
             {
-                CheckIsCorrectEmployee(employee);
-                CheckIsCorrectEmployeeAdress(employee.Address);
-                var emp = EmployeesList.Find(el => el.ID == employee.ID);
-
-                if (emp != null)
-                {
-                    emp.FirstName = employee.FirstName;
-                    emp.LastName = employee.LastName;
-                    emp.ContactNo = employee.ContactNo;
-                    emp.Email = employee.Email;
-                    emp.Address = employee.Address;
-
-                    return 1;
-                }
-
-                return 0;
-            }
-            catch (IncorectValueOfUserException ex)
-            {
-                throw new IncorectValueOfUserException(ex.Message);
+                return fabric.Delete(id);
             }
             catch (Exception ex)
             {
@@ -144,26 +131,13 @@ namespace FabricAPP.Controllers
 
         }
 
-        public int DeleteFromDB(Models.Employee employee)
-        {
-            try
-            {
-                return fabric.Delete(employee);
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message, ex);
-            }
-
-        }
-
-        public int UpdateInDb(Models.Employee employee)
+        public async Task<int> UpdateInDb(Models.Employee employee)
         {
             try
             {
                 CheckIsCorrectEmployee(employee);
                 CheckIsCorrectEmployeeAdress(employee.Address);
-                return fabric.Update(employee);
+                return await fabric.Update(employee);
             }
             catch (IncorectValueOfUserException ex)
             {

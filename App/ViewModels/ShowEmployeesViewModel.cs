@@ -16,11 +16,11 @@ namespace FabricAPP.ViewModels
         {
             Employees = employeesController.GetFromDB();
         }
-        public async void Delete(Employee employee)
+        public void Delete(Employee employee)
         {
             try
             {
-                if (employeesController.DeleteFromDB(employee) == 1)
+                if (employeesController.DeleteFromDB(employee.ID) == 1)
                     Employees.Remove(employee);
             }
             catch (Exception ex)
@@ -29,11 +29,11 @@ namespace FabricAPP.ViewModels
             }
         }
 
-        public void Save(Models.Employee employee)
+        public async void Save(Models.Employee employee)
         {
             try
             {
-                if (employeesController.UpdateInDb(employee) != 1)
+                if (await employeesController.UpdateInDb(employee) != 1)
                 {
                     throw new Exception("Server error");
                 }
