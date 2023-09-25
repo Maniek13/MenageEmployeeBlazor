@@ -16,7 +16,7 @@ namespace FabricAPP.ViewModels
         {
             Employees = employeesController.GetFromDB();
         }
-        public void Delete(Employee employee)
+        public async void Delete(Employee employee)
         {
             try
             {

@@ -48,7 +48,45 @@ namespace FabricAppTests
 			{
 				Assert.Fail(ex.Message);
 			}
-			
+		}
+		[Fact]
+		public async void Get()
+		{
+			try
+			{
+				Employee emp = new()
+				{
+					FirstName = "testget",
+					LastName = "test",
+					ContactNo = 123456789,
+					Email = "test",
+					Address = new()
+					{
+						City = "test",
+						Street = "test",
+						StreetNr = "test",
+						HouseNr = "test",
+						Zip = 12345
+					}
+				};
+
+				int id = await fb.Add(emp);
+
+				var list = fb.Get();
+
+				Assert.True(list.Count > 0 && list.Select(el => el).Where(el => el.FirstName == "testget").ToList().Count != 0);
+
+                fb.Dispose();
+                fb = new(new FabricContext());
+                fb.Delete(emp);
+
+                fb.Dispose();
+
+            }
+			catch (Exception ex)
+			{
+				Assert.Fail(ex.Message);
+			}
 		}
 	}
 }

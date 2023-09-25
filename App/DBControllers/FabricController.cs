@@ -17,12 +17,6 @@ namespace FabricAPP.DBControllers
         {
             _context = context;
         }
-
-        public async Task<IActionResult> Index()
-        {
-            return View(await _context.Employees.ToListAsync());
-        }
-
         public List<Models.Employee> Get()
         {
             try
@@ -88,7 +82,8 @@ namespace FabricAPP.DBControllers
              
                 await _context.SaveChangesAsync();
 				employee.ID = emp.ID;
-                return emp.ID;
+
+                return employee.ID;
             }
             catch (Exception ex)
             {

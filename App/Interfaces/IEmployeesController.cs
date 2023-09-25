@@ -13,11 +13,10 @@ namespace FabricAPP.Interfaces
         public void Save();
         public int Edit(Models.Employee employee);
 
-        public int DeleteFromDB(Models.Employee employee);
+        public int DeleteFromDB(Models.Employee employee)=> throw new NotImplementedException();
         public int UpdateInDb(Models.Employee employee);
-#pragma warning disable CS1998
-        public async void Add(Models.Employee employee) => throw new NotImplementedException();
-#pragma warning restore CS1998
+
+        public void Add(Models.Employee employee);
     }
 }
 
