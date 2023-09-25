@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace FabricAPP.Interfaces
 {
@@ -13,7 +12,7 @@ namespace FabricAPP.Interfaces
         public void Save();
         public int Edit(Models.Employee employee);
 
-        public int DeleteFromDB(Models.Employee employee)=> throw new NotImplementedException();
+        public int DeleteFromDB(Models.Employee employee) => throw new NotImplementedException();
         public int UpdateInDb(Models.Employee employee);
 
         public void Add(Models.Employee employee);

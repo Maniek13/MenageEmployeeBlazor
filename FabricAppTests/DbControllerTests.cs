@@ -2,14 +2,11 @@
 using FabricAPP.DBControllers;
 using FabricAPP.Models;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FabricAppTests
 {
-	public class DbControllerTests : TestContext
+    public class DbControllerTests : TestContext
 	{
 		FabricController fb = new(new FabricContext());
 		[Fact]

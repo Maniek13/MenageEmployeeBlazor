@@ -21,7 +21,6 @@ namespace FabricAPP.DBControllers
         {
             try
             {
-
                 var query = from emp in _context.Employees
                             join address in _context.Addresses
                             on emp.ID equals address.EmployeeID
@@ -43,13 +42,12 @@ namespace FabricAPP.DBControllers
                             };
 
 
-				return query.AsNoTracking().ToList();
-			}
+                return query.ToList();
+            }
             catch (Exception ex)
             {
                 throw new Exception(ex.Message, ex);
             }
-
         }
 
         public async void Set(List<Models.Employee> employees)
@@ -78,10 +76,10 @@ namespace FabricAPP.DBControllers
             try
             {
                 Employee emp = GetDBEmployee(employee);
-				_context.Add(emp);
-             
+                _context.Add(emp);
+
                 await _context.SaveChangesAsync();
-				employee.ID = emp.ID;
+                employee.ID = emp.ID;
 
                 return employee.ID;
             }
@@ -98,7 +96,7 @@ namespace FabricAPP.DBControllers
             {
                 Employee emp = GetDBEmployee(employee);
                 emp.ID = employee.ID;
-                _context.Employees.Remove(emp);
+                _context.Remove(emp);
                 _context.SaveChangesAsync();
                 return 1;
             }
