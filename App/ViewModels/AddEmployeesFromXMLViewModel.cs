@@ -1,27 +1,52 @@
 ﻿using FabricAPP.Controllers;
-using FabricAPP.Exceptions;
 using FabricAPP.Interfaces;
-using FabricAPP.Models;
+using Microsoft.AspNetCore.Components.Forms;
 using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Threading.Tasks;
 
 namespace FabricAPP.ViewModels
 {
     public class AddEmployeesFromXMLViewModel : IAddEmployeesFromXMLViewModel
     {
         readonly IEmployeesController employeesController = new EmployeesController();
-        public List<Employee> Employees { get; set; }
+        public bool ShowedInfo { get; set; }
+        public List<Models.Employee> Employees { get; set; }
 
         public AddEmployeesFromXMLViewModel()
         {
-            Employees = employeesController.GetFromDB();
+            Employees = new List<Models.Employee>();
         }
-        public void Delete(Employee employee)
+        public void ShowInfo()
+        {
+            ShowedInfo = !ShowedInfo;
+        }
+        public async Task<bool> SetData(IReadOnlyList<IBrowserFile> files)
         {
             try
             {
-                if (employeesController.DeleteFromDB(employee) == 1)
-                    Employees.Remove(employee);
+                string xml = "";
+
+                foreach (var file in files)
+                {
+                    using var stream = file.OpenReadStream();
+                    using var reader = new StreamReader(stream);
+                    xml = await reader.ReadToEndAsync();
+                }
+                Employees = employeesController.GetFromXML(xml);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message, ex);
+            }
+        }
+        public void Save()
+        {
+            try
+            {
+                employeesController.Save();
             }
             catch (Exception ex)
             {
@@ -29,18 +54,11 @@ namespace FabricAPP.ViewModels
             }
         }
 
-        public void Save(Models.Employee employee)
+        public void Delete(Models.Employee employee)
         {
             try
             {
-                if (employeesController.UpdateInDb(employee) != 1)
-                {
-                    throw new Exception("Server error");
-                }
-            }
-            catch (IncorectValueOfUserException ex)
-            {
-                throw new IncorectValueOfUserException($"Employe on id:{employee.ID}: {ex.Message}");
+                Employees.Remove(employee);
             }
             catch (Exception ex)
             {

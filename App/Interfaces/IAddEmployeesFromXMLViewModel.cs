@@ -1,13 +1,19 @@
-﻿using FabricAPP.Models;
+﻿using Microsoft.AspNetCore.Components.Forms;
+using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace FabricAPP.Interfaces
 {
     public interface IAddEmployeesFromXMLViewModel
     {
-        public List<Employee> Employees { get; set; }
-        public void Delete(Employee employee);
+        public List<Models.Employee> Employees { get; set; }
+        public bool ShowedInfo { get; set; }
+        public void ShowInfo();
+        public Task<bool> SetData(IReadOnlyList<IBrowserFile> files) => throw new NotImplementedException();
+        public void Save();
 
-        public void Save(Models.Employee employee);
+        public void Delete(Models.Employee employee);
+
     }
 }

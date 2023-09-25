@@ -239,3 +239,12 @@ G:\Programowanie\blazor projects\Menage employee\MenageEmployeeBlazor\FabricAppT
 G:\Programowanie\blazor projects\Menage employee\MenageEmployeeBlazor\FabricAppTests\obj\Debug\net7.0\FabricAppTests.pdb
 G:\Programowanie\blazor projects\Menage employee\MenageEmployeeBlazor\FabricAppTests\obj\Debug\net7.0\FabricAppTests.genruntimeconfig.cache
 G:\Programowanie\blazor projects\Menage employee\MenageEmployeeBlazor\FabricAppTests\obj\Debug\net7.0\ref\FabricAppTests.dll
+G:\Programowanie\blazor projects\Menage employee\MenageEmployeeBlazor\FabricAppTests\bin\Debug\net7.0\EntityFramework.SqlServer.dll
+G:\Programowanie\blazor projects\Menage employee\MenageEmployeeBlazor\FabricAppTests\bin\Debug\net7.0\EntityFramework.dll
+G:\Programowanie\blazor projects\Menage employee\MenageEmployeeBlazor\FabricAppTests\bin\Debug\net7.0\System.CodeDom.dll
+G:\Programowanie\blazor projects\Menage employee\MenageEmployeeBlazor\FabricAppTests\bin\Debug\net7.0\System.Data.SqlClient.dll
+G:\Programowanie\blazor projects\Menage employee\MenageEmployeeBlazor\FabricAppTests\bin\Debug\net7.0\runtimes\win-arm64\native\sni.dll
+G:\Programowanie\blazor projects\Menage employee\MenageEmployeeBlazor\FabricAppTests\bin\Debug\net7.0\runtimes\win-x64\native\sni.dll
+G:\Programowanie\blazor projects\Menage employee\MenageEmployeeBlazor\FabricAppTests\bin\Debug\net7.0\runtimes\win-x86\native\sni.dll
+G:\Programowanie\blazor projects\Menage employee\MenageEmployeeBlazor\FabricAppTests\bin\Debug\net7.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+G:\Programowanie\blazor projects\Menage employee\MenageEmployeeBlazor\FabricAppTests\bin\Debug\net7.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll

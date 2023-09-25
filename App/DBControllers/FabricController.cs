@@ -11,7 +11,7 @@ namespace FabricAPP.DBControllers
 {
     public class FabricController : Controller
     {
-        private readonly FabricContext _context;
+        private FabricContext _context;
 
         public FabricController(FabricContext context)
         {
@@ -27,6 +27,7 @@ namespace FabricAPP.DBControllers
         {
             try
             {
+
                 var query = from emp in _context.Employees
                             join address in _context.Addresses
                             on emp.ID equals address.EmployeeID
@@ -48,8 +49,8 @@ namespace FabricAPP.DBControllers
                             };
 
 
-                return query.ToList();
-            }
+				return query.AsNoTracking().ToList();
+			}
             catch (Exception ex)
             {
                 throw new Exception(ex.Message, ex);
@@ -83,9 +84,10 @@ namespace FabricAPP.DBControllers
             try
             {
                 Employee emp = GetDBEmployee(employee);
-                _context.Add(emp);
+				_context.Add(emp);
+             
                 await _context.SaveChangesAsync();
-
+				employee.ID = emp.ID;
                 return emp.ID;
             }
             catch (Exception ex)
@@ -101,7 +103,7 @@ namespace FabricAPP.DBControllers
             {
                 Employee emp = GetDBEmployee(employee);
                 emp.ID = employee.ID;
-                _context.Remove(emp);
+                _context.Employees.Remove(emp);
                 _context.SaveChangesAsync();
                 return 1;
             }

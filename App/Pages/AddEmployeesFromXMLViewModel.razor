@@ -1,0 +1,151 @@
+﻿@using System
+@using System.IO;
+@using FabricAPP.Models;
+@using FabricAPP.ViewModels;
+@using FabricAPP.Interfaces;
+@inject IAddEmployeesFromXMLViewModel addEmployeesFromXMLViewModel
+
+<div class="users-info">
+    <h1>Add users with addresses from XML</h1>
+    <div class="btn_container">
+        <div class="input-file">
+            <InputFile class="btn btn-primary" OnChange="SetData">Chose file</InputFile>
+        </div>
+
+        <div class="info-btn" @onmouseover="addEmployeesFromXMLViewModel.ShowInfo" @onmouseout="addEmployeesFromXMLViewModel.ShowInfo"></div>
+    </div>
+
+    @if (Loaded)
+    {
+        <table class="emp-tbl" id="Employees">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Surname</th>
+                    <th>Contact Nr</th>
+                    <th>Email</th>
+                    <th>Street</th>
+                    <th>Street Nr</th>
+                    <th>House Nr</th>
+                    <th>City</th>
+                    <th>ZIP Code</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var emp in addEmployeesFromXMLViewModel.Employees)
+                {
+                    <tr id="@emp.ID" @key="@emp">
+                        <td>@emp.ID</td>
+                        <td><input type="text" class="form-control" @bind="@emp.FirstName" readonly ondblclick="this.readOnly='';"/></td>
+                        <td><input type="text" class="form-control" @bind="@emp.LastName" readonly ondblclick="this.readOnly='';"/></td>
+                        <td><input type="text" class="form-control" @bind="@emp.ContactNo" readonly ondblclick="this.readOnly='';"/></td>
+                        <td><input type="text" class="form-control" @bind="@emp.Email" readonly ondblclick="this.readOnly='';"/></td>
+                        <td><input type="text" class="form-control" @bind="@emp.Address.Street" readonly ondblclick="this.readOnly='';"/></td>
+                        <td><input type="text" class="form-control" @bind="@emp.Address.StreetNr" readonly ondblclick="this.readOnly='';"/></td>
+                        <td><input type="text" class="form-control" @bind="@emp.Address.HouseNr" readonly ondblclick="this.readOnly='';"/></td>
+                        <td><input type="text" class="form-control" @bind="@emp.Address.City" readonly ondblclick="this.readOnly='';"/></td>
+                        <td><input type="text" class="form-control" @bind="@emp.Address.Zip" readonly ondblclick="this.readOnly='';"/></td>
+                        <th><button class="btn-delete" @onclick="@((e) => { Delete(emp); })" disabled=@Saved></button></th>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <div class="btn_container">
+            <div class="save-container">
+                <button class="btn btn-primary" disabled=@SaveBtnDisabled @onclick="Save">Save</button>
+            </div>
+        </div>
+    }
+</div>
+
+
+@if (addEmployeesFromXMLViewModel.ShowedInfo)
+{
+    <ImportInfo />
+}
+
+@if (Saved)
+{
+    <div class="saved-info">
+        @addEmployeesFromXMLViewModel.Employees.Count elements was saved
+    </div>
+}
+
+
+@if (Error)
+{
+    <div class="error">
+        @ErrorMsg
+    </div>
+}
+
+
+@code {
+    bool Loaded { get; set; } = false;
+    bool Saved { get; set; } = false;
+
+    bool SaveBtnDisabled = false;
+
+    bool Error { get; set; } = false;
+    string ErrorMsg { get; set; }
+
+    async void SetData(InputFileChangeEventArgs e)
+    {
+        try
+        {
+            Loaded = false;
+            Error = false;
+            Saved = false;
+
+            _ = await addEmployeesFromXMLViewModel.SetData(e.GetMultipleFiles(1));
+
+            SaveBtnDisabled = false;
+            Loaded = true;
+        }
+        catch (Exception ex)
+        {
+            ErrorMsg = ex.Message;
+            Error = true;
+        }
+
+        this.StateHasChanged();
+    }
+
+    void Save()
+    {
+        try
+        {
+            Error = false;
+            Saved = false;
+            SaveBtnDisabled = true;
+
+            addEmployeesFromXMLViewModel.Save();
+
+            Saved = true;
+            
+        }
+        catch(Exception ex)
+        {
+            ErrorMsg = ex.Message;
+            Error = true;
+            SaveBtnDisabled = false;
+        }
+    }
+
+    void Delete(Models.Employee employee)
+    {
+        try
+        {
+            Error = false;
+            addEmployeesFromXMLViewModel.Delete(employee);
+        }
+        catch(Exception ex)
+        {
+            ErrorMsg = ex.Message;
+            Error = true;
+        }
+    }
+}
