@@ -25,7 +25,7 @@
         <div>
             <label for="GetPhoneNr">Phone nr: </label>
             <div class="input-value">
-                <InputText @bind-Value="GetPhoneNr"name="GetPhoneNr" id="GetPhoneNr" />
+                <InputText @bind-Value="addEmployeeViewModel.Employee.ContactNo"name="GetPhoneNr" id="GetPhoneNr" />
             </div>
         </div>
         <div>
@@ -91,19 +91,6 @@
         bool Succes;
         string ErrorMsg = "";
 
-        string GetPhoneNr
-        {
-            get
-            {
-            return addEmployeeViewModel.Employee.ContactNo.ToString();
-            }
-            set
-            {   
-                int.TryParse(value, out int nr);
-            addEmployeeViewModel.Employee.ContactNo = nr;
-            }
-        }
-
         string GetZipCode
         {
             get
@@ -113,7 +100,7 @@
             set
             {
                 int.TryParse(value, out int nr);
-            addEmployeeViewModel.Employee.Address.Zip = nr;
+                addEmployeeViewModel.Employee.Address.Zip = nr;
             }
         }
 

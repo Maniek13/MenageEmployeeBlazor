@@ -3,7 +3,7 @@
     <Employee>
         <FirstName>string</FirstName>
         <LastName>string</LastName>
-        <ContactNo>int</ContactNo>
+        <ContactNo>string</ContactNo>
         <Email>string</Email>
         <Address>
             <City>string</City>

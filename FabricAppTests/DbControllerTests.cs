@@ -18,7 +18,7 @@ namespace FabricAppTests
 				{
 					FirstName = "test",
 					LastName = "test",
-					ContactNo = 123456789,
+					ContactNo = "123456789",
 					Email = "test",
 					Address = new()
 					{
@@ -55,7 +55,7 @@ namespace FabricAppTests
 				{
 					FirstName = "testget",
 					LastName = "test",
-					ContactNo = 123456789,
+					ContactNo = "123456789",
 					Email = "test",
 					Address = new()
 					{

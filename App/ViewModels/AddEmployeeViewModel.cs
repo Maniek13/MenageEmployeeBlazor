@@ -12,7 +12,7 @@ namespace FabricAPP.ViewModels
         {
             FirstName = "",
             LastName = "",
-            ContactNo = 0,
+            ContactNo = "0",
             Email = "",
             Address = new()
             {
@@ -42,8 +42,8 @@ namespace FabricAPP.ViewModels
                 throw new Exception("Please write a name");
             if (String.IsNullOrEmpty(Employee.LastName))
                 throw new Exception("Please write a last name");
-            if (Employee.ContactNo < 0 || Employee.ContactNo.ToString().Length < 9)
-                throw new Exception("Please write a number in format: (0048123456789) 0048 is a code for poland");
+            if (Employee.ContactNo.Length < 9)
+                throw new Exception("Please write a number in correct format");
             if (String.IsNullOrEmpty(Employee.Email))
                 throw new Exception("Please write an email");
 
@@ -53,7 +53,7 @@ namespace FabricAPP.ViewModels
                 throw new Exception("Please write a street");
             if (String.IsNullOrEmpty(Employee.Address.StreetNr))
                 throw new Exception("Please write a street nr");
-            if (Employee.ContactNo < 0 || Employee.Address.Zip.ToString().Length != 5)
+            if (Employee.Address.Zip.ToString().Length != 5)
                 throw new Exception("Please write a zipcode in format: 00000");
         }
     }

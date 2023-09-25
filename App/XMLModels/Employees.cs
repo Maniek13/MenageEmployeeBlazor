@@ -33,7 +33,7 @@ namespace FabricAPP.XMLModels
         public string LastName { get; set; }
 
         [XmlElement(ElementName = "ContactNo")]
-        public int ContactNo { get; set; }
+        public string ContactNo { get; set; }
 
         [XmlElement(ElementName = "Email")]
         public string Email { get; set; }

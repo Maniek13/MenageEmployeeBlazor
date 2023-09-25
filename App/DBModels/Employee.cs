@@ -10,7 +10,7 @@ namespace FabricAPP.DBModels
         public string FirstName { get; set; }
         [Required]
         public string LastName { get; set; }
-        public int ContactNo { get; set; }
+        public string ContactNo { get; set; }
         [Required]
         public string Email { get; set; }
 

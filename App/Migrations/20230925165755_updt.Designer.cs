@@ -3,14 +3,16 @@ using FabricAPP.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace FabricAPP.Migrations
 {
     [DbContext(typeof(FabricContext))]
-    partial class FabricContextModelSnapshot : ModelSnapshot
+    [Migration("20230925165755_updt")]
+    partial class updt
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -61,8 +63,8 @@ namespace FabricAPP.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("ContactNo")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<long>("ContactNo")
+                        .HasColumnType("bigint");
 
                     b.Property<string>("Email")
                         .IsRequired()

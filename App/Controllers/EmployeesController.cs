@@ -183,6 +183,8 @@ namespace FabricAPP.Controllers
                 throw new IncorectValueOfUserException("User first name is empty");
             if (string.IsNullOrEmpty(employee.LastName))
                 throw new IncorectValueOfUserException("User last name is empty");
+            if (string.IsNullOrEmpty(employee.ContactNo) || employee.ContactNo.Length < 9)
+                throw new IncorectValueOfUserException("Plese write a correct number");
             if (string.IsNullOrEmpty(employee.Email))
                 throw new IncorectValueOfUserException("User email is empty");
         }
