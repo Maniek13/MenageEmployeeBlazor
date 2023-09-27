@@ -107,7 +107,7 @@ namespace FabricAPP.Controllers
             try
             {
                 CheckIsCorrectEmployee(employee);
-
+                CheckIsCorrectEmployeeAdress(employee.Address);
                 int id = await fabric.Add(employee);
                 employee.ID = id;
                 return id;
@@ -160,18 +160,16 @@ namespace FabricAPP.Controllers
             try
             {
                 if (employee == null)
-                    throw new IncorectValueOfUserException($"User is empty");
+                    throw new IncorectValueOfUserException($"Please write a name");
                 if (string.IsNullOrEmpty(employee.FirstName))
-                    throw new IncorectValueOfUserException("User first name is empty");
+                    throw new IncorectValueOfUserException("Please write a name");
                 if (string.IsNullOrEmpty(employee.LastName))
-                    throw new IncorectValueOfUserException("User last name is empty");
-                if (string.IsNullOrEmpty(employee.ContactNo))
-                    throw new IncorectValueOfUserException("Plese write a correct number");
+                    throw new IncorectValueOfUserException("Please write a last name");
 
                 Helpers.CheckValueHelper.CheckIsPhoneNr(employee.ContactNo);
 
                 if (string.IsNullOrEmpty(employee.Email))
-                    throw new IncorectValueOfUserException("User email is empty");
+                    throw new IncorectValueOfUserException("Please write an email");
             }
             catch (IncorectValueOfUserException ex)
             {
@@ -191,13 +189,11 @@ namespace FabricAPP.Controllers
                 if (address == null)
                     throw new IncorectValueOfUserException("Adres is empty");
                 if (string.IsNullOrEmpty(address.City))
-                    throw new IncorectValueOfUserException("City is empty");
+                    throw new IncorectValueOfUserException("Please write a city name");
                 if (string.IsNullOrEmpty(address.Street))
-                    throw new IncorectValueOfUserException("Street is empty");
+                    throw new IncorectValueOfUserException("Please write a street");
                 if (string.IsNullOrEmpty(address.StreetNr))
-                    throw new IncorectValueOfUserException("Street nr is empty");
-                if (string.IsNullOrEmpty(address.Zip) || address.Zip.Length != 5)
-                    throw new IncorectValueOfUserException("Wrong zip code. Please use a format 00000");
+                    throw new IncorectValueOfUserException("Please write a street nr");
 
                 Helpers.CheckValueHelper.CheckIsZipNumbers(address.Zip);
             }

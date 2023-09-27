@@ -29,7 +29,7 @@ namespace FabricAppTests.AppTests
 
             cut.Find("input[id=LastName]").Change("test");
             cut.Find("form").Submit();
-            Assert.Equal("Please write a number in correct format", cut.Find("div[id=error]").TextContent);
+            Assert.Equal("Plese write a number", cut.Find("div[id=error]").TextContent);
 
             cut.Find("input[id=GetPhoneNr]").Change("123456789");
             cut.Find("form").Submit();
@@ -49,7 +49,7 @@ namespace FabricAppTests.AppTests
 
             cut.Find("input[id=StreetNr]").Change("test");
             cut.Find("form").Submit();
-            Assert.Equal("Please write a zipcode in format: 00000", cut.Find("div[id=error]").TextContent);
+            Assert.Equal("Plese write a zip code", cut.Find("div[id=error]").TextContent);
 
             cut.Find("input[id=GetZipCode]").Change("12345");
             cut.Find("form").Submit();

@@ -29,7 +29,7 @@ namespace FabricAppTests.UnitTests
                 });
 
 
-                test = "123a56789";
+                test = "123a6789";
                 Assert.Throws<IncorectValueOfUserException>(() =>
                 {
                     CheckValueHelper.CheckIsPhoneNr(test);
