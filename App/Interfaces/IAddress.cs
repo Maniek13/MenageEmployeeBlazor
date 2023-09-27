@@ -6,6 +6,6 @@
         string Street { get; set; }
         string StreetNr { get; set; }
         string HouseNr { get; set; }
-        int Zip { get; set; }
+        string Zip { get; set; }
     }
 }

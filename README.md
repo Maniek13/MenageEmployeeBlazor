@@ -6,7 +6,7 @@ http://178.235.60.107:421/
 
 Przeglądanie i dodawania pracowników z pliku xml
 
-1. Copy and run update-database
+1. Copy and run EntityFrameworkCore\Update-Database
 2. Enjoy
 
 

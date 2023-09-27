@@ -61,7 +61,7 @@
         <div>
             <label for="GetZipCode">Zip code: </label>
             <div class="input-value">
-                <InputText @bind-Value="GetZipCode" name="GetZipCode" id="GetZipCode" />
+                <InputText @bind-Value="addEmployeeViewModel.Employee.Address.Zip" name="GetZipCode" id="GetZipCode" />
             </div>
         </div>
         <div class="btn-container">
@@ -90,19 +90,6 @@
         bool Error;
         bool Succes;
         string ErrorMsg = "";
-
-        string GetZipCode
-        {
-            get
-            {
-            return addEmployeeViewModel.Employee.Address.Zip.ToString();
-            }
-            set
-            {
-                int.TryParse(value, out int nr);
-                addEmployeeViewModel.Employee.Address.Zip = nr;
-            }
-        }
 
         async void AddEmloyee()
         {

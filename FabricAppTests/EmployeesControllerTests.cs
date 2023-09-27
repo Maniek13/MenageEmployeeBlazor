@@ -29,7 +29,7 @@ namespace FabricAppTests
                     Street = "test",
                     StreetNr = "test",
                     HouseNr = "test",
-                    Zip = 76200
+                    Zip = "76200"
                 }
             },
             new Employee()
@@ -44,7 +44,7 @@ namespace FabricAppTests
                     Street = "test1",
                     StreetNr = "test1",
                     HouseNr = "test1",
-                    Zip = 76200
+                    Zip = "76200"
                 }
             }
         };
@@ -53,6 +53,7 @@ namespace FabricAppTests
         {
             EmployeesController = new EmployeesController();
         }
+
 
         [Fact]
         public async void AddToDb()
@@ -63,12 +64,16 @@ namespace FabricAppTests
                 for(int i = 0; i < employees.Count; ++i)
                 {
                     _ = await EmployeesController.AddToDb(employees[i]);
-
                 }
 
                 var list = EmployeesController.GetFromDB();
 
                 Assert.True(list.Select(el => el).Where(el => el.ID == employees[0].ID || el.ID == employees[1].ID).ToList().Count == 2);
+
+                for (int i = 0; i < employees.Count; ++i)
+                {
+                    _ = EmployeesController.DeleteFromDB(employees[i].ID);
+                }
             }
             catch (Exception ex)
             {
@@ -81,6 +86,9 @@ namespace FabricAppTests
         {
             try
             {
+                _ = await EmployeesController.AddToDb(employees[0]);
+
+
                 employees[0].FirstName = "nowe";
                 await EmployeesController.UpdateInDb(employees[0]);
 
@@ -88,7 +96,7 @@ namespace FabricAppTests
 
                 Assert.True(list.Select(el => el).Where(el => el.ID == employees[0].ID && el.FirstName == "nowe") != null);
 
-
+                _ = EmployeesController.DeleteFromDB(employees[0].ID);
             }
             catch (Exception ex)
             {
@@ -98,11 +106,19 @@ namespace FabricAppTests
 
 
         [Fact]
-        public void GetFromDb()
+        public async void GetFromDb()
         {
             try
             {
-                Assert.Fail();
+                _ = await EmployeesController.AddToDb(employees[0]);
+                _ = await EmployeesController.AddToDb(employees[1]);
+
+                var list = EmployeesController.GetFromDB();
+
+                Assert.True(list.Select(el => el).Where(el => el.ID == employees[0].ID || el.ID == employees[1].ID).ToList().Count == 2);
+
+                _ = EmployeesController.DeleteFromDB(employees[0].ID);
+                _ = EmployeesController.DeleteFromDB(employees[1].ID);
             }
             catch(Exception ex)
             {
@@ -114,7 +130,40 @@ namespace FabricAppTests
         {
             try
             {
-                Assert.Fail();
+                string XMLString = @"<?xml version=""1.0"" encoding=""UTF-8""?>
+                                        <Employees>
+                                            <Employee>
+                                                <FirstName>Adrian</FirstName>
+                                                <LastName>Nowak</LastName>
+                                                <ContactNo>123456789</ContactNo>
+                                                <Email>test@gmail.com</Email>
+                                                <Address>
+                                                    <City>Słupsk</City>
+                                                    <Street>Wojska Polskiego</Street>
+                                                    <StreetNr>2</StreetNr>
+                                                    <HouseNr>3</HouseNr>
+                                                    <Zip>75200</Zip>
+                                                </Address>
+                                            </Employee>
+                                            <Employee>
+                                                <FirstName>Kamil</FirstName>
+                                                <LastName>Nowak</LastName>
+                                                <ContactNo>123456789</ContactNo>
+                                                <Email>test@gmail.com</Email>
+                                                <Address>
+                                                    <City>Słupsk</City>
+                                                    <Street>Wojska Polskiego</Street>
+                                                    <StreetNr>2</StreetNr>
+                                                    <HouseNr>3</HouseNr>
+                                                    <Zip>75200</Zip>
+                                                </Address>
+                                            </Employee>
+                                        </Employees>";
+                var  list = EmployeesController.GetFromXML(XMLString);
+
+
+
+                Assert.True(list.Count == 2);
             }
             catch (Exception ex)
             {
@@ -127,7 +176,37 @@ namespace FabricAppTests
         {
             try
             {
-                Assert.Fail();
+                string XMLString = @"<?xml version=""1.0"" encoding=""UTF-8""?>
+                                        <Employees>
+                                            <Employee>
+                                                <FirstName>Adrian</FirstName>
+                                                <LastName>Nowak</LastName>
+                                                <ContactNo>123456789</ContactNo>
+                                                <Email>test@gmail.com</Email>
+                                                <Address>
+                                                    <City>Słupsk</City>
+                                                    <Street>Wojska Polskiego</Street>
+                                                    <StreetNr>2</StreetNr>
+                                                    <HouseNr>3</HouseNr>
+                                                    <Zip>75200</Zip>
+                                                </Address>
+                                            </Employee>
+                                            <Employee>
+                                                <FirstName>Kamil</FirstName>
+                                                <LastName>Nowak</LastName>
+                                                <ContactNo>123456789</ContactNo>
+                                                <Email>test@gmail.com</Email>
+                                                <Address>
+                                                    <City>Słupsk</City>
+                                                    <Street>Wojska Polskiego</Street>
+                                                    <StreetNr>2</StreetNr>
+                                                    <HouseNr>3</HouseNr>
+                                                    <Zip>75200</Zip>
+                                                </Address>
+                                            </Employee>
+                                        </Employees>";
+                var list = EmployeesController.GetFromXML(XMLString);
+                EmployeesController.SaveFromXML();
             }
             catch (Exception ex)
             {
@@ -136,11 +215,15 @@ namespace FabricAppTests
         }
 
         [Fact]
-        public void Delete()
+        public async void Delete()
         {
             try
             {
-                Assert.Fail();
+                _ = await EmployeesController.AddToDb(employees[0]);
+
+                int status = EmployeesController.DeleteFromDB(employees[0].ID);
+
+                Assert.True(status == 1);
             }
             catch (Exception ex)
             {

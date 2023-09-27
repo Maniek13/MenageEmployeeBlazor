@@ -4,18 +4,19 @@ using FabricAPP.Interfaces;
 using FabricAPP.Models;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 namespace FabricAPP.ViewModels
 {
     public class ShowEmployeesViewModel : IShowEmployeesViewModel
     {
         readonly IEmployeesController employeesController = new EmployeesController();
-        public List<Employee> Employees { get; set; }
-
+        public List<Employee> Employees { get; set; } = new List<Employee>();
         public ShowEmployeesViewModel()
         {
             Employees = employeesController.GetFromDB();
         }
+
         public void Delete(Employee employee)
         {
             try

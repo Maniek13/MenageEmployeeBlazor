@@ -19,7 +19,7 @@ namespace FabricAPP.XMLModels
         public string HouseNr { get; set; }
 
         [XmlElement(ElementName = "Zip")]
-        public int Zip { get; set; }
+        public string Zip { get; set; }
     }
 
     [XmlRoot(ElementName = "Employee")]

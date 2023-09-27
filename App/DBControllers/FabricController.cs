@@ -50,21 +50,21 @@ namespace FabricAPP.DBControllers
             }
         }
 
-        public async void Set(List<Models.Employee> employees)
+        public async Task<bool> Set(List<Models.Employee> employees)
         {
             try
             {
-                    List<Employee> emps = new();
-                    int nrOfEmp = _context.Employees.Count();
+                List<Employee> emps = new();
+                int nrOfEmp = _context.Employees.Count();
 
-                    employees.ForEach(delegate (Models.Employee emp)
-                    {
-                        emps.Add(GetDBEmployee(emp));
-                    });
+                employees.ForEach(delegate (Models.Employee emp)
+                {
+                    emps.Add(GetDBEmployee(emp));
+                });
 
-                    _context.AddRange(emps);
-                    await _context.SaveChangesAsync(); ;
-                    
+                _context.AddRange(emps);
+                await _context.SaveChangesAsync(); ;
+                return true;
             }
             catch (Exception ex)
             {

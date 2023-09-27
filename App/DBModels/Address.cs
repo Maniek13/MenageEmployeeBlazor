@@ -13,7 +13,7 @@ namespace FabricAPP.DBModels
         [Required]
         public string StreetNr { get; set; }
         public string HouseNr { get; set; }
-        public int Zip { get; set; }
+        public string Zip { get; set; }
 
         public int EmployeeID { get; set; }
         public Employee Employee { get; set; }

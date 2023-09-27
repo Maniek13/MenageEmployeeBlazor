@@ -10,7 +10,7 @@
             <Street>string</Street>
             <StreetNr>string</StreetNr>
             <HouseNr>string</HouseNr>
-            <Zip>int</Zip>
+            <Zip>string</Zip>
         </Address>
     </Employee>
 </Employees>

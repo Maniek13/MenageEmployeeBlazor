@@ -21,7 +21,7 @@ namespace FabricAPP.ViewModels
                 Street = "",
                 StreetNr = "",
                 HouseNr = "",
-                Zip = 0
+                Zip = ""
             }
         };
 
@@ -54,7 +54,7 @@ namespace FabricAPP.ViewModels
                 throw new Exception("Please write a street");
             if (String.IsNullOrEmpty(Employee.Address.StreetNr))
                 throw new Exception("Please write a street nr");
-            if (Employee.Address.Zip.ToString().Length != 5)
+            if (Employee.Address.Zip.Length != 5)
                 throw new Exception("Please write a zipcode in format: 00000");
         }
     }

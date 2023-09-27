@@ -6,6 +6,7 @@ using FabricAPP.XMLModels;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 
@@ -15,13 +16,12 @@ namespace FabricAPP.Controllers
     {
         private readonly List<Models.Employee> EmployeesList = new();
         private readonly FabricController fabric = new(new FabricContext());
-
         public List<Models.Employee> GetFromDB()
         {
             try
             {
-                var list = fabric.Get();
-                return list;
+                return fabric.Get();
+
             }
             catch (Exception ex)
             {
@@ -70,7 +70,7 @@ namespace FabricAPP.Controllers
             return EmployeesList;
         }
 
-        public void SaveFromXML()
+        public async void SaveFromXML()
         {
             try
             {
@@ -78,7 +78,7 @@ namespace FabricAPP.Controllers
                 {
                     CheckIsCorrectListOfEmployee(EmployeesList);
 
-                    fabric.Set(EmployeesList);
+                    _ =  await fabric.Set(EmployeesList);
                 }
                 else
                 {
