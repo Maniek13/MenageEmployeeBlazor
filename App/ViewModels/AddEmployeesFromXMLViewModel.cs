@@ -10,7 +10,7 @@ namespace FabricAPP.ViewModels
 {
     public class AddEmployeesFromXMLViewModel : IAddEmployeesFromXMLViewModel
     {
-        readonly IEmployeesController employeesController = new EmployeesController();
+        readonly IEmployeesController employeesController = new EmployeesController(new Data.FabricContext());
         public bool ShowedInfo { get; set; }
         public List<Models.Employee> Employees { get; set; }
 

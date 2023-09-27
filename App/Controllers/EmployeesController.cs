@@ -15,7 +15,13 @@ namespace FabricAPP.Controllers
     public class EmployeesController : IEmployeesController
     {
         private readonly List<Models.Employee> EmployeesList = new();
-        private readonly FabricController fabric = new(new FabricContext());
+        private readonly FabricController fabric;
+
+        public EmployeesController(FabricContext dbContext)
+        {
+            fabric = new(dbContext);
+        }
+
         public List<Models.Employee> GetFromDB()
         {
             try

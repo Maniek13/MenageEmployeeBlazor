@@ -10,7 +10,7 @@ namespace FabricAPP.ViewModels
 {
     public class ShowEmployeesViewModel : IShowEmployeesViewModel
     {
-        readonly IEmployeesController employeesController = new EmployeesController();
+        readonly IEmployeesController employeesController = new EmployeesController(new Data.FabricContext());
         public List<Employee> Employees { get; set; } = new List<Employee>();
         public ShowEmployeesViewModel()
         {

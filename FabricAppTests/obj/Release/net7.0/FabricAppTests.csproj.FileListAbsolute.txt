@@ -248,3 +248,6 @@ G:\Programowanie\blazor projects\Menage employee\MenageEmployeeBlazor\FabricAppT
 G:\Programowanie\blazor projects\Menage employee\MenageEmployeeBlazor\FabricAppTests\obj\Release\net7.0\FabricAppTests.pdb
 G:\Programowanie\blazor projects\Menage employee\MenageEmployeeBlazor\FabricAppTests\obj\Release\net7.0\FabricAppTests.genruntimeconfig.cache
 G:\Programowanie\blazor projects\Menage employee\MenageEmployeeBlazor\FabricAppTests\obj\Release\net7.0\ref\FabricAppTests.dll
+G:\Programowanie\blazor projects\Menage employee\MenageEmployeeBlazor\FabricAppTests\bin\Release\net7.0\XML\test.xml
+G:\Programowanie\blazor projects\Menage employee\MenageEmployeeBlazor\FabricAppTests\bin\Release\net7.0\Microsoft.EntityFrameworkCore.Design.dll
+G:\Programowanie\blazor projects\Menage employee\MenageEmployeeBlazor\FabricAppTests\bin\Release\net7.0\Microsoft.EntityFrameworkCore.InMemory.dll

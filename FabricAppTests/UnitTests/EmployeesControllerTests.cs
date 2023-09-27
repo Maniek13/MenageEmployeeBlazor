@@ -1,19 +1,35 @@
 ﻿using FabricAPP.Controllers;
+using FabricAPP.Data;
 using FabricAPP.Interfaces;
-using FabricAPP.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics.Metrics;
 using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-
-namespace FabricAppTests
+using Employee = FabricAPP.Models.Employee;
+namespace FabricAppTests.UnitTests
 {
     public class EmployeesControllerTests : TestContext
     {
         IEmployeesController EmployeesController { get; set; }
+
+
+        public EmployeesControllerTests()
+        {
+            try
+            {
+                var options = new DbContextOptionsBuilder<FabricContext>()
+                    .UseInMemoryDatabase(databaseName: "FabricDB")
+                    .Options;
+
+                EmployeesController = new EmployeesController(new FabricContext(options));
+            }
+            catch(Exception ex)
+            {
+                Assert.Fail(ex.Message);
+            }
+          
+
+        }
 
         static readonly List<Employee> employees = new()
         {
@@ -49,19 +65,13 @@ namespace FabricAppTests
             }
         };
 
-        public EmployeesControllerTests() 
-        {
-            EmployeesController = new EmployeesController();
-        }
-
-
         [Fact]
         public async void AddToDb()
         {
             try
             {
 
-                for(int i = 0; i < employees.Count; ++i)
+                for (int i = 0; i < employees.Count; ++i)
                 {
                     _ = await EmployeesController.AddToDb(employees[i]);
                 }
@@ -120,7 +130,7 @@ namespace FabricAppTests
                 _ = EmployeesController.DeleteFromDB(employees[0].ID);
                 _ = EmployeesController.DeleteFromDB(employees[1].ID);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Assert.Fail(ex.Message);
             }
@@ -159,7 +169,7 @@ namespace FabricAppTests
                                                 </Address>
                                             </Employee>
                                         </Employees>";
-                var  list = EmployeesController.GetFromXML(XMLString);
+                var list = EmployeesController.GetFromXML(XMLString);
 
 
 
@@ -231,7 +241,7 @@ namespace FabricAppTests
             }
         }
 
-       
+
 
 
     }

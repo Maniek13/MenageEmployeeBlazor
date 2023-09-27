@@ -8,7 +8,7 @@ namespace FabricAPP.ViewModels
 {
     public class AddEmployeeViewModel : IAddEmployeeViewModel
     {
-        readonly IEmployeesController employeesController = new EmployeesController();
+        readonly IEmployeesController employeesController = new EmployeesController(new Data.FabricContext());
         public Models.Employee Employee { get; set; } = new Models.Employee()
         {
             FirstName = "",

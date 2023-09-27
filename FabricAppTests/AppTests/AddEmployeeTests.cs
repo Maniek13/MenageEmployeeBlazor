@@ -2,13 +2,13 @@ using FabricAPP.Interfaces;
 using FabricAPP.Pages;
 using FabricAPP.ViewModels;
 
-namespace FabricAppTests
+namespace FabricAppTests.AppTests
 {
-	/// <summary>
-	/// These tests are written entirely in C#.
-	/// Learn more at https://bunit.dev/docs/getting-started/writing-tests.html#creating-basic-tests-in-cs-files
-	/// </summary>
-	public class AddEmployeeTests : TestContext
+    /// <summary>
+    /// These tests are written entirely in C#.
+    /// Learn more at https://bunit.dev/docs/getting-started/writing-tests.html#creating-basic-tests-in-cs-files
+    /// </summary>
+    public class AddEmployeeTests : TestContext
     {
         [Fact]
         public void AddEmployeClick()

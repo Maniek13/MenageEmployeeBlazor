@@ -1,4 +1,5 @@
 G:\Programowanie\blazor projects\Menage employee\MenageEmployeeBlazor\www\FabricAPP.exe
+G:\Programowanie\blazor projects\Menage employee\MenageEmployeeBlazor\www\XML\test.xml
 G:\Programowanie\blazor projects\Menage employee\MenageEmployeeBlazor\www\FabricAPP.runtimeconfig.json
 G:\Programowanie\blazor projects\Menage employee\MenageEmployeeBlazor\www\FabricAPP.Views.dll
 G:\Programowanie\blazor projects\Menage employee\MenageEmployeeBlazor\www\FabricAPP.Views.pdb
@@ -51,6 +52,7 @@ G:\Programowanie\blazor projects\Menage employee\MenageEmployeeBlazor\www\Micros
 G:\Programowanie\blazor projects\Menage employee\MenageEmployeeBlazor\www\Microsoft.Data.SqlClient.dll
 G:\Programowanie\blazor projects\Menage employee\MenageEmployeeBlazor\www\Microsoft.EntityFrameworkCore.dll
 G:\Programowanie\blazor projects\Menage employee\MenageEmployeeBlazor\www\Microsoft.EntityFrameworkCore.Abstractions.dll
+G:\Programowanie\blazor projects\Menage employee\MenageEmployeeBlazor\www\Microsoft.EntityFrameworkCore.InMemory.dll
 G:\Programowanie\blazor projects\Menage employee\MenageEmployeeBlazor\www\Microsoft.EntityFrameworkCore.Relational.dll
 G:\Programowanie\blazor projects\Menage employee\MenageEmployeeBlazor\www\Microsoft.EntityFrameworkCore.SqlServer.dll
 G:\Programowanie\blazor projects\Menage employee\MenageEmployeeBlazor\www\Microsoft.Identity.Client.dll

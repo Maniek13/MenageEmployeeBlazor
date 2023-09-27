@@ -5,10 +5,20 @@ namespace FabricAPP.Data
 {
     public class FabricContext : DbContext
     {
+        public FabricContext(DbContextOptions<FabricContext> options) : base(options)
+        {
+        }
+
+        public FabricContext() : base()
+        {
+
+        }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=RAKIETA\SQLEXPRESS;Database=FabricDB;Trusted_Connection=True;MultipleActiveResultSets=True;");
-            
+            if(!optionsBuilder.IsConfigured) 
+            {
+                optionsBuilder.UseSqlServer(@"Server=RAKIETA\SQLEXPRESS;Database=FabricDB;Trusted_Connection=True;MultipleActiveResultSets=True;");
+            }
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -19,7 +29,7 @@ namespace FabricAPP.Data
                 .HasForeignKey<Address>(b => b.EmployeeID);
         }
 
-        public DbSet<Employee> Employees { get; set; }
-        public DbSet<Address> Addresses { get; set; }
+        public virtual DbSet<Employee> Employees { get; set; }
+        public virtual DbSet<Address> Addresses { get; set; }
     }
 }
