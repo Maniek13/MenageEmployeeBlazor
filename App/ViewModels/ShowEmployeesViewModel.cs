@@ -5,6 +5,7 @@ using FabricAPP.Models;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Threading.Tasks;
 
 namespace FabricAPP.ViewModels
 {
@@ -30,7 +31,7 @@ namespace FabricAPP.ViewModels
             }
         }
 
-        public async void Save(Models.Employee employee)
+        public async Task<bool>Save (Models.Employee employee)
         {
             try
             {
@@ -38,6 +39,7 @@ namespace FabricAPP.ViewModels
                 {
                     throw new Exception("Server error");
                 }
+                return true;
             }
             catch (IncorectValueOfUserException ex)
             {

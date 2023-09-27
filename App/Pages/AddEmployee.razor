@@ -75,30 +75,28 @@
                 @ErrorMsg
             </div>
         }
+
         @if (@Succes)
         {
-            <div style="text-align: center">
-                Employee: @addEmployeeViewModel.Employee.FirstName @addEmployeeViewModel.Employee.LastName added succesfully
-            </div>
+            <div style="text-align: center" id="succes">Employee: @addEmployeeViewModel.Employee.FirstName @addEmployeeViewModel.Employee.LastName added succesfully</div>
         }
     </div>
 </EditForm>
 
-
-
 @code {
-        bool Error;
-        bool Succes;
-        string ErrorMsg = "";
+    bool Error;
+    bool Succes;
+    string ErrorMsg = "";
 
-        async void AddEmloyee()
+    async void AddEmloyee()
+    {
+        try
         {
-            try
-            {
-                Succes = false;
-                Error = false;
-                _ = await addEmployeeViewModel.AddUser();
-                Succes = true;
+            Succes = false;
+            Error = false;
+            var status = await addEmployeeViewModel.AddUser();
+            Succes = true;
+            this.StateHasChanged();
         }
         catch(Exception ex)
         {
@@ -106,4 +104,5 @@
             Error = true;
         }
     }
+    
 }

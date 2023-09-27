@@ -179,6 +179,8 @@ namespace FabricAPP.Controllers
                 throw new IncorectValueOfUserException("Street is empty");
             if (string.IsNullOrEmpty(address.StreetNr))
                 throw new IncorectValueOfUserException("Street nr is empty");
+            if (string.IsNullOrEmpty(address.Zip) || address.Zip.Length != 5)
+                throw new IncorectValueOfUserException("Wrong zip code. Please use a format 00000");
         }
 
         private static void CheckIsCorrectListOfEmployee(List<Models.Employee> employees)

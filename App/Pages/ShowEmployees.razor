@@ -45,7 +45,7 @@
                 <td><input type="text" class="form-control" @bind="@emp.Address.HouseNr" readonly ondblclick="this.readOnly='';" /></td>
                 <td><input type="text" class="form-control" @bind="@emp.Address.City" readonly ondblclick="this.readOnly='';" /></td>
                 <td><input type="text" class="form-control" @bind="@emp.Address.Zip" readonly ondblclick="this.readOnly='';" /></td>
-                <th><button class="btn-delete" @onclick="@((e) => { Delete(emp); })"></button><button class="btn-save" @onclick="@((e) => { Save(emp); })"></button></th>
+                <th><button class="btn-delete" id="Delete" @onclick="@((e) => { Delete(emp); })"></button><button class="btn-save" @onclick="@((e) => { Save(emp); })"></button></th>
             </tr>
         }
     </tbody>
@@ -70,12 +70,12 @@
         }
     }
 
-    void Save(Models.Employee employee)
+    async void Save(Models.Employee employee)
     {
         try
         {
             Error = false;
-            showEmployeesViewModel.Save(employee);
+            _ = await showEmployeesViewModel.Save(employee);
         }
         catch (Exception ex)
         {

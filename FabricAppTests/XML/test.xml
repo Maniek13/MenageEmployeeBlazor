@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Employees>
     <Employee>
-        <FirstName>Adrian</FirstName>
+        <FirstName>XMLAddedTest1</FirstName>
         <LastName>Nowak</LastName>
         <ContactNo>123456789</ContactNo>
         <Email>test@gmail.com</Email>
@@ -14,7 +14,7 @@
         </Address>
     </Employee>
     <Employee>
-        <FirstName>Kamil</FirstName>
+        <FirstName>XMLAddedTest2</FirstName>
         <LastName>Nowak</LastName>
         <ContactNo>123456789</ContactNo>
         <Email>test@gmail.com</Email>

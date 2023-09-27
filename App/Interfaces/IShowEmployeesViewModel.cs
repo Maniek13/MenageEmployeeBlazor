@@ -1,7 +1,7 @@
 ﻿using FabricAPP.Models;
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.Threading.Tasks;
 
 namespace FabricAPP.Interfaces
 {
@@ -11,6 +11,6 @@ namespace FabricAPP.Interfaces
 #pragma warning disable CS1998
         public void Delete(Employee employee) => throw new NotImplementedException();
 
-        public async void Save(Models.Employee employee) => throw new NotImplementedException();
+        public async Task<bool> Save(Employee employee) => throw new NotImplementedException();
     }
 }

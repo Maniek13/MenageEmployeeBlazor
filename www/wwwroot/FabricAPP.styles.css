@@ -44,19 +44,19 @@ h1[b-br35er81o3]{
     -ms-transform: translateX(-50%);
     transform: translateX(-50%);
 }
-/* _content/FabricAPP/Pages/AddEmployeesFromXMLViewModel.razor.rz.scp.css */
-h1[b-ot61jcst3u]{
+/* _content/FabricAPP/Pages/AddEmployeesFromXML.razor.rz.scp.css */
+h1[b-helv2cseh8]{
     text-align: center;
     width: 100%;
 }
 
-.btn_container[b-ot61jcst3u] {
+.btn_container[b-helv2cseh8] {
     width: 100%;
     height: 100px;
     position: relative;
 }
 
-.input-file[b-ot61jcst3u], .info-btn[b-ot61jcst3u], .save-container[b-ot61jcst3u] {
+.input-file[b-helv2cseh8], .info-btn[b-helv2cseh8], .save-container[b-helv2cseh8] {
     margin: 0;
     position: absolute;
     top: 50%;
@@ -66,7 +66,7 @@ h1[b-ot61jcst3u]{
     transform: translateY(-50%);
 }
 
-.info-btn[b-ot61jcst3u] {
+.info-btn[b-helv2cseh8] {
     background-image: url('icons/information-button.png');
     background-repeat: no-repeat;
     background-size: 15px, 15px;
@@ -78,33 +78,33 @@ h1[b-ot61jcst3u]{
     top: 41%;
 }
 
-.save-container[b-ot61jcst3u] {
+.save-container[b-helv2cseh8] {
     left: calc(50% - 30px)!important;
 }
-.saved-info[b-ot61jcst3u]{
+.saved-info[b-helv2cseh8]{
     width: 100%;
     padding: 10px;
     text-align: center;
 }
 
-.error[b-ot61jcst3u]{
+.error[b-helv2cseh8]{
     width: 100%;
     padding: 10px;
     color: red;
     text-align: center;
 }
 
-.emp-tbl[b-ot61jcst3u] {
+.emp-tbl[b-helv2cseh8] {
     width: 100%;
     position: relative;
     margin-bottom: 20px;
 }
 
-.emp-tbl[b-ot61jcst3u], th[b-ot61jcst3u], td[b-ot61jcst3u]{
+.emp-tbl[b-helv2cseh8], th[b-helv2cseh8], td[b-helv2cseh8]{
     border: 1px solid black;
 }
 
-.btn-delete[b-ot61jcst3u] {
+.btn-delete[b-helv2cseh8] {
     background-image: url('icons/remove.png') !important;
     background-repeat: no-repeat;
     background-size: 15px, 15px;

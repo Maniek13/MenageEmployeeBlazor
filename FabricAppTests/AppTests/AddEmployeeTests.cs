@@ -1,6 +1,9 @@
+using FabricAPP.Data;
 using FabricAPP.Interfaces;
 using FabricAPP.Pages;
 using FabricAPP.ViewModels;
+using System.Linq;
+using System.Threading;
 
 namespace FabricAppTests.AppTests
 {
@@ -14,12 +17,13 @@ namespace FabricAppTests.AppTests
         public void AddEmployeClick()
         {
 			Services.AddSingleton<IAddEmployeeViewModel>(new AddEmployeeViewModel());
-			var cut = RenderComponent<AddEmployee>();
+
+            var cut = RenderComponent<AddEmployee>();
 
             cut.Find("form").Submit();
             Assert.Equal("Please write a name", cut.Find("div[id=error]").TextContent);
 
-            cut.Find("input[id=FirstName]").Change("test");
+            cut.Find("input[id=FirstName]").Change("AddEmployeClick");
 			cut.Find("form").Submit();
 			Assert.Equal("Please write a last name", cut.Find("div[id=error]").TextContent);
 
@@ -49,6 +53,14 @@ namespace FabricAppTests.AppTests
 
             cut.Find("input[id=GetZipCode]").Change("12345");
             cut.Find("form").Submit();
+
+            Thread.Sleep(1000);
+
+            Assert.Equal("Employee: AddEmployeClick test added succesfully", cut.Find("div[id=succes]").TextContent);
+
+            FabricContext fabricContext = new FabricContext();
+            var x = fabricContext.Employees.Select(el => el).Where(el => el.FirstName == "AddEmployeClick").FirstOrDefault();
+            fabricContext.Remove(x);
         }
     }
 }

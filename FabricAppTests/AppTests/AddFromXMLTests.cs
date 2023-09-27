@@ -1,9 +1,11 @@
+using FabricAPP.Data;
 using FabricAPP.Interfaces;
 using FabricAPP.Pages;
 using FabricAPP.ViewModels;
 using Microsoft.AspNetCore.Components.Forms;
 using System;
 using System.IO;
+using System.Linq;
 
 namespace FabricAppTests.AppTests
 {
@@ -16,8 +18,10 @@ namespace FabricAppTests.AppTests
         [Fact]
         public void AddFromXML()
         {
-			Services.AddSingleton<IAddEmployeesFromXMLViewModel>(new AddEmployeesFromXMLViewModel());
-			var cut = RenderComponent<AddEmployeesFromXML>();
+            Services.AddSingleton<IAddEmployeesFromXMLViewModel>(new AddEmployeesFromXMLViewModel());
+
+
+            var cut = RenderComponent<AddEmployeesFromXML>();
 
             var path = Path.Combine(Environment.CurrentDirectory, "XML", "test.xml");
             var file = File.ReadAllBytes(path);
@@ -28,6 +32,10 @@ namespace FabricAppTests.AppTests
             cut.Find("button[id=Save]").Click();
 
             Assert.Equal("Element was saved. Added 2", cut.Find("div[id=SavedFilesStatus]").TextContent);
+
+            FabricContext fabricContext = new FabricContext();
+            fabricContext.Remove(fabricContext.Employees.Select(el => el).Where(el => el.FirstName == "XMLAddedTest1").FirstOrDefault());
+            fabricContext.Remove(fabricContext.Employees.Select(el => el).Where(el => el.FirstName == "XMLAddedTest2").FirstOrDefault());
         }
     }
 }
