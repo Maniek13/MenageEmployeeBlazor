@@ -58,7 +58,7 @@ namespace FabricAppTests.AppTests
 
             Assert.Equal("Employee: AddEmployeClick test added succesfully", cut.Find("div[id=succes]").TextContent);
 
-            FabricContext fabricContext = new FabricContext();
+            FabricContext fabricContext = new();
             var x = fabricContext.Employees.Select(el => el).Where(el => el.FirstName == "AddEmployeClick").FirstOrDefault();
             fabricContext.Remove(x);
         }

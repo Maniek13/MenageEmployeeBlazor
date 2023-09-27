@@ -240,9 +240,5 @@ namespace FabricAppTests.UnitTests
                 Assert.Fail(ex.Message);
             }
         }
-
-
-
-
     }
 }

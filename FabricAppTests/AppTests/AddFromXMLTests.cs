@@ -33,7 +33,7 @@ namespace FabricAppTests.AppTests
 
             Assert.Equal("Element was saved. Added 2", cut.Find("div[id=SavedFilesStatus]").TextContent);
 
-            FabricContext fabricContext = new FabricContext();
+            FabricContext fabricContext = new();
             fabricContext.Remove(fabricContext.Employees.Select(el => el).Where(el => el.FirstName == "XMLAddedTest1").FirstOrDefault());
             fabricContext.Remove(fabricContext.Employees.Select(el => el).Where(el => el.FirstName == "XMLAddedTest2").FirstOrDefault());
         }

@@ -11829,8 +11829,8 @@
     },
     "FabricAPP/1.0.0": {
       "type": "project",
-      "path": "../App/FabricAPP.csproj",
-      "msbuildProject": "../App/FabricAPP.csproj"
+      "path": "../FabricApp/FabricAPP.csproj",
+      "msbuildProject": "../FabricApp/FabricAPP.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -11879,8 +11879,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\App\\FabricAPP.csproj": {
-              "projectPath": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\App\\FabricAPP.csproj"
+            "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\FabricApp\\FabricAPP.csproj": {
+              "projectPath": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\FabricApp\\FabricAPP.csproj"
             }
           }
         }

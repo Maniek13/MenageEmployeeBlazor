@@ -1,13 +1,13 @@
 {
   "Version": 1,
-  "Hash": "S1/pOoDusFwuGTZDVwhXL6TafmWKY+onpBdT+h6vG+Y=",
+  "Hash": "SaH1GWtSPLq8gaKBVxNazIY2TUkUt/Em+y7iK0b6OiU=",
   "Source": "FabricAppTests",
   "BasePath": "_content/FabricAppTests",
   "Mode": "Default",
   "ManifestType": "Publish",
   "ReferencedProjectsConfiguration": [
     {
-      "Identity": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\App\\FabricAPP.csproj",
+      "Identity": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\FabricApp\\FabricAPP.csproj",
       "Version": 1,
       "Source": "FabricAPP",
       "GetPublishAssetsTargets": "",
@@ -22,7 +22,7 @@
     {
       "Name": "FabricAPP\\wwwroot",
       "Source": "FabricAPP",
-      "ContentRoot": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\App\\wwwroot\\",
+      "ContentRoot": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\FabricApp\\wwwroot\\",
       "BasePath": "_content/FabricAPP",
       "Pattern": "**"
     }
@@ -46,10 +46,10 @@
       "OriginalItemSpec": "C:\\Users\\mani3\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly.authentication\\7.0.0\\staticwebassets\\AuthenticationService.js"
     },
     {
-      "Identity": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\App\\obj\\Release\\net5.0\\scopedcss\\projectbundle\\FabricAPP.bundle.scp.css",
+      "Identity": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\FabricApp\\obj\\Release\\net5.0\\scopedcss\\projectbundle\\FabricAPP.bundle.scp.css",
       "SourceId": "FabricAPP",
       "SourceType": "Project",
-      "ContentRoot": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\App\\obj\\Release\\net5.0\\scopedcss\\projectbundle\\",
+      "ContentRoot": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\FabricApp\\obj\\Release\\net5.0\\scopedcss\\projectbundle\\",
       "BasePath": "_content/FabricAPP",
       "RelativePath": "FabricAPP.bundle.scp.css",
       "AssetKind": "All",
@@ -60,13 +60,13 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\App\\obj\\Release\\net5.0\\scopedcss\\projectbundle\\FabricAPP.bundle.scp.css"
+      "OriginalItemSpec": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\FabricApp\\obj\\Release\\net5.0\\scopedcss\\projectbundle\\FabricAPP.bundle.scp.css"
     },
     {
-      "Identity": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\App\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "Identity": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\FabricApp\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
       "SourceId": "FabricAPP",
       "SourceType": "Project",
-      "ContentRoot": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\App\\wwwroot\\",
+      "ContentRoot": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\FabricApp\\wwwroot\\",
       "BasePath": "_content/FabricAPP",
       "RelativePath": "css/bootstrap/bootstrap.min.css",
       "AssetKind": "All",
@@ -77,13 +77,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\App\\wwwroot\\css\\bootstrap\\bootstrap.min.css"
+      "OriginalItemSpec": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\FabricApp\\wwwroot\\css\\bootstrap\\bootstrap.min.css"
     },
     {
-      "Identity": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\App\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+      "Identity": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\FabricApp\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
       "SourceId": "FabricAPP",
       "SourceType": "Project",
-      "ContentRoot": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\App\\wwwroot\\",
+      "ContentRoot": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\FabricApp\\wwwroot\\",
       "BasePath": "_content/FabricAPP",
       "RelativePath": "css/bootstrap/bootstrap.min.css.map",
       "AssetKind": "All",
@@ -94,13 +94,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\App\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map"
+      "OriginalItemSpec": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\FabricApp\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map"
     },
     {
-      "Identity": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\App\\wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css",
+      "Identity": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\FabricApp\\wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css",
       "SourceId": "FabricAPP",
       "SourceType": "Project",
-      "ContentRoot": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\App\\wwwroot\\",
+      "ContentRoot": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\FabricApp\\wwwroot\\",
       "BasePath": "_content/FabricAPP",
       "RelativePath": "css/open-iconic/font/css/open-iconic-bootstrap.min.css",
       "AssetKind": "All",
@@ -111,13 +111,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\App\\wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css"
+      "OriginalItemSpec": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\FabricApp\\wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css"
     },
     {
-      "Identity": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\App\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot",
+      "Identity": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\FabricApp\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot",
       "SourceId": "FabricAPP",
       "SourceType": "Project",
-      "ContentRoot": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\App\\wwwroot\\",
+      "ContentRoot": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\FabricApp\\wwwroot\\",
       "BasePath": "_content/FabricAPP",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.eot",
       "AssetKind": "All",
@@ -128,13 +128,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\App\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot"
+      "OriginalItemSpec": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\FabricApp\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot"
     },
     {
-      "Identity": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\App\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf",
+      "Identity": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\FabricApp\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf",
       "SourceId": "FabricAPP",
       "SourceType": "Project",
-      "ContentRoot": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\App\\wwwroot\\",
+      "ContentRoot": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\FabricApp\\wwwroot\\",
       "BasePath": "_content/FabricAPP",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.otf",
       "AssetKind": "All",
@@ -145,13 +145,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\App\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf"
+      "OriginalItemSpec": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\FabricApp\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf"
     },
     {
-      "Identity": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\App\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg",
+      "Identity": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\FabricApp\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg",
       "SourceId": "FabricAPP",
       "SourceType": "Project",
-      "ContentRoot": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\App\\wwwroot\\",
+      "ContentRoot": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\FabricApp\\wwwroot\\",
       "BasePath": "_content/FabricAPP",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.svg",
       "AssetKind": "All",
@@ -162,13 +162,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\App\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg"
+      "OriginalItemSpec": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\FabricApp\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg"
     },
     {
-      "Identity": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\App\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf",
+      "Identity": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\FabricApp\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf",
       "SourceId": "FabricAPP",
       "SourceType": "Project",
-      "ContentRoot": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\App\\wwwroot\\",
+      "ContentRoot": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\FabricApp\\wwwroot\\",
       "BasePath": "_content/FabricAPP",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.ttf",
       "AssetKind": "All",
@@ -179,13 +179,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\App\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf"
+      "OriginalItemSpec": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\FabricApp\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf"
     },
     {
-      "Identity": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\App\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff",
+      "Identity": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\FabricApp\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff",
       "SourceId": "FabricAPP",
       "SourceType": "Project",
-      "ContentRoot": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\App\\wwwroot\\",
+      "ContentRoot": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\FabricApp\\wwwroot\\",
       "BasePath": "_content/FabricAPP",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.woff",
       "AssetKind": "All",
@@ -196,13 +196,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\App\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff"
+      "OriginalItemSpec": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\FabricApp\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff"
     },
     {
-      "Identity": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\App\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
+      "Identity": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\FabricApp\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
       "SourceId": "FabricAPP",
       "SourceType": "Project",
-      "ContentRoot": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\App\\wwwroot\\",
+      "ContentRoot": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\FabricApp\\wwwroot\\",
       "BasePath": "_content/FabricAPP",
       "RelativePath": "css/open-iconic/FONT-LICENSE",
       "AssetKind": "All",
@@ -213,13 +213,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\App\\wwwroot\\css\\open-iconic\\FONT-LICENSE"
+      "OriginalItemSpec": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\FabricApp\\wwwroot\\css\\open-iconic\\FONT-LICENSE"
     },
     {
-      "Identity": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\App\\wwwroot\\css\\open-iconic\\ICON-LICENSE",
+      "Identity": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\FabricApp\\wwwroot\\css\\open-iconic\\ICON-LICENSE",
       "SourceId": "FabricAPP",
       "SourceType": "Project",
-      "ContentRoot": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\App\\wwwroot\\",
+      "ContentRoot": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\FabricApp\\wwwroot\\",
       "BasePath": "_content/FabricAPP",
       "RelativePath": "css/open-iconic/ICON-LICENSE",
       "AssetKind": "All",
@@ -230,13 +230,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\App\\wwwroot\\css\\open-iconic\\ICON-LICENSE"
+      "OriginalItemSpec": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\FabricApp\\wwwroot\\css\\open-iconic\\ICON-LICENSE"
     },
     {
-      "Identity": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\App\\wwwroot\\css\\open-iconic\\README.md",
+      "Identity": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\FabricApp\\wwwroot\\css\\open-iconic\\README.md",
       "SourceId": "FabricAPP",
       "SourceType": "Project",
-      "ContentRoot": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\App\\wwwroot\\",
+      "ContentRoot": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\FabricApp\\wwwroot\\",
       "BasePath": "_content/FabricAPP",
       "RelativePath": "css/open-iconic/README.md",
       "AssetKind": "All",
@@ -247,13 +247,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\App\\wwwroot\\css\\open-iconic\\README.md"
+      "OriginalItemSpec": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\FabricApp\\wwwroot\\css\\open-iconic\\README.md"
     },
     {
-      "Identity": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\App\\wwwroot\\css\\site.css",
+      "Identity": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\FabricApp\\wwwroot\\css\\site.css",
       "SourceId": "FabricAPP",
       "SourceType": "Project",
-      "ContentRoot": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\App\\wwwroot\\",
+      "ContentRoot": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\FabricApp\\wwwroot\\",
       "BasePath": "_content/FabricAPP",
       "RelativePath": "css/site.css",
       "AssetKind": "All",
@@ -264,13 +264,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\App\\wwwroot\\css\\site.css"
+      "OriginalItemSpec": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\FabricApp\\wwwroot\\css\\site.css"
     },
     {
-      "Identity": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\App\\wwwroot\\favicon.ico",
+      "Identity": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\FabricApp\\wwwroot\\favicon.ico",
       "SourceId": "FabricAPP",
       "SourceType": "Project",
-      "ContentRoot": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\App\\wwwroot\\",
+      "ContentRoot": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\FabricApp\\wwwroot\\",
       "BasePath": "_content/FabricAPP",
       "RelativePath": "favicon.ico",
       "AssetKind": "All",
@@ -281,13 +281,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\App\\wwwroot\\favicon.ico"
+      "OriginalItemSpec": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\FabricApp\\wwwroot\\favicon.ico"
     },
     {
-      "Identity": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\App\\wwwroot\\icons\\check.png",
+      "Identity": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\FabricApp\\wwwroot\\icons\\check.png",
       "SourceId": "FabricAPP",
       "SourceType": "Project",
-      "ContentRoot": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\App\\wwwroot\\",
+      "ContentRoot": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\FabricApp\\wwwroot\\",
       "BasePath": "_content/FabricAPP",
       "RelativePath": "icons/check.png",
       "AssetKind": "All",
@@ -298,13 +298,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\App\\wwwroot\\icons\\check.png"
+      "OriginalItemSpec": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\FabricApp\\wwwroot\\icons\\check.png"
     },
     {
-      "Identity": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\App\\wwwroot\\icons\\information-button.png",
+      "Identity": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\FabricApp\\wwwroot\\icons\\information-button.png",
       "SourceId": "FabricAPP",
       "SourceType": "Project",
-      "ContentRoot": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\App\\wwwroot\\",
+      "ContentRoot": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\FabricApp\\wwwroot\\",
       "BasePath": "_content/FabricAPP",
       "RelativePath": "icons/information-button.png",
       "AssetKind": "All",
@@ -315,13 +315,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\App\\wwwroot\\icons\\information-button.png"
+      "OriginalItemSpec": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\FabricApp\\wwwroot\\icons\\information-button.png"
     },
     {
-      "Identity": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\App\\wwwroot\\icons\\remove.png",
+      "Identity": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\FabricApp\\wwwroot\\icons\\remove.png",
       "SourceId": "FabricAPP",
       "SourceType": "Project",
-      "ContentRoot": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\App\\wwwroot\\",
+      "ContentRoot": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\FabricApp\\wwwroot\\",
       "BasePath": "_content/FabricAPP",
       "RelativePath": "icons/remove.png",
       "AssetKind": "All",
@@ -332,7 +332,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\App\\wwwroot\\icons\\remove.png"
+      "OriginalItemSpec": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\FabricApp\\wwwroot\\icons\\remove.png"
     },
     {
       "Identity": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\FabricAppTests\\obj\\Release\\net7.0\\scopedcss\\bundle\\FabricAppTests.styles.css",
