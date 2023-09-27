@@ -1,4 +1,4 @@
-﻿using FabricAPP.Controllers;
+﻿using FabricAPP.Providers;
 using FabricAPP.Exceptions;
 using FabricAPP.Interfaces;
 using FabricAPP.Models;
@@ -11,18 +11,18 @@ namespace FabricAPP.ViewModels
 {
     public class ShowEmployeesViewModel : IShowEmployeesViewModel
     {
-        readonly IEmployeesController employeesController = new EmployeesController(new Data.FabricContext());
+        readonly IFabricDbControllerProvider fabricControllerProvider = new FabricDbControllerProvider(new Data.FabricContext());
         public List<Employee> Employees { get; set; } = new List<Employee>();
         public ShowEmployeesViewModel()
         {
-            Employees = employeesController.GetFromDB();
+            Employees = fabricControllerProvider.GetFromDB();
         }
 
         public void Delete(Employee employee)
         {
             try
             {
-                if (employeesController.DeleteFromDB(employee.ID) == 1)
+                if (fabricControllerProvider.DeleteFromDB(employee.ID) == 1)
                     Employees.Remove(employee);
             }
             catch (Exception ex)
@@ -35,7 +35,7 @@ namespace FabricAPP.ViewModels
         {
             try
             {
-                if (await employeesController.UpdateInDb(employee) != 1)
+                if (await fabricControllerProvider.UpdateInDb(employee) != 1)
                 {
                     throw new Exception("Server error");
                 }

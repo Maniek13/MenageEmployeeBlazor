@@ -9,7 +9,7 @@ namespace FabricAppTests.IntegrationTests
 {
     public class DbControllerTests : TestContext
     {
-        readonly FabricController fb = new(new FabricContext());
+        readonly FabricDbController fb = new(new FabricContext());
         [Fact]
         public async void AddEmployeeTests()
         {

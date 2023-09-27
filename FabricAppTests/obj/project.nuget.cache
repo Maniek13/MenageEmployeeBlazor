@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "yfGoYdWVMa7Ly82OXEtWd6cnHcvq2p29HM+qr6a6Ck6FhSXn9E280eu4mLrwW3FvIj+Lo3RssYvDvdeRmGwuvw==",
+  "dgSpecHash": "8Qzhe3Spuhf6Ai1xB83FjaqBI8AVhoerwKA74VA5kkicBVLO/yjyhFThtVOeHXd2rGxf7lqJ/l4i0rwsvYvAvg==",
   "success": true,
   "projectFilePath": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\FabricAppTests\\FabricAppTests.csproj",
   "expectedPackageFiles": [
@@ -210,16 +210,5 @@
     "C:\\Users\\mani3\\.nuget\\packages\\xunit.extensibility.execution\\2.5.0\\xunit.extensibility.execution.2.5.0.nupkg.sha512",
     "C:\\Users\\mani3\\.nuget\\packages\\xunit.runner.visualstudio\\2.5.0\\xunit.runner.visualstudio.2.5.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1603",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "FabricAppTests depends on Microsoft.NET.Test.Sdk (>= 16.12.0) but Microsoft.NET.Test.Sdk 16.12.0 was not found. An approximate best match of Microsoft.NET.Test.Sdk 17.0.0 was resolved.",
-      "libraryId": "Microsoft.NET.Test.Sdk",
-      "targetGraphs": [
-        "net7.0"
-      ]
-    }
-  ]
+  "logs": []
 }

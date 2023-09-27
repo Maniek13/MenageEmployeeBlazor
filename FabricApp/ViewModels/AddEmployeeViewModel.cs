@@ -1,4 +1,4 @@
-﻿using FabricAPP.Controllers;
+﻿using FabricAPP.Providers;
 using FabricAPP.DBModels;
 using FabricAPP.Interfaces;
 using System;
@@ -8,7 +8,7 @@ namespace FabricAPP.ViewModels
 {
     public class AddEmployeeViewModel : IAddEmployeeViewModel
     {
-        readonly IEmployeesController employeesController = new EmployeesController(new Data.FabricContext());
+        readonly IFabricDbControllerProvider fabricControllerProvider = new FabricDbControllerProvider(new Data.FabricContext());
         public Models.Employee Employee { get; set; } = new Models.Employee()
         {
             FirstName = "",
@@ -29,7 +29,7 @@ namespace FabricAPP.ViewModels
         {
             try
             {
-                return await employeesController.AddToDb(Employee);
+                return await fabricControllerProvider.AddToDb(Employee);
             }
             catch (Exception ex)
             {

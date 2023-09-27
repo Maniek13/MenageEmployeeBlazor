@@ -1,4 +1,4 @@
-﻿using FabricAPP.Controllers;
+﻿using FabricAPP.Providers;
 using FabricAPP.Interfaces;
 using Microsoft.AspNetCore.Components.Forms;
 using System;
@@ -10,7 +10,7 @@ namespace FabricAPP.ViewModels
 {
     public class AddEmployeesFromXMLViewModel : IAddEmployeesFromXMLViewModel
     {
-        readonly IEmployeesController employeesController = new EmployeesController(new Data.FabricContext());
+        readonly IFabricDbControllerProvider fabricControllerProvider = new FabricDbControllerProvider(new Data.FabricContext());
         public bool ShowedInfo { get; set; }
         public List<Models.Employee> Employees { get; set; }
 
@@ -34,7 +34,7 @@ namespace FabricAPP.ViewModels
                     using var reader = new StreamReader(stream);
                     xml = await reader.ReadToEndAsync();
                 }
-                Employees = employeesController.GetFromXML(xml);
+                Employees = fabricControllerProvider.GetFromXML(xml);
                 return true;
             }
             catch (Exception ex)
@@ -46,7 +46,7 @@ namespace FabricAPP.ViewModels
         {
             try
             {
-                employeesController.SaveFromXML();
+                fabricControllerProvider.SaveFromXML();
             }
             catch (Exception ex)
             {
