@@ -115,12 +115,11 @@ namespace FabricAppTests
         {
             try
             {
-                var nrof = fb.Get().Count;
                 List<Employee> list = new()
                 {
                     new Employee
                     {
-                        FirstName = "testget",
+                        FirstName = "SetEmployeesTest1",
                         LastName = "test",
                         ContactNo = "123456789",
                         Email = "test",
@@ -135,7 +134,7 @@ namespace FabricAppTests
                     },
                     new Employee
                     {
-                        FirstName = "testget",
+                        FirstName = "SetEmployeesTest2",
                         LastName = "test",
                         ContactNo = "123456789",
                         Email = "test",
@@ -151,8 +150,8 @@ namespace FabricAppTests
                 };
 
 				_ = await fb.Set(list);
-
-                Assert.True(nrof+2 == fb.Get().Count);
+                List<Employee> res = fb.Get();
+                Assert.True(res.Select(el => el).Where(el => el.FirstName == "SetEmployeesTest1" || el.FirstName == "SetEmployeesTest2").ToList().Count == 2);
             }
             catch (Exception ex)
             {

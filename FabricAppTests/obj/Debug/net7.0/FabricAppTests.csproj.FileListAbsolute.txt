@@ -248,3 +248,4 @@ G:\Programowanie\blazor projects\Menage employee\MenageEmployeeBlazor\FabricAppT
 G:\Programowanie\blazor projects\Menage employee\MenageEmployeeBlazor\FabricAppTests\bin\Debug\net7.0\runtimes\win-x86\native\sni.dll
 G:\Programowanie\blazor projects\Menage employee\MenageEmployeeBlazor\FabricAppTests\bin\Debug\net7.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 G:\Programowanie\blazor projects\Menage employee\MenageEmployeeBlazor\FabricAppTests\bin\Debug\net7.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+G:\Programowanie\blazor projects\Menage employee\MenageEmployeeBlazor\FabricAppTests\bin\Debug\net7.0\XML\test.xml

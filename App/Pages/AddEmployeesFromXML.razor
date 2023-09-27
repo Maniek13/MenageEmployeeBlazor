@@ -9,7 +9,7 @@
     <h1>Add users with addresses from XML</h1>
     <div class="btn_container">
         <div class="input-file">
-            <InputFile class="btn btn-primary" OnChange="SetData">Chose file</InputFile>
+            <InputFile class="btn btn-primary" OnChange="SetData" id="SetData">Chose file</InputFile>
         </div>
 
         <div class="info-btn" @onmouseover="addEmployeesFromXMLViewModel.ShowInfo" @onmouseout="addEmployeesFromXMLViewModel.ShowInfo"></div>
@@ -55,7 +55,7 @@
 
         <div class="btn_container">
             <div class="save-container">
-                <button class="btn btn-primary" disabled=@SaveBtnDisabled @onclick="Save">Save</button>
+                <button class="btn btn-primary" id="Save" disabled=@SaveBtnDisabled @onclick="Save">Save</button>
             </div>
         </div>
     }
@@ -69,9 +69,7 @@
 
 @if (Saved)
 {
-    <div class="saved-info">
-        @addEmployeesFromXMLViewModel.Employees.Count elements was saved
-    </div>
+    <div class="saved-info" id="SavedFilesStatus">Element was saved. Added @addEmployeesFromXMLViewModel.Employees.Count</div>
 }
 
 
