@@ -157,30 +157,58 @@ namespace FabricAPP.Controllers
 
         private static void CheckIsCorrectEmployee(Models.Employee employee)
         {
-            if (employee == null)
-                throw new IncorectValueOfUserException($"User is empty");
-            if (string.IsNullOrEmpty(employee.FirstName))
-                throw new IncorectValueOfUserException("User first name is empty");
-            if (string.IsNullOrEmpty(employee.LastName))
-                throw new IncorectValueOfUserException("User last name is empty");
-            if (string.IsNullOrEmpty(employee.ContactNo) || employee.ContactNo.Length < 9)
-                throw new IncorectValueOfUserException("Plese write a correct number");
-            if (string.IsNullOrEmpty(employee.Email))
-                throw new IncorectValueOfUserException("User email is empty");
+            try
+            {
+                if (employee == null)
+                    throw new IncorectValueOfUserException($"User is empty");
+                if (string.IsNullOrEmpty(employee.FirstName))
+                    throw new IncorectValueOfUserException("User first name is empty");
+                if (string.IsNullOrEmpty(employee.LastName))
+                    throw new IncorectValueOfUserException("User last name is empty");
+                if (string.IsNullOrEmpty(employee.ContactNo))
+                    throw new IncorectValueOfUserException("Plese write a correct number");
+
+                Helpers.CheckValueHelper.CheckIsPhoneNr(employee.ContactNo);
+
+                if (string.IsNullOrEmpty(employee.Email))
+                    throw new IncorectValueOfUserException("User email is empty");
+            }
+            catch (IncorectValueOfUserException ex)
+            {
+                throw new IncorectValueOfUserException(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message, ex);
+            }
         }
 
         private static void CheckIsCorrectEmployeeAdress(Models.Address address)
         {
-            if (address == null)
-                throw new IncorectValueOfUserException("Adres is empty");
-            if (string.IsNullOrEmpty(address.City))
-                throw new IncorectValueOfUserException("City is empty");
-            if (string.IsNullOrEmpty(address.Street))
-                throw new IncorectValueOfUserException("Street is empty");
-            if (string.IsNullOrEmpty(address.StreetNr))
-                throw new IncorectValueOfUserException("Street nr is empty");
-            if (string.IsNullOrEmpty(address.Zip) || address.Zip.Length != 5)
-                throw new IncorectValueOfUserException("Wrong zip code. Please use a format 00000");
+
+            try
+            {
+                if (address == null)
+                    throw new IncorectValueOfUserException("Adres is empty");
+                if (string.IsNullOrEmpty(address.City))
+                    throw new IncorectValueOfUserException("City is empty");
+                if (string.IsNullOrEmpty(address.Street))
+                    throw new IncorectValueOfUserException("Street is empty");
+                if (string.IsNullOrEmpty(address.StreetNr))
+                    throw new IncorectValueOfUserException("Street nr is empty");
+                if (string.IsNullOrEmpty(address.Zip) || address.Zip.Length != 5)
+                    throw new IncorectValueOfUserException("Wrong zip code. Please use a format 00000");
+
+                Helpers.CheckValueHelper.CheckIsZipNumbers(address.Zip);
+            }
+            catch (IncorectValueOfUserException ex)
+            {
+                throw new IncorectValueOfUserException(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message, ex);
+            }
         }
 
         private static void CheckIsCorrectListOfEmployee(List<Models.Employee> employees)
