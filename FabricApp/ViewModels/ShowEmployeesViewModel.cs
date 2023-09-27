@@ -1,23 +1,25 @@
-﻿using FabricAPP.Providers;
+﻿using FabricAPP.Data;
 using FabricAPP.Exceptions;
 using FabricAPP.Interfaces;
 using FabricAPP.Models;
+using FabricAPP.Providers;
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 
 namespace FabricAPP.ViewModels
 {
     public class ShowEmployeesViewModel : IShowEmployeesViewModel
     {
-        readonly IFabricDbControllerProvider fabricControllerProvider = new FabricDbControllerProvider(new Data.FabricContext());
+
+        readonly IFabricDbControllerProvider fabricControllerProvider; 
         public List<Employee> Employees { get; set; } = new List<Employee>();
         public ShowEmployeesViewModel()
         {
+            fabricControllerProvider = new FabricDbControllerProvider(new Data.FabricContext());
             Employees = fabricControllerProvider.GetFromDB();
+            
         }
-
         public void Delete(Employee employee)
         {
             try
@@ -50,5 +52,13 @@ namespace FabricAPP.ViewModels
                 throw new Exception(ex.Message, ex);
             }
         }
+
+        #region forTests
+        public ShowEmployeesViewModel(FabricContext dbContext)
+        {
+            fabricControllerProvider = new FabricDbControllerProvider(dbContext);
+            Employees = fabricControllerProvider.GetFromDB();
+        }
+        #endregion
     }
 }

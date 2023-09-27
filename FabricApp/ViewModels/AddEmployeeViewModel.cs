@@ -3,12 +3,19 @@ using FabricAPP.DBModels;
 using FabricAPP.Interfaces;
 using System;
 using System.Threading.Tasks;
+using FabricAPP.Data;
+using FabricAPP.XMLModels;
 
 namespace FabricAPP.ViewModels
 {
     public class AddEmployeeViewModel : IAddEmployeeViewModel
     {
-        readonly IFabricDbControllerProvider fabricControllerProvider = new FabricDbControllerProvider(new Data.FabricContext());
+        readonly IFabricDbControllerProvider fabricControllerProvider;
+
+        public AddEmployeeViewModel()
+        {
+            fabricControllerProvider = new FabricDbControllerProvider(new Data.FabricContext());
+        }
         public Models.Employee Employee { get; set; } = new Models.Employee()
         {
             FirstName = "",
@@ -36,5 +43,11 @@ namespace FabricAPP.ViewModels
                 throw new Exception(ex.Message, ex);
             }
         }
+        #region forTests
+        public AddEmployeeViewModel(FabricContext dbContext)
+        {
+            fabricControllerProvider = new FabricDbControllerProvider(dbContext);
+        }
+        #endregion
     }
 }

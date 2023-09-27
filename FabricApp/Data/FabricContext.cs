@@ -1,4 +1,5 @@
 ﻿using FabricAPP.DBModels;
+using FabricAPP.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace FabricAPP.Data

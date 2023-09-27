@@ -5,17 +5,19 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
+using FabricAPP.Data;
 
 namespace FabricAPP.ViewModels
 {
     public class AddEmployeesFromXMLViewModel : IAddEmployeesFromXMLViewModel
     {
-        readonly IFabricDbControllerProvider fabricControllerProvider = new FabricDbControllerProvider(new Data.FabricContext());
+        readonly IFabricDbControllerProvider fabricControllerProvider;
         public bool ShowedInfo { get; set; }
         public List<Models.Employee> Employees { get; set; }
 
         public AddEmployeesFromXMLViewModel()
         {
+            fabricControllerProvider = new FabricDbControllerProvider(new Data.FabricContext());
             Employees = new List<Models.Employee>();
         }
         public void ShowInfo()
@@ -65,5 +67,13 @@ namespace FabricAPP.ViewModels
                 throw new Exception(ex.Message, ex);
             }
         }
+
+        #region forTests
+        public AddEmployeesFromXMLViewModel(FabricContext dbContext)
+        {
+            fabricControllerProvider = new FabricDbControllerProvider(dbContext);
+            Employees = fabricControllerProvider.GetFromDB();
+        }
+        #endregion
     }
 }
