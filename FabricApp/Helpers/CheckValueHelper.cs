@@ -17,7 +17,7 @@ namespace FabricAPP.Helpers
 
                 if (!int.TryParse(nr[i].ToString(), out _))
                 {
-                    throw new IncorectValueOfUserException($"Phone number must have only numeric value but have a/an {nr[i]} in position {i+1}");
+                    throw new IncorectValueOfUserException($"Phone number must have only numeric value but have a/an {nr[i]} in position {i + 1}");
                 }
             }
         }
@@ -30,11 +30,11 @@ namespace FabricAPP.Helpers
                 throw new IncorectValueOfUserException("Zip code must have 5 digits. Format: 00000");
 
 
-            for(int i = 0; i < nr.Length; ++i) 
+            for (int i = 0; i < nr.Length; ++i)
             {
-                if(!int.TryParse(nr[i].ToString(), out _)) 
+                if (!int.TryParse(nr[i].ToString(), out _))
                 {
-                    throw new IncorectValueOfUserException($"ZIP code must have only numeric value but have a/an {nr[i]} in position {i+1}");
+                    throw new IncorectValueOfUserException($"ZIP code must have only numeric value but have a/an {nr[i]} in position {i + 1}");
                 }
             }
         }

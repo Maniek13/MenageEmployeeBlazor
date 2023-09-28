@@ -14,11 +14,11 @@ namespace FabricAPP.Providers
     public class FabricDbControllerProvider : IFabricDbControllerProvider
     {
         private readonly List<Models.Employee> EmployeesList = new();
-        private readonly FabricDbController fabric;
+        private readonly IFabricDbController fabric;
 
         public FabricDbControllerProvider(FabricContext dbContext)
         {
-            fabric = new(dbContext);
+            fabric = new FabricDbController(dbContext);
         }
 
         public List<Models.Employee> GetFromDB()
@@ -83,7 +83,7 @@ namespace FabricAPP.Providers
                 {
                     CheckIsCorrectListOfEmployee(EmployeesList);
 
-                    _ =  await fabric.Set(EmployeesList);
+                    _ = await fabric.Set(EmployeesList);
                 }
                 else
                 {

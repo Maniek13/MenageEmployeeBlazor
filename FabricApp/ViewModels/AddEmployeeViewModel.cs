@@ -1,10 +1,8 @@
-﻿using FabricAPP.Providers;
-using FabricAPP.DBModels;
+﻿using FabricAPP.Data;
 using FabricAPP.Interfaces;
+using FabricAPP.Providers;
 using System;
 using System.Threading.Tasks;
-using FabricAPP.Data;
-using FabricAPP.XMLModels;
 
 namespace FabricAPP.ViewModels
 {

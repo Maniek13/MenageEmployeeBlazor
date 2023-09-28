@@ -1,5 +1,4 @@
 ﻿using FabricAPP.DBModels;
-using FabricAPP.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace FabricAPP.Data
@@ -16,7 +15,7 @@ namespace FabricAPP.Data
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            if(!optionsBuilder.IsConfigured) 
+            if (!optionsBuilder.IsConfigured)
             {
                 optionsBuilder.UseSqlServer(@"Server=RAKIETA\SQLEXPRESS;Database=FabricDB;Trusted_Connection=True;MultipleActiveResultSets=True;");
             }

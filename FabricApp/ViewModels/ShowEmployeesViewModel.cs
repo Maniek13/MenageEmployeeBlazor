@@ -12,13 +12,13 @@ namespace FabricAPP.ViewModels
     public class ShowEmployeesViewModel : IShowEmployeesViewModel
     {
 
-        readonly IFabricDbControllerProvider fabricControllerProvider; 
+        readonly IFabricDbControllerProvider fabricControllerProvider;
         public List<Employee> Employees { get; set; } = new List<Employee>();
         public ShowEmployeesViewModel()
         {
             fabricControllerProvider = new FabricDbControllerProvider(new Data.FabricContext());
             Employees = fabricControllerProvider.GetFromDB();
-            
+
         }
         public void Delete(Employee employee)
         {
@@ -33,7 +33,7 @@ namespace FabricAPP.ViewModels
             }
         }
 
-        public async Task<bool>Save (Models.Employee employee)
+        public async Task<bool> Save(Models.Employee employee)
         {
             try
             {

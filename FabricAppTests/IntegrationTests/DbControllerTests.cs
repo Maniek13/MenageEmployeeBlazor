@@ -1,5 +1,6 @@
 ﻿using FabricAPP.Data;
 using FabricAPP.DBControllers;
+using FabricAPP.Interfaces;
 using FabricAPP.Models;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,7 @@ namespace FabricAppTests.IntegrationTests
 {
     public class DbControllerTests : TestContext
     {
-        readonly FabricDbController fb = new(new FabricContext());
+        readonly IFabricDbController fb = new FabricDbController(new FabricContext());
         [Fact]
         public async void AddEmployeeTests()
         {

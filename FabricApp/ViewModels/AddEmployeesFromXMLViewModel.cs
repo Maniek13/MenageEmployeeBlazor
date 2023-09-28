@@ -1,11 +1,11 @@
-﻿using FabricAPP.Providers;
+﻿using FabricAPP.Data;
 using FabricAPP.Interfaces;
+using FabricAPP.Providers;
 using Microsoft.AspNetCore.Components.Forms;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
-using FabricAPP.Data;
 
 namespace FabricAPP.ViewModels
 {

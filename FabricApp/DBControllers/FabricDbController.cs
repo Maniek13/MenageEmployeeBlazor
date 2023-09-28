@@ -1,7 +1,7 @@
 ﻿using FabricAPP.Data;
 using FabricAPP.DBModels;
+using FabricAPP.Interfaces;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace FabricAPP.DBControllers
 {
-    public class FabricDbController : Controller
+    public class FabricDbController : Controller, IFabricDbController
     {
         private readonly FabricContext _context;
 
@@ -41,8 +41,8 @@ namespace FabricAPP.DBControllers
                                 }
                             };
 
-                  return query.ToList();
-                    
+                return query.ToList();
+
             }
             catch (Exception ex)
             {
@@ -83,7 +83,7 @@ namespace FabricAPP.DBControllers
                 employee.ID = emp.ID;
 
                 return employee.ID;
-                    
+
             }
             catch (Exception ex)
             {
@@ -131,7 +131,7 @@ namespace FabricAPP.DBControllers
 
                 _context.Update(emp);
                 await _context.SaveChangesAsync();
-                   
+
                 return 1;
             }
             catch (Exception ex)
