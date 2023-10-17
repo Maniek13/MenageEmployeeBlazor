@@ -193,12 +193,47 @@ h1[b-l4t63e6mi4] {
 .btn-save[b-l4t63e6mi4] {
     background-image: url('icons/check.png') !important;
 }
+/* _content/FabricAPP/Shared/LoginControl.razor.rz.scp.css */
+img[b-ltqmcwehxb] {
+    
+    width: 25px;
+    height: 25px;
+    margin-right: 5px;
+}
+
+a b[b-ltqmcwehxb]{
+    color: white;
+    margin-right: 5px;
+}
+
+
 /* _content/FabricAPP/Shared/MainLayout.razor.rz.scp.css */
 .page[b-ac5dwbje1b] {
     position: relative;
     display: flex;
     flex-direction: column;
 }
+
+.mainmenutop[b-ac5dwbje1b] {
+    list-style-type: none;
+    margin: 0;
+    padding: 5px;
+    overflow: hidden;
+    background-color: #333;
+    height: 55px;
+}
+.mainmenutop li[b-ac5dwbje1b] {
+    height: 45px;
+    line-height: 45px;
+    float: right
+}
+
+li a[b-ac5dwbje1b] {
+    float: right
+}
+   
+
+
 
 .main[b-ac5dwbje1b] {
     flex: 1;

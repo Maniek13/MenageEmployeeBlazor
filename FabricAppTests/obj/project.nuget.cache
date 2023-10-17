@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "8Qzhe3Spuhf6Ai1xB83FjaqBI8AVhoerwKA74VA5kkicBVLO/yjyhFThtVOeHXd2rGxf7lqJ/l4i0rwsvYvAvg==",
+  "dgSpecHash": "p70zJSX65NIHIQrWXMCl6xb0HGRwP6idIZbFrVeMSwo05TrGQ7MRnMUfqbYTPvyum3Zk1pAyJf+WZTgddEiDVQ==",
   "success": true,
   "projectFilePath": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\FabricAppTests\\FabricAppTests.csproj",
   "expectedPackageFiles": [
@@ -13,6 +13,7 @@
     "C:\\Users\\mani3\\.nuget\\packages\\coverlet.collector\\6.0.0\\coverlet.collector.6.0.0.nupkg.sha512",
     "C:\\Users\\mani3\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
     "C:\\Users\\mani3\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
+    "C:\\Users\\mani3\\.nuget\\packages\\microsoft.aspnetcore.authentication.google\\5.0.17\\microsoft.aspnetcore.authentication.google.5.0.17.nupkg.sha512",
     "C:\\Users\\mani3\\.nuget\\packages\\microsoft.aspnetcore.authorization\\7.0.0\\microsoft.aspnetcore.authorization.7.0.0.nupkg.sha512",
     "C:\\Users\\mani3\\.nuget\\packages\\microsoft.aspnetcore.components\\7.0.0\\microsoft.aspnetcore.components.7.0.0.nupkg.sha512",
     "C:\\Users\\mani3\\.nuget\\packages\\microsoft.aspnetcore.components.analyzers\\7.0.0\\microsoft.aspnetcore.components.analyzers.7.0.0.nupkg.sha512",

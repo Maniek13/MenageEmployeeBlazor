@@ -1,0 +1,67 @@
+﻿@using System.Security.Claims
+@using Microsoft.AspNetCore.Http
+@inject AuthenticationStateProvider AuthenticationStateProvider
+
+@if (User.Identity.Name != null)
+{
+    <a>
+        <b>@GivenName @Surname</b>
+        <img src="@Avatar" />
+    </a>
+    <a class="ml-md-auto btn btn-primary" href="/Identity/Logout" target="_top">Logout</a>
+}
+else
+{
+    <a class="ml-md-auto btn btn-primary" href="/Identity/Login" target="_top">Login</a>
+}
+@code {
+    private ClaimsPrincipal User;
+    private string GivenName;
+    private string Surname;
+    private string Avatar;
+    protected override async void OnInitialized()
+    {
+        base.OnInitialized();
+        try
+        {
+            var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+            User = authState.User;
+
+            var givenName = User.FindFirst(ClaimTypes.GivenName);
+
+            if (givenName != null)
+            {
+                GivenName = givenName.Value;
+            }
+            else
+            {
+                GivenName = User.Identity.Name;
+            }
+
+            var surname = User.FindFirst(ClaimTypes.Surname);
+
+            if (surname != null)
+            {
+                Surname = surname.Value;
+            }
+            else
+            {
+                Surname = "";
+            }
+
+            var avatar = User.FindFirst("urn:google:image");
+
+            if (avatar != null)
+            {
+                Avatar = avatar.Value;
+            }
+            else
+            {
+                Avatar = "";
+            }
+        }
+        catch
+        {  
+        }
+    }
+}

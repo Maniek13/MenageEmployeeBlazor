@@ -10,6 +10,8 @@ Przeglądanie i dodawania pracowników z pliku xml
 2. Enjoy
 
 
+
+
 <img width="800" alt="image" src="https://github.com/Maniek13/MenageEmployeeBlazor/assets/47826375/eb5a3c02-509c-42b5-8ad5-239e9f36c6ac">
 
 
@@ -20,3 +22,9 @@ Przeglądanie i dodawania pracowników z pliku xml
 
 
 <img width="800" alt="image" src="https://github.com/Maniek13/MenageEmployeeBlazor/assets/47826375/aae7d000-a915-43dc-8f08-0210ada4437c">
+
+
+
+-- 
+
+add google login(but is only for show name and picture yet)

@@ -1,10 +1,13 @@
 using FabricAPP.Interfaces;
 using FabricAPP.ViewModels;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using System.Net;
 
 namespace FabricAPP
 {
@@ -12,6 +15,7 @@ namespace FabricAPP
     {
         public Startup(IConfiguration configuration)
         {
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
             Configuration = configuration;
         }
 
@@ -24,6 +28,15 @@ namespace FabricAPP
             services.AddTransient<IAddEmployeesFromXMLViewModel, AddEmployeesFromXMLViewModel>();
             services.AddTransient<IShowEmployeesViewModel, ShowEmployeesViewModel>();
             services.AddTransient<IAddEmployeeViewModel, AddEmployeeViewModel>();
+
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie();
+            services.AddAuthentication().AddGoogle(options =>
+            {
+                options.ClientId = Configuration["Google:ClientId"];
+                options.ClientSecret = Configuration["Google:ClientSecret"];
+                options.ClaimActions.MapJsonKey("urn:google:profile", "link");
+                options.ClaimActions.MapJsonKey("urn:google:image", "picture");
+            });
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -40,6 +53,10 @@ namespace FabricAPP
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+
+            app.UseCookiePolicy();
+            app.UseAuthentication();
+
 
             app.UseRouting();
 
