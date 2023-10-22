@@ -8,61 +8,73 @@
 
 <h1>Add user</h1>
 
-<EditForm Model="@addEmployeeViewModel" OnSubmit="@AddEmloyee" style="position: relative">
+<EditForm Model="@addEmployeeViewModel" OnValidSubmit="@AddEmloyee" style="position: relative">
+    <ObjectGraphDataAnnotationsValidator />
+
     <div class="emloyee-add-form">
         <div>
             <label for="FirstName">Name: </label>
             <div class="input-value">
                 <InputText @bind-Value="addEmployeeViewModel.Employee.FirstName" name="FirstName" id="FirstName" class="FirstName" />
+                
             </div>
+            <ValidationMessage For="@(() => addEmployeeViewModel.Employee.FirstName)" />
         </div>
         <div>
             <label for="LastName">Last name: </label>
             <div class="input-value">
-                <InputText @bind-Value="addEmployeeViewModel.Employee.LastName" name="LastName" id="LastName" />
+                <InputText @bind-Value="addEmployeeViewModel!.Employee.LastName" name="LastName" id="LastName" />
             </div>
+            <ValidationMessage For="@(() => addEmployeeViewModel.Employee.LastName)" />
         </div>
         <div>
             <label for="GetPhoneNr">Phone nr: </label>
             <div class="input-value">
                 <InputText @bind-Value="addEmployeeViewModel.Employee.ContactNo"name="GetPhoneNr" id="GetPhoneNr" />
             </div>
+            <ValidationMessage For="@(() => addEmployeeViewModel.Employee.ContactNo)" />
         </div>
         <div>
             <label for="Email">Email: </label>
             <div class="input-value">
                 <InputText @bind-Value="addEmployeeViewModel.Employee.Email" name="Email" id="Email" />
             </div>
+            <ValidationMessage For="@(() => addEmployeeViewModel.Employee.Email)" />
         </div>
         <div>
             <label for="City">City: </label>
             <div class="input-value">
                 <InputText @bind-Value="addEmployeeViewModel.Employee.Address.City" name="City" id="City" />
             </div>
+            <ValidationMessage For="@(() => addEmployeeViewModel.Employee.Address.City)" />
         </div>
         <div>
             <label for="Street">Street: </label>
             <div class="input-value">
                 <InputText @bind-Value="addEmployeeViewModel.Employee.Address.Street" name="Street" id="Street" />
             </div>
+            <ValidationMessage For="@(() => addEmployeeViewModel.Employee.Address.Street)" />
         </div>
         <div>
             <label for="StreetNr">Street nr: </label>
             <div class="input-value">
                 <InputText @bind-Value="addEmployeeViewModel.Employee.Address.StreetNr" name="StreetNr" id="StreetNr" />
             </div>
+            <ValidationMessage For="@(() => addEmployeeViewModel.Employee.Address.StreetNr)" />
         </div>
         <div>
             <label for="HouseNr">House nr: </label>
             <div class="input-value">
                 <InputText @bind-Value="addEmployeeViewModel.Employee.Address.HouseNr" name="HouseNr" id="HouseNr" />
             </div>
+            <ValidationMessage For="@(() => addEmployeeViewModel.Employee.Address.HouseNr)" />
         </div>
         <div>
             <label for="GetZipCode">Zip code: </label>
             <div class="input-value">
                 <InputText @bind-Value="addEmployeeViewModel.Employee.Address.Zip" name="GetZipCode" id="GetZipCode" />
             </div>
+            <ValidationMessage For="@(() => addEmployeeViewModel.Employee.Address.Zip)" />
         </div>
         <div class="btn-container">
             <div class="add-user-btn">

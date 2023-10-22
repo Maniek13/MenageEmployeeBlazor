@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "p70zJSX65NIHIQrWXMCl6xb0HGRwP6idIZbFrVeMSwo05TrGQ7MRnMUfqbYTPvyum3Zk1pAyJf+WZTgddEiDVQ==",
+  "dgSpecHash": "xjjGS9XN5gkLpqg4IvtKnMcw7R5VvydyZj8ePjXM/oR+jFs5lQroHR/cMoxOssjlI9EPzKUVL74LQYJU4pJZNA==",
   "success": true,
   "projectFilePath": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\FabricAppTests\\FabricAppTests.csproj",
   "expectedPackageFiles": [
@@ -18,6 +18,7 @@
     "C:\\Users\\mani3\\.nuget\\packages\\microsoft.aspnetcore.components\\7.0.0\\microsoft.aspnetcore.components.7.0.0.nupkg.sha512",
     "C:\\Users\\mani3\\.nuget\\packages\\microsoft.aspnetcore.components.analyzers\\7.0.0\\microsoft.aspnetcore.components.analyzers.7.0.0.nupkg.sha512",
     "C:\\Users\\mani3\\.nuget\\packages\\microsoft.aspnetcore.components.authorization\\7.0.0\\microsoft.aspnetcore.components.authorization.7.0.0.nupkg.sha512",
+    "C:\\Users\\mani3\\.nuget\\packages\\microsoft.aspnetcore.components.dataannotations.validation\\3.2.0-rc1.20223.4\\microsoft.aspnetcore.components.dataannotations.validation.3.2.0-rc1.20223.4.nupkg.sha512",
     "C:\\Users\\mani3\\.nuget\\packages\\microsoft.aspnetcore.components.forms\\7.0.0\\microsoft.aspnetcore.components.forms.7.0.0.nupkg.sha512",
     "C:\\Users\\mani3\\.nuget\\packages\\microsoft.aspnetcore.components.web\\7.0.0\\microsoft.aspnetcore.components.web.7.0.0.nupkg.sha512",
     "C:\\Users\\mani3\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly\\7.0.0\\microsoft.aspnetcore.components.webassembly.7.0.0.nupkg.sha512",

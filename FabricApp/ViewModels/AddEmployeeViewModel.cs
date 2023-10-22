@@ -2,11 +2,12 @@
 using FabricAPP.Interfaces;
 using FabricAPP.Providers;
 using System;
+using System.ComponentModel.DataAnnotations;
 using System.Threading.Tasks;
 
 namespace FabricAPP.ViewModels
 {
-    public class AddEmployeeViewModel : IAddEmployeeViewModel
+    public class AddEmployeeViewModel : ValidationAttribute, IAddEmployeeViewModel
     {
         readonly IFabricDbControllerProvider fabricControllerProvider;
 
@@ -14,6 +15,8 @@ namespace FabricAPP.ViewModels
         {
             fabricControllerProvider = new FabricDbControllerProvider(new Data.FabricContext());
         }
+        [ValidateComplexType]
+   
         public Models.Employee Employee { get; set; } = new Models.Employee()
         {
             FirstName = "",
