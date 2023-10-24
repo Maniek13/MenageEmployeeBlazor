@@ -62,7 +62,7 @@ namespace FabricAppTests.ExternalTests.Selenium
                 Assert.Equal(8, els.Count);
 
             }
-            catch (StaleElementReferenceException ex)
+            catch (StaleElementReferenceException)
             {
                 var btnDiv = driver.FindElement(By.ClassName("add-user-btn"));
                 btnDiv.FindElement(By.TagName("button")).Submit();
