@@ -15,7 +15,6 @@ namespace FabricAPP.Models
         [Required(ErrorMessage = "Street nr is required")]
         public string StreetNr { get; set; }
 
-        [Required(ErrorMessage = "House nr is required")]
         public string HouseNr { get; set; }
 
         [Required(ErrorMessage = "Zip code name is required")]

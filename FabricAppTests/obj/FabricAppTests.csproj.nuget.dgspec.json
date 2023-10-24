@@ -64,6 +64,10 @@
               "target": "Package",
               "version": "[17.0.0, )"
             },
+            "Selenium.WebDriver": {
+              "target": "Package",
+              "version": "[4.14.1, )"
+            },
             "bunit": {
               "target": "Package",
               "version": "[1.23.9, )"
