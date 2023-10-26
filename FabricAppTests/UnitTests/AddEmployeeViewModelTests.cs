@@ -54,7 +54,7 @@ namespace FabricAppTests.UnitTests
 
                 Assert.ThrowsAsync<Exception>(async () =>
                 {
-                    await AddEmployeeViewModel.AddUser();
+                    await AddEmployeeViewModel.AsyncAddUser();
                 });
 
                 AddEmployeeViewModel.Employee = new();
@@ -62,7 +62,7 @@ namespace FabricAppTests.UnitTests
 
                 Assert.ThrowsAsync<Exception>(async () =>
                 {
-                    await AddEmployeeViewModel.AddUser();
+                    await AddEmployeeViewModel.AsyncAddUser();
                 });
 
             }

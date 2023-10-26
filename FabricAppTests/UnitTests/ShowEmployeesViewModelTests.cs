@@ -94,7 +94,7 @@ namespace FabricAppTests.UnitTests
 
                 Assert.ThrowsAsync<IncorectValueOfUserException>(async () =>
                 {
-                    _ = await ShowEmployeesViewModel.Save(emp);
+                    await ShowEmployeesViewModel.AsyncSave(emp);
                 });
 
 

@@ -106,7 +106,7 @@
         {
             Succes = false;
             Error = false;
-            var status = await addEmployeeViewModel.AddUser();
+            var status = await addEmployeeViewModel.AsyncAddUser();
             Succes = true;
             this.StateHasChanged();
         }

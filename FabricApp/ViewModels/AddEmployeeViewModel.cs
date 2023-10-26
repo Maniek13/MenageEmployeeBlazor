@@ -33,11 +33,11 @@ namespace FabricAPP.ViewModels
             }
         };
 
-        public async Task<int> AddUser()
+        public async Task<int> AsyncAddUser()
         {
             try
             {
-                return await fabricControllerProvider.AddToDb(Employee);
+                return await fabricControllerProvider.AsyncAddToDb(Employee);
             }
             catch (Exception ex)
             {

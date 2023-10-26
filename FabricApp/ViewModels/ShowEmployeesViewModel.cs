@@ -24,8 +24,8 @@ namespace FabricAPP.ViewModels
         {
             try
             {
-                if (fabricControllerProvider.DeleteFromDB(employee.ID) == 1)
-                    Employees.Remove(employee);
+                fabricControllerProvider.DeleteFromDB(employee.ID);
+                Employees.Remove(employee);
             }
             catch (Exception ex)
             {
@@ -33,15 +33,11 @@ namespace FabricAPP.ViewModels
             }
         }
 
-        public async Task<bool> Save(Models.Employee employee)
+        public async Task AsyncSave(Models.Employee employee)
         {
             try
             {
-                if (await fabricControllerProvider.UpdateInDb(employee) != 1)
-                {
-                    throw new Exception("Server error");
-                }
-                return true;
+                await fabricControllerProvider.AsyncUpdateInDb(employee);
             }
             catch (IncorectValueOfUserException ex)
             {

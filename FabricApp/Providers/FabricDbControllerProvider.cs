@@ -75,7 +75,7 @@ namespace FabricAPP.Providers
             return EmployeesList;
         }
 
-        public async void SaveFromXML()
+        public async Task AsyncSaveFromXML()
         {
             try
             {
@@ -83,7 +83,7 @@ namespace FabricAPP.Providers
                 {
                     CheckIsCorrectListOfEmployee(EmployeesList);
 
-                    _ = await fabric.Set(EmployeesList);
+                    await fabric.AsyncSet(EmployeesList);
                 }
                 else
                 {
@@ -101,13 +101,13 @@ namespace FabricAPP.Providers
             }
         }
 
-        public async Task<int> AddToDb(Models.Employee employee)
+        public async Task<int> AsyncAddToDb(Models.Employee employee)
         {
             try
             {
                 CheckIsCorrectEmployee(employee);
                 CheckIsCorrectEmployeeAdress(employee.Address);
-                int id = await fabric.Add(employee);
+                int id = await fabric.AsyncAdd(employee);
                 employee.ID = id;
                 return id;
             }
@@ -123,11 +123,11 @@ namespace FabricAPP.Providers
 
 
 
-        public int DeleteFromDB(int id)
+        public void DeleteFromDB(int id)
         {
             try
             {
-                return fabric.Delete(id);
+                fabric.Delete(id);
             }
             catch (Exception ex)
             {
@@ -136,13 +136,13 @@ namespace FabricAPP.Providers
 
         }
 
-        public async Task<int> UpdateInDb(Models.Employee employee)
+        public async Task AsyncUpdateInDb(Models.Employee employee)
         {
             try
             {
                 CheckIsCorrectEmployee(employee);
                 CheckIsCorrectEmployeeAdress(employee.Address);
-                return await fabric.Update(employee);
+                await fabric.AsyncUpdate(employee);
             }
             catch (IncorectValueOfUserException ex)
             {

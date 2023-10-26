@@ -98,7 +98,7 @@
             Error = false;
             Saved = false;
 
-            _ = await addEmployeesFromXMLViewModel.SetData(e.GetMultipleFiles(1));
+            await addEmployeesFromXMLViewModel.AsyncSetData(e.GetMultipleFiles(1));
 
             SaveBtnDisabled = false;
             Loaded = true;

@@ -9,8 +9,8 @@ namespace FabricAPP.Interfaces
     {
         public List<Employee> Employees { get; set; }
 #pragma warning disable CS1998
-        public void Delete(Employee employee) => throw new NotImplementedException();
+        public void Delete(Employee employee);
 
-        public async Task<bool> Save(Employee employee) => throw new NotImplementedException();
+        public Task AsyncSave(Employee employee);
     }
 }

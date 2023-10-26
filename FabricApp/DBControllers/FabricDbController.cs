@@ -50,7 +50,7 @@ namespace FabricAPP.DBControllers
             }
         }
 
-        public async Task<bool> Set(List<Models.Employee> employees)
+        public async Task AsyncSet(List<Models.Employee> employees)
         {
             try
             {
@@ -63,8 +63,7 @@ namespace FabricAPP.DBControllers
                 });
 
                 _context.AddRange(emps);
-                await _context.SaveChangesAsync(); ;
-                return true;
+                await _context.SaveChangesAsync();
             }
             catch (Exception ex)
             {
@@ -72,7 +71,7 @@ namespace FabricAPP.DBControllers
             }
         }
 
-        public async Task<int> Add(Models.Employee employee)
+        public async Task<int> AsyncAdd(Models.Employee employee)
         {
             try
             {
@@ -92,15 +91,13 @@ namespace FabricAPP.DBControllers
         }
 
 
-        public int Delete(int id)
+        public void Delete(int id)
         {
             try
             {
                 var emp = _context.Employees.FirstOrDefault(x => x.ID == id);
                 _context.Remove(emp);
                 _context.SaveChanges();
-
-                return 1;
             }
             catch (Exception ex)
             {
@@ -108,7 +105,7 @@ namespace FabricAPP.DBControllers
             }
         }
 
-        public async Task<int> Update(Models.Employee employee)
+        public async Task AsyncUpdate(Models.Employee employee)
         {
             try
             {
@@ -131,8 +128,6 @@ namespace FabricAPP.DBControllers
 
                 _context.Update(emp);
                 await _context.SaveChangesAsync();
-
-                return 1;
             }
             catch (Exception ex)
             {

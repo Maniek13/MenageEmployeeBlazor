@@ -32,7 +32,7 @@ namespace FabricAppTests.IntegrationTests
                     }
                 };
 
-                int id = await fb.Add(emp);
+                int id = await fb.AsyncAdd(emp);
 
 
                 Assert.True(emp.ID > 0 && id > 0 && emp.ID == id);
@@ -64,7 +64,7 @@ namespace FabricAppTests.IntegrationTests
                     }
                 };
 
-                int id = await fb.Add(emp);
+                int id = await fb.AsyncAdd(emp);
 
                 var list = fb.Get();
 
@@ -100,7 +100,7 @@ namespace FabricAppTests.IntegrationTests
                     }
                 };
 
-                _ = await fb.Add(emp);
+                _ = await fb.AsyncAdd(emp);
                 fb.Delete(emp.ID);
 
             }
@@ -150,7 +150,7 @@ namespace FabricAppTests.IntegrationTests
                     }
                 };
 
-                _ = await fb.Set(list);
+                await fb.AsyncSet(list);
                 List<Employee> res = fb.Get();
                 Assert.True(res.Select(el => el).Where(el => el.FirstName == "SetEmployeesTest1" || el.FirstName == "SetEmployeesTest2").ToList().Count == 2);
 
@@ -191,10 +191,10 @@ namespace FabricAppTests.IntegrationTests
                     }
                 };
 
-                _ = await fb.Add(emp);
+                _ = await fb.AsyncAdd(emp);
 
                 emp.FirstName = "updated";
-                await fb.Update(emp);
+                await fb.AsyncUpdate(emp);
                 fb.Delete(emp.ID);
             }
             catch (Exception ex)

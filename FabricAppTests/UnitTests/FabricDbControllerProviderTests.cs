@@ -73,7 +73,7 @@ namespace FabricAppTests.UnitTests
 
                 for (int i = 0; i < employees.Count; ++i)
                 {
-                    _ = await FabricControllerProvider.AddToDb(employees[i]);
+                    _ = await FabricControllerProvider.AsyncAddToDb(employees[i]);
                 }
 
                 var list = FabricControllerProvider.GetFromDB();
@@ -82,7 +82,7 @@ namespace FabricAppTests.UnitTests
 
                 for (int i = 0; i < employees.Count; ++i)
                 {
-                    _ = FabricControllerProvider.DeleteFromDB(employees[i].ID);
+                    FabricControllerProvider.DeleteFromDB(employees[i].ID);
                 }
             }
             catch (Exception ex)
@@ -96,17 +96,17 @@ namespace FabricAppTests.UnitTests
         {
             try
             {
-                _ = await FabricControllerProvider.AddToDb(employees[0]);
+                _ = await FabricControllerProvider.AsyncAddToDb(employees[0]);
 
 
                 employees[0].FirstName = "nowe";
-                await FabricControllerProvider.UpdateInDb(employees[0]);
+                await FabricControllerProvider.AsyncUpdateInDb(employees[0]);
 
                 var list = FabricControllerProvider.GetFromDB();
 
                 Assert.True(list.Select(el => el).Where(el => el.ID == employees[0].ID && el.FirstName == "nowe") != null);
 
-                _ = FabricControllerProvider.DeleteFromDB(employees[0].ID);
+                FabricControllerProvider.DeleteFromDB(employees[0].ID);
             }
             catch (Exception ex)
             {
@@ -120,15 +120,15 @@ namespace FabricAppTests.UnitTests
         {
             try
             {
-                _ = await FabricControllerProvider.AddToDb(employees[0]);
-                _ = await FabricControllerProvider.AddToDb(employees[1]);
+                _ = await FabricControllerProvider.AsyncAddToDb(employees[0]);
+                _ = await FabricControllerProvider.AsyncAddToDb(employees[1]);
 
                 var list = FabricControllerProvider.GetFromDB();
 
                 Assert.True(list.Select(el => el).Where(el => el.ID == employees[0].ID || el.ID == employees[1].ID).ToList().Count == 2);
 
-                _ = FabricControllerProvider.DeleteFromDB(employees[0].ID);
-                _ = FabricControllerProvider.DeleteFromDB(employees[1].ID);
+                FabricControllerProvider.DeleteFromDB(employees[0].ID);
+                FabricControllerProvider.DeleteFromDB(employees[1].ID);
             }
             catch (Exception ex)
             {
@@ -216,7 +216,7 @@ namespace FabricAppTests.UnitTests
                                             </Employee>
                                         </Employees>";
                 var list = FabricControllerProvider.GetFromXML(XMLString);
-                FabricControllerProvider.SaveFromXML();
+                FabricControllerProvider.AsyncSaveFromXML();
             }
             catch (Exception ex)
             {
@@ -229,11 +229,9 @@ namespace FabricAppTests.UnitTests
         {
             try
             {
-                _ = await FabricControllerProvider.AddToDb(employees[0]);
+                _ = await FabricControllerProvider.AsyncAddToDb(employees[0]);
 
-                int status = FabricControllerProvider.DeleteFromDB(employees[0].ID);
-
-                Assert.True(status == 1);
+                FabricControllerProvider.DeleteFromDB(employees[0].ID);
             }
             catch (Exception ex)
             {

@@ -24,7 +24,7 @@ namespace FabricAPP.ViewModels
         {
             ShowedInfo = !ShowedInfo;
         }
-        public async Task<bool> SetData(IReadOnlyList<IBrowserFile> files)
+        public async Task AsyncSetData(IReadOnlyList<IBrowserFile> files)
         {
             try
             {
@@ -37,7 +37,6 @@ namespace FabricAPP.ViewModels
                     xml = await reader.ReadToEndAsync();
                 }
                 Employees = fabricControllerProvider.GetFromXML(xml);
-                return true;
             }
             catch (Exception ex)
             {
@@ -48,7 +47,7 @@ namespace FabricAPP.ViewModels
         {
             try
             {
-                fabricControllerProvider.SaveFromXML();
+                fabricControllerProvider.AsyncSaveFromXML();
             }
             catch (Exception ex)
             {

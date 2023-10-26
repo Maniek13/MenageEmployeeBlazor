@@ -8,14 +8,13 @@ namespace FabricAPP.Interfaces
     {
         public List<Models.Employee> Get();
 
-        public async Task<bool> Set(List<Models.Employee> employees) => throw new NotImplementedException();
+        public Task AsyncSet(List<Models.Employee> employees);
+        public Task<int> AsyncAdd(Models.Employee employee);
 
-        public async Task<int> Add(Models.Employee employee) => throw new NotImplementedException();
 
+        public void Delete(int id);
 
-        public int Delete(int id);
-
-        public async Task<int> Update(Models.Employee employee) => throw new NotImplementedException();
+        public Task AsyncUpdate(Models.Employee employee);
 
     }
 }

@@ -75,7 +75,7 @@
         try
         {
             Error = false;
-            _ = await showEmployeesViewModel.Save(employee);
+            await showEmployeesViewModel.AsyncSave(employee);
         }
         catch (Exception ex)
         {
