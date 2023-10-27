@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using System;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
@@ -12,39 +13,51 @@ namespace FabricAPP.Pages.Identity
     [AllowAnonymous]
     public class LoginModel : PageModel
     {
-        public IActionResult OnGetAsync(string returnUrl = null)
+        public IActionResult OnGetAsync(string returnUrl = null, string provider = "")
         {
-            string provider = "Google";
-            // Request a redirect to the external login provider.
-            var authenticationProperties = new AuthenticationProperties
+            try
             {
-                RedirectUri = Url.Page("./Login",
-                pageHandler: "Callback",
-                values: new { returnUrl }),
-            };
-            return new ChallengeResult(provider, authenticationProperties);
-        }
-        public async Task<IActionResult> OnGetCallbackAsync(
-            string returnUrl = null, string remoteError = null)
-        {
-            // Get the information about the user from the external login provider
-            var GoogleUser = this.User.Identities.FirstOrDefault();
-
-            if (GoogleUser.IsAuthenticated)
-            {
-                var authProperties = new AuthenticationProperties
+                var authenticationProperties = new AuthenticationProperties
                 {
-                    IsPersistent = true,
-                    RedirectUri = this.Request.Host.Value
+                   RedirectUri = Url.Page("./Login",
+                   pageHandler: "Callback",
+                   values: new { returnUrl })
                 };
-                await HttpContext.SignInAsync(
-                CookieAuthenticationDefaults.AuthenticationScheme,
-                new ClaimsPrincipal(GoogleUser),
-                authProperties);
-                return LocalRedirect("/listofusers");
+                return new ChallengeResult(provider, authenticationProperties);
             }
+            catch(Exception ex)
+            {
+                throw new Exception(ex.Message, ex);
+            }
+           
+        }
+        public async Task<IActionResult> OnGetCallbackAsync(string returnUrl = null, string remoteError = null) 
+        {
+            try
+            {
+                var user = this.User.Identities.FirstOrDefault();
 
-            return LocalRedirect("/");
+
+                if (user.IsAuthenticated)
+                {
+                    var authProperties = new AuthenticationProperties
+                    {
+                        IsPersistent = true,
+                        RedirectUri = this.Request.Host.Value
+                    };
+                    await HttpContext.SignInAsync(
+                    CookieAuthenticationDefaults.AuthenticationScheme,
+                    new ClaimsPrincipal(user),
+                    authProperties);
+                    return LocalRedirect("/listofusers");
+                }
+
+                return LocalRedirect("/");
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message, ex);
+            }
         }
     }
 }

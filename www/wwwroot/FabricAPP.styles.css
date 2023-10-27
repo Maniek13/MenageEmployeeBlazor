@@ -206,6 +206,10 @@ a b[b-ltqmcwehxb]{
     margin-right: 5px;
 }
 
+#login-btn[b-ltqmcwehxb] {
+    width: 170px;
+}
+
 
 /* _content/FabricAPP/Shared/MainLayout.razor.rz.scp.css */
 .page[b-ac5dwbje1b] {
@@ -219,7 +223,7 @@ a b[b-ltqmcwehxb]{
     margin: 0;
     padding: 5px;
     overflow: hidden;
-    background-color: #333;
+    background-color: transparent;
     height: 55px;
 }
 .mainmenutop li[b-ac5dwbje1b] {

@@ -49,4 +49,5 @@ Przeglądanie i dodawania pracowników z pliku xml
 
 add google login(but is only for show name and picture yet) only working localy need ssl certyficate to save connection on https
 
-<img width="800" alt="image" src="https://github.com/Maniek13/MenageEmployeeBlazor/assets/47826375/2cd50ed7-e59c-43a1-9dc2-cb8e37e5e9d3">
+<img width="1920" alt="image" src="https://github.com/Maniek13/MenageEmployeeBlazor/assets/47826375/94536983-3f4b-419a-9a0f-b8ca110e01df">
+

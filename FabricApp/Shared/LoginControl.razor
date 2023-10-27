@@ -12,13 +12,19 @@
 }
 else
 {
-    <a class="ml-md-auto btn btn-primary" href="/Identity/Login" target="_top">Login</a>
+  @*   <a id="login-btn" class="ml-md-auto btn btn-primary" href="/Identity/Login?provider=Facebook" target="_top">Login by Facebook</a> *@
+    <a id="login-btn" class="ml-md-auto btn btn-primary" href="/Identity/Login?provider=Google" target="_top">Login by Google</a>
+  @*   <a id="login-btn" class="ml-md-auto btn btn-primary" href="/Identity/Login?provider=Microsoft" target="_top">Login by Microsoft</a> *@
 }
+
 @code {
     private ClaimsPrincipal User;
     private string GivenName;
     private string Surname;
     private string Avatar;
+
+
+
     protected override async void OnInitialized()
     {
         base.OnInitialized();
@@ -27,37 +33,26 @@ else
             var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
             User = authState.User;
 
-            var givenName = User.FindFirst(ClaimTypes.GivenName);
 
-            if (givenName != null)
+            if(User.Identity.Name != null)
             {
-                GivenName = givenName.Value;
-            }
-            else
-            {
-                GivenName = User.Identity.Name;
-            }
+                var givenName = User.FindFirst(ClaimTypes.GivenName);
+                if (givenName != null)
+                    GivenName = givenName.Value;
+                else
+                    GivenName = User.Identity.Name;
 
-            var surname = User.FindFirst(ClaimTypes.Surname);
+                var surname = User.FindFirst(ClaimTypes.Surname);
+                if (surname != null)
+                    Surname = surname.Value;
+                else
+                    Surname = "";
 
-            if (surname != null)
-            {
-                Surname = surname.Value;
-            }
-            else
-            {
-                Surname = "";
-            }
-
-            var avatar = User.FindFirst("urn:google:image");
-
-            if (avatar != null)
-            {
-                Avatar = avatar.Value;
-            }
-            else
-            {
-                Avatar = "";
+                var avatar = (User.FindFirst("urn:google:image") ?? User.FindFirst("urn:facebook:image")) ?? User.FindFirst("urn:microsoft:image");
+                if (avatar != null)
+                    Avatar = avatar.Value;
+                else
+                    Avatar = "";
             }
         }
         catch

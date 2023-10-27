@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "whiEF13xbGo703Rc/+xNBV/Ot7tCy7FTLgANNg5/cfq44i609xI7iD7vWkT4knld9ekbq0/QuxBJg1ISl8npBg==",
+  "dgSpecHash": "l7cj6zKWIttQTzbjF8hT3VMMs1bzXh3/zJ4wwOJXIdXmecra/nhSeqN/XLpIbD+Nn9ATMhTBK4hca+IdSobflg==",
   "success": true,
   "projectFilePath": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\FabricAppTests\\FabricAppTests.csproj",
   "expectedPackageFiles": [
@@ -13,7 +13,9 @@
     "C:\\Users\\mani3\\.nuget\\packages\\coverlet.collector\\6.0.0\\coverlet.collector.6.0.0.nupkg.sha512",
     "C:\\Users\\mani3\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
     "C:\\Users\\mani3\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
+    "C:\\Users\\mani3\\.nuget\\packages\\microsoft.aspnetcore.authentication.facebook\\5.0.17\\microsoft.aspnetcore.authentication.facebook.5.0.17.nupkg.sha512",
     "C:\\Users\\mani3\\.nuget\\packages\\microsoft.aspnetcore.authentication.google\\5.0.17\\microsoft.aspnetcore.authentication.google.5.0.17.nupkg.sha512",
+    "C:\\Users\\mani3\\.nuget\\packages\\microsoft.aspnetcore.authentication.microsoftaccount\\5.0.17\\microsoft.aspnetcore.authentication.microsoftaccount.5.0.17.nupkg.sha512",
     "C:\\Users\\mani3\\.nuget\\packages\\microsoft.aspnetcore.authorization\\7.0.0\\microsoft.aspnetcore.authorization.7.0.0.nupkg.sha512",
     "C:\\Users\\mani3\\.nuget\\packages\\microsoft.aspnetcore.components\\7.0.0\\microsoft.aspnetcore.components.7.0.0.nupkg.sha512",
     "C:\\Users\\mani3\\.nuget\\packages\\microsoft.aspnetcore.components.analyzers\\7.0.0\\microsoft.aspnetcore.components.analyzers.7.0.0.nupkg.sha512",
