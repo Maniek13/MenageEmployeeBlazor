@@ -7,7 +7,27 @@ https://178.235.60.107:5025/
 Przeglądanie i dodawania pracowników z pliku xml
 
 1. Copy and run EntityFrameworkCore\Update-Database
-2. Enjoy
+2. Add appsettings.json to project or www like
+
+{
+  "Google": {
+    "Instance": "https://accounts.google.com/o/oauth2/v2/auth",
+    "ClientId": ",
+    "ClientSecret": "",
+    "CallBackPath": "signin-google"
+  },
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft": "Warning",
+      "Microsoft.Hosting.Lifetime": "Information"
+    }
+  },
+  "AllowedHosts": "*"
+}
+
+3. Enjoy
+ 
 
 
 
