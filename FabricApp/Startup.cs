@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
 using System.Net;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace FabricAPP
@@ -39,23 +40,23 @@ namespace FabricAPP
             {
                 options.ClientId = Configuration["Google:ClientId"];
                 options.ClientSecret = Configuration["Google:ClientSecret"];
-                options.ClaimActions.MapJsonKey("urn:google:profile", "link");
-                options.ClaimActions.MapJsonKey("urn:google:image", "picture");
+                options.ClaimActions.MapJsonKey("image", "picture");
+
+            })
+            .AddFacebook(options =>
+             {
+                 options.AppId = Configuration["Facebook:AppId"];
+                 options.AppSecret = Configuration["Facebook:AppSecret"];
+                 options.ClaimActions.MapJsonKey("image", "picture");
+             })
+            .AddMicrosoftAccount(options =>
+            {
+                options.ClientId = Configuration["Microsoft:ClientId"];
+                options.ClientSecret = Configuration["Microsoft:ClientSecret"];
+                options.ClaimActions.MapJsonKey(ClaimTypes.GivenName, "given_name");
+                options.ClaimActions.MapJsonKey(ClaimTypes.Surname, "family_name");
+                options.ClaimActions.MapJsonKey("image", "picture");
             });
-            //.AddFacebook(options =>
-            // {
-            //     options.AppId = Configuration["Facebook:AppId"];
-            //     options.AppSecret = Configuration["Facebook:AppSecret"];
-            //     options.ClaimActions.MapJsonKey("urn:facebook:profile", "link");
-            //     options.ClaimActions.MapJsonKey("urn:facebook:image", "picture");
-            // })
-            //.AddMicrosoftAccount(options =>
-            //{
-            //    options.ClientId = Configuration["Microsoft:ClientId"];
-            //    options.ClientSecret = Configuration["Microsoft:ClientSecret"];
-            //    options.ClaimActions.MapJsonKey("urn:microsoft:profile", "link");
-            //    options.ClaimActions.MapJsonKey("urn:microsoft:image", "picture");
-            //});
         }
 
 
@@ -76,7 +77,6 @@ namespace FabricAPP
 
             app.UseCookiePolicy();
             app.UseAuthentication();
-            app.UseAuthorization();
 
 
             app.UseRouting();
