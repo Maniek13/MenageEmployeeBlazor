@@ -6,13 +6,16 @@
 {
     <a>
         <b>@GivenName @Surname</b>
-        <img src="@Avatar" />
+        @if (Avatar != null)
+        {
+            <img src="@Avatar" />
+        }
     </a>
     <a class="ml-md-auto btn btn-primary" href="/Identity/Logout" target="_top">Logout</a>
 }
 else
 {
-    //<a id="login-btn" class="ml-md-auto btn btn-primary" href="/Identity/Login?provider=Facebook" target="_top">Login by Facebook</a>
+    <a id="login-btn" class="ml-md-auto btn btn-primary" href="/Identity/Login?provider=Facebook" target="_top">Login by Facebook</a>
     <a id="login-btn" class="ml-md-auto btn btn-primary" href="/Identity/Login?provider=Google" target="_top">Login by Google</a>
     <a id="login-btn" class="ml-md-auto btn btn-primary" href="/Identity/Login?provider=Microsoft" target="_top">Login by Microsoft</a>
 }
@@ -50,8 +53,6 @@ else
                 var avatar = (User.FindFirst("image"));
                 if (avatar != null)
                     Avatar = avatar.Value;
-                else
-                    Avatar = "";
             }
         }
         catch

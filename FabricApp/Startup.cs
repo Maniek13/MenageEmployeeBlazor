@@ -47,7 +47,7 @@ namespace FabricAPP
              {
                  options.AppId = Configuration["Facebook:AppId"];
                  options.AppSecret = Configuration["Facebook:AppSecret"];
-                 options.ClaimActions.MapJsonKey("image", "picture");
+                 options.ClaimActions.MapJsonKey("image", "picture", "url");
              })
             .AddMicrosoftAccount(options =>
             {
@@ -55,7 +55,7 @@ namespace FabricAPP
                 options.ClientSecret = Configuration["Microsoft:ClientSecret"];
                 options.ClaimActions.MapJsonKey(ClaimTypes.GivenName, "given_name");
                 options.ClaimActions.MapJsonKey(ClaimTypes.Surname, "family_name");
-                options.ClaimActions.MapJsonKey("image", "picture");
+                options.ClaimActions.MapJsonKey("image", "picture", "url");
             });
         }
 
