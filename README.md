@@ -11,10 +11,19 @@ Przeglądanie i dodawania pracowników z pliku xml
 
 {
   "Google": {
-    "Instance": "https://accounts.google.com/o/oauth2/v2/auth",
-    "ClientId": ",
-    "ClientSecret": "",
+    "ClientId": "",
+    "ClientSecret": ",
     "CallBackPath": "signin-google"
+  },
+  "Facebook": {
+    "AppId": "",
+    "AppSecret": "",
+    "CallBackPath": "signin-facebook"
+  },
+  "Microsoft": {
+    "ClientId": "",
+    "ClientSecret": "",
+    "CallBackPath": "signin-microsoft"
   },
   "Logging": {
     "LogLevel": {
@@ -25,6 +34,7 @@ Przeglądanie i dodawania pracowników z pliku xml
   },
   "AllowedHosts": "*"
 }
+
 
 3. Enjoy
  
@@ -47,7 +57,7 @@ Przeglądanie i dodawania pracowników z pliku xml
 
 -- 
 
-add facebook/google/microsoft login(but is only for show name and picture yet) only working localy need ssl certyficate to save connection on https
+add facebook/google/microsoft login(but is only for show name and picture yet) only working localy need ssl certyficate to save connection on https and it is only to show/no more action when login (working everythink becouse I don't have a certificate)
 
 <img width="1920" alt="image" src="https://github.com/Maniek13/MenageEmployeeBlazor/assets/47826375/425a5329-41d4-48e3-a760-fa4f4fbb56cd">
 
