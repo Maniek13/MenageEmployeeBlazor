@@ -40,6 +40,7 @@ Przeglądanie i dodawania pracowników z pliku xml
  
 
 facebook/google/microsoft login(but is only for show name and picture yet) only working localy need ssl certyficate to save connection on https
+login working with every values
 
 
 Main page
