@@ -19,7 +19,7 @@ namespace FabricAPP.Pages.Identity
             {
                 var authenticationProperties = new AuthenticationProperties
                 {
-                    RedirectUri = Url.Page("./Login",
+                    RedirectUri = Url.Page("./ExternalLogin",
                    pageHandler: "Callback",
                    values: new { returnUrl })
                 };
