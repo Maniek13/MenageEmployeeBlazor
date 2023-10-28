@@ -268,7 +268,7 @@ img[b-ltqmcwehxb] {
     margin-bottom: auto;
     margin-top: auto;
     width: 100%;
-    text-align: center;
+    text-align: right;
     padding: 5px !important;
     background-color: transparent;
 }
@@ -278,11 +278,7 @@ a b[b-ltqmcwehxb]{
 }
 
 #logout-btn[b-ltqmcwehxb] {
-    position: absolute;
-    right: 5px;
 }
-
-
 
 
 /* _content/FabricAPP/Shared/MainLayout.razor.rz.scp.css */

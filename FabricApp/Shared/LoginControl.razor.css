@@ -9,7 +9,7 @@
     margin-bottom: auto;
     margin-top: auto;
     width: 100%;
-    text-align: center;
+    text-align: right;
     padding: 5px !important;
     background-color: transparent;
 }
@@ -19,10 +19,6 @@ a b{
 }
 
 #logout-btn {
-    position: absolute;
-    right: 5px;
 }
-
-
 
 

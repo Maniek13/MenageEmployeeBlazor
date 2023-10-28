@@ -123,7 +123,7 @@
             await addEmployeesFromXMLViewModel.Save();
 
             Saved = true;
-            
+           
         }
         catch(Exception ex)
         {
@@ -131,6 +131,7 @@
             Error = true;
             SaveBtnDisabled = false;
         }
+        this.StateHasChanged();
     }
 
     void Delete(Models.Employee employee)
