@@ -112,7 +112,7 @@
         this.StateHasChanged();
     }
 
-    void Save()
+    async void Save()
     {
         try
         {
@@ -120,7 +120,7 @@
             Saved = false;
             SaveBtnDisabled = true;
 
-            addEmployeesFromXMLViewModel.Save();
+            await addEmployeesFromXMLViewModel.Save();
 
             Saved = true;
             

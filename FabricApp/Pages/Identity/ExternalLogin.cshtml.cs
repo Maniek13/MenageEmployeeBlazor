@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 namespace FabricAPP.Pages.Identity
 {
     [AllowAnonymous]
-    public class LoginModel : PageModel
+    public class ExternalLoginModel : PageModel
     {
         public IActionResult OnGetAsync(string returnUrl = null, string provider = "")
         {
@@ -19,19 +19,19 @@ namespace FabricAPP.Pages.Identity
             {
                 var authenticationProperties = new AuthenticationProperties
                 {
-                   RedirectUri = Url.Page("./Login",
+                    RedirectUri = Url.Page("./Login",
                    pageHandler: "Callback",
                    values: new { returnUrl })
                 };
                 return new ChallengeResult(provider, authenticationProperties);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 throw new Exception(ex.Message, ex);
             }
-           
+
         }
-        public async Task<IActionResult> OnGetCallbackAsync(string returnUrl = null, string remoteError = null) 
+        public async Task<IActionResult> OnGetCallbackAsync(string returnUrl = null, string remoteError = null)
         {
             try
             {

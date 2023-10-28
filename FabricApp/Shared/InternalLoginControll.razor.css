@@ -1,0 +1,48 @@
+﻿.form-inline {
+    display: flex;
+    align-items: center;
+}
+
+.form-inline label {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+#login-input {
+    vertical-align: middle;
+    margin: 5px 10px 5px 0;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+
+
+#login-btn {
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+    border: 1px solid #ddd;
+    color: white;
+    cursor: pointer;
+    margin-left: 5px !important;
+}
+
+#ext-login-btn:hover {
+    background-color: royalblue;
+}
+
+
+#lastName {
+    margin-left: 5px;
+}
+
+.login-error{
+    margin-left: 5px;
+    color: red
+}
+
+.val-msg {
+    margin-left: 5px;
+    padding: 0px;
+    height: auto;
+}
+

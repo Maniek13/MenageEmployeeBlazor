@@ -43,11 +43,11 @@ namespace FabricAPP.ViewModels
                 throw new Exception(ex.Message, ex);
             }
         }
-        public void Save()
+        public async Task Save()
         {
             try
             {
-                fabricControllerProvider.AsyncSaveFromXML();
+                await fabricControllerProvider.AsyncSaveFromXML();
             }
             catch (Exception ex)
             {

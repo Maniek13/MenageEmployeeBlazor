@@ -1,14 +1,10 @@
-﻿using FabricAPP.Models;
-
-namespace FabricAPP.Interfaces
+﻿namespace FabricAPP.Interfaces
 {
-    interface IEmployee
+    interface IUser
     {
-        int ID { get; set; }
-        string FirstName { get; set; }
-        string LastName { get; set; }
-        string ContactNo { get; set; }
-        string Email { get; set; }
-        Address Address { get; set; }
+        int Id { get; set; }
+        string Login { get; set; }
+        string Password { get; set; }
+
     }
 }

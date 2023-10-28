@@ -5,23 +5,27 @@
 }
 
 .mainmenutop {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 5px 5px 5px 0px !important;
     list-style-type: none;
     margin: 0;
-    padding: 5px;
     overflow: hidden;
     background-color: transparent;
-    height: 55px;
-}
-.mainmenutop li {
-    height: 45px;
-    line-height: 45px;
+    display: top;
+    height: auto;
     float: right
 }
 
-li a {
+.mainmenutop a {
     float: right
 }
-   
+
+.content{
+    margin: 50px 0px 0px 0px;
+}
+
 
 
 
@@ -42,15 +46,15 @@ li a {
     align-items: center;
 }
 
-    .top-row ::deep a, .top-row .btn-link {
-        white-space: nowrap;
-        margin-left: 1.5rem;
-    }
+.top-row ::deep a, .top-row .btn-link {
+    white-space: nowrap;
+    margin-left: 1.5rem;
+}
 
-    .top-row a:first-child {
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
+.top-row a:first-child {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 
 @media (max-width: 640.98px) {
     .top-row:not(.auth) {
@@ -82,10 +86,5 @@ li a {
         position: sticky;
         top: 0;
         z-index: 1;
-    }
-
-    .main > div {
-        padding-left: 2rem !important;
-        padding-right: 1.5rem !important;
     }
 }

@@ -1,10 +1,12 @@
 ﻿@using System.Security.Claims
 @using Microsoft.AspNetCore.Http
-@inject AuthenticationStateProvider AuthenticationStateProvider
+@using FabricAPP.Interfaces;
+@using FabricAPP.Pages.Identity;
+@inject AuthenticationStateProvider AuthenticationStateProvider;
 
 @if (User.Identity.Name != null)
 {
-    <a>
+    <a class="user-info">
         <b>@GivenName @Surname</b>
         @if (Avatar != null)
         {
@@ -15,9 +17,8 @@
 }
 else
 {
-    <a id="login-btn" class="ml-md-auto btn btn-primary" href="/Identity/Login?provider=Facebook" target="_top">Login by Facebook</a>
-    <a id="login-btn" class="ml-md-auto btn btn-primary" href="/Identity/Login?provider=Google" target="_top">Login by Google</a>
-    <a id="login-btn" class="ml-md-auto btn btn-primary" href="/Identity/Login?provider=Microsoft" target="_top">Login by Microsoft</a>
+    <InternalLoginControll />
+    <ExternalLoginControll />
 }
 
 @code {
@@ -35,7 +36,7 @@ else
         {
             var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
             User = authState.User;
-           
+            
             if(User.Identity.Name != null)
             {
                 var givenName = User.FindFirst(ClaimTypes.GivenName);

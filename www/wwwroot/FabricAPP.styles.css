@@ -193,6 +193,69 @@ h1[b-l4t63e6mi4] {
 .btn-save[b-l4t63e6mi4] {
     background-image: url('icons/check.png') !important;
 }
+/* _content/FabricAPP/Shared/ExternalLoginControll.razor.rz.scp.css */
+a[b-l0igeeojo3] {
+    color: white;
+}
+
+#external-login-btn[b-l0igeeojo3] {
+    width: 170px;
+}
+
+
+.external-logins[b-l0igeeojo3] {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+/* _content/FabricAPP/Shared/InternalLoginControll.razor.rz.scp.css */
+.form-inline[b-kb986mfafw] {
+    display: flex;
+    align-items: center;
+}
+
+.form-inline label[b-kb986mfafw] {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+#login-input[b-kb986mfafw] {
+    vertical-align: middle;
+    margin: 5px 10px 5px 0;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+
+
+#login-btn[b-kb986mfafw] {
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+    border: 1px solid #ddd;
+    color: white;
+    cursor: pointer;
+    margin-left: 5px !important;
+}
+
+#ext-login-btn:hover[b-kb986mfafw] {
+    background-color: royalblue;
+}
+
+
+#lastName[b-kb986mfafw] {
+    margin-left: 5px;
+}
+
+.login-error[b-kb986mfafw]{
+    margin-left: 5px;
+    color: red
+}
+
+.val-msg[b-kb986mfafw] {
+    margin-left: 5px;
+    padding: 0px;
+    height: auto;
+}
+
 /* _content/FabricAPP/Shared/LoginControl.razor.rz.scp.css */
 img[b-ltqmcwehxb] {
     
@@ -201,6 +264,12 @@ img[b-ltqmcwehxb] {
     margin-right: 5px;
 }
 
+.user-info[b-ltqmcwehxb] {
+    margin-bottom: auto;
+    margin-top: auto;
+    width: 100%;
+    text-align: center;
+}
 a b[b-ltqmcwehxb]{
     color: black;
     margin-right: 5px;
@@ -211,6 +280,8 @@ a b[b-ltqmcwehxb]{
 }
 
 
+
+
 /* _content/FabricAPP/Shared/MainLayout.razor.rz.scp.css */
 .page[b-ac5dwbje1b] {
     position: relative;
@@ -219,23 +290,27 @@ a b[b-ltqmcwehxb]{
 }
 
 .mainmenutop[b-ac5dwbje1b] {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 5px 5px 5px 0px !important;
     list-style-type: none;
     margin: 0;
-    padding: 5px;
     overflow: hidden;
     background-color: transparent;
-    height: 55px;
-}
-.mainmenutop li[b-ac5dwbje1b] {
-    height: 45px;
-    line-height: 45px;
+    display: top;
+    height: auto;
     float: right
 }
 
-li a[b-ac5dwbje1b] {
+.mainmenutop a[b-ac5dwbje1b] {
     float: right
 }
-   
+
+.content[b-ac5dwbje1b]{
+    margin: 50px 0px 0px 0px;
+}
+
 
 
 
@@ -256,15 +331,15 @@ li a[b-ac5dwbje1b] {
     align-items: center;
 }
 
-    .top-row[b-ac5dwbje1b]  a, .top-row .btn-link[b-ac5dwbje1b] {
-        white-space: nowrap;
-        margin-left: 1.5rem;
-    }
+.top-row[b-ac5dwbje1b]  a, .top-row .btn-link[b-ac5dwbje1b] {
+    white-space: nowrap;
+    margin-left: 1.5rem;
+}
 
-    .top-row a:first-child[b-ac5dwbje1b] {
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
+.top-row a:first-child[b-ac5dwbje1b] {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 
 @media (max-width: 640.98px) {
     .top-row:not(.auth)[b-ac5dwbje1b] {
@@ -296,11 +371,6 @@ li a[b-ac5dwbje1b] {
         position: sticky;
         top: 0;
         z-index: 1;
-    }
-
-    .main > div[b-ac5dwbje1b] {
-        padding-left: 2rem !important;
-        padding-right: 1.5rem !important;
     }
 }
 /* _content/FabricAPP/Shared/NavMenu.razor.rz.scp.css */

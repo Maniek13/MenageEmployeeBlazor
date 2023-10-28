@@ -1,0 +1,61 @@
+﻿@using System.Security.Claims
+@using Microsoft.AspNetCore.Http
+@using FabricAPP.Interfaces;
+@using FabricAPP.Pages.Identity;
+@inject NavigationManager navigationManager
+@inject AuthenticationStateProvider AuthenticationStateProvider;
+@inject IInternalLoginControllViewModel internalLoginControllViewModel;
+@inject IJSRuntime JSRuntime;
+
+
+<EditForm Model="@internalLoginControllViewModel" OnValidSubmit="@LoginClick" class="form-inline">
+    <ObjectGraphDataAnnotationsValidator />
+    <label>Login: </label>
+    <InputText @bind-Value="internalLoginControllViewModel!.User.Login" name="Login" id="login-input"  />
+    <div class="val-msg">
+        <ValidationMessage For="@(() => internalLoginControllViewModel.User.Login)"  />
+    </div>
+
+    <label>Password: </label>
+    <InputText @bind-Value="internalLoginControllViewModel!.User.Password" name="Password" id="login-input" />
+    
+    <div class="val-msg">
+        <ValidationMessage For="@(() => internalLoginControllViewModel.User.Password)" />
+    </div>
+
+    <button id="login-btn" class="ml-md-auto btn btn-primary" type="submit">Login</button>
+    @if (@Error)
+    {
+        <div class="login-error" id="error">
+            @ErrorMsg
+        </div>
+    }
+
+</EditForm>
+
+
+
+@code {
+    private ClaimsPrincipal User;
+    private string GivenName;
+    private string Surname;
+    private string Avatar;
+    private string ErrorMsg;
+    private bool Error;
+
+    async void LoginClick()
+    {
+        try
+        {
+            Error = false;
+            InternalLoginModel.User = internalLoginControllViewModel.User;
+
+            await JSRuntime.InvokeAsync<object>("open", "/Identity/InternalLogin", "_self");
+        }
+        catch (Exception ex)
+        {
+            ErrorMsg = ex.Message;
+            Error = true;
+        }
+    }
+}

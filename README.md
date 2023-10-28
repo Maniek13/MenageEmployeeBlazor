@@ -39,27 +39,31 @@ Przeglądanie i dodawania pracowników z pliku xml
 3. Enjoy
  
 
+facebook/google/microsoft login(but is only for show name and picture yet) only working localy need ssl certyficate to save connection on https
 
 
+Main page
 
-<img width="800" alt="image" src="https://github.com/Maniek13/MenageEmployeeBlazor/assets/47826375/eb5a3c02-509c-42b5-8ad5-239e9f36c6ac">
+<img width="600" alt="image" src="https://github.com/Maniek13/MenageEmployeeBlazor/assets/47826375/b2ab00a7-29d7-4703-a9f9-45740880f348">
+<img width="600" alt="image" src="https://github.com/Maniek13/MenageEmployeeBlazor/assets/47826375/05dcb785-32ae-41ce-a738-6ca1bd89e766">
+
+Show employee
+<img width="600" alt="image" src="https://github.com/Maniek13/MenageEmployeeBlazor/assets/47826375/93d1dd1b-68ad-47d6-a00d-5f507d67ccdf">
+
+<img width="1919" alt="image" src="https://github.com/Maniek13/MenageEmployeeBlazor/assets/47826375/e529a2f9-615f-43b8-bb92-8e8423b0cb6a">
+
+Add from xml
+<img width="1920" alt="image" src="https://github.com/Maniek13/MenageEmployeeBlazor/assets/47826375/1f651fe5-a603-4c4d-8cfd-5783da1e944e">
+<img width="1920" alt="image" src="https://github.com/Maniek13/MenageEmployeeBlazor/assets/47826375/b217d881-223f-4786-8ef9-7bd84311425c">
+
+<img width="1920" alt="image" src="https://github.com/Maniek13/MenageEmployeeBlazor/assets/47826375/7cd089ca-4c9c-4ab2-9cac-d2a5f5d8a7e0">
+
+Add user
+
+<img width="1920" alt="image" src="https://github.com/Maniek13/MenageEmployeeBlazor/assets/47826375/b45e9f92-5c61-408a-8f0d-a3c3522b5d58">
+<img width="1920" alt="image" src="https://github.com/Maniek13/MenageEmployeeBlazor/assets/47826375/49780419-df6f-4708-972b-dc3ba1dd90f3">
 
 
-<img width="800" alt="image" src="https://github.com/Maniek13/MenageEmployeeBlazor/assets/47826375/5c3ec3e6-bb02-42c0-98af-07c17e93a703">
-
-
-<img width="800" alt="image" src="https://github.com/Maniek13/MenageEmployeeBlazor/assets/47826375/6bd7008a-9088-43ed-88e6-0292e20d8d0d">
-
-
-<img width="800" alt="image" src="https://github.com/Maniek13/MenageEmployeeBlazor/assets/47826375/aae7d000-a915-43dc-8f08-0210ada4437c">
-
-
-
--- 
-
-add facebook/google/microsoft login(but is only for show name and picture yet) only working localy need ssl certyficate to save connection on https and it is only to show/no more action when login (working everythink becouse I don't have a certificate)
-
-<img width="1920" alt="image" src="https://github.com/Maniek13/MenageEmployeeBlazor/assets/47826375/425a5329-41d4-48e3-a760-fa4f4fbb56cd">
 
 
 

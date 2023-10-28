@@ -1,0 +1,12 @@
+﻿@using System.Security.Claims
+@using Microsoft.AspNetCore.Http
+@using FabricAPP.Interfaces;
+@using FabricAPP.Pages.Identity;
+
+
+<div class="external-logins">
+    <a id="external-login-btn" class="ml-md-auto btn btn-primary" href="/Identity/ExternalLogin?provider=Facebook" target="_top">Login by Facebook</a>
+    <a id="external-login-btn" class="ml-md-auto btn btn-primary" href="/Identity/ExternalLogin?provider=Google" target="_top">Login by Google</a>
+    <a id="external-login-btn" class="ml-md-auto btn btn-primary" href="/Identity/ExternalLogin?provider=Microsoft" target="_top">Login by Microsoft</a>
+</div>
+

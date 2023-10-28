@@ -16,7 +16,7 @@ namespace FabricAPP.ViewModels
             fabricControllerProvider = new FabricDbControllerProvider(new Data.FabricContext());
         }
         [ValidateComplexType]
-   
+
         public Models.Employee Employee { get; set; } = new Models.Employee()
         {
             FirstName = "",

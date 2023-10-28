@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Components.Forms;
-using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -11,7 +10,7 @@ namespace FabricAPP.Interfaces
         public bool ShowedInfo { get; set; }
         public void ShowInfo();
         public Task AsyncSetData(IReadOnlyList<IBrowserFile> files);
-        public void Save();
+        public Task Save();
 
         public void Delete(Models.Employee employee);
 

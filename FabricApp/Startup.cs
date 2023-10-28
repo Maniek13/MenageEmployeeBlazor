@@ -2,17 +2,13 @@ using FabricAPP.Interfaces;
 using FabricAPP.ViewModels;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
-using Microsoft.AspNetCore.Authentication.Facebook;
-using Microsoft.AspNetCore.Authentication.OAuth;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Options;
 using System.Net;
 using System.Security.Claims;
-using System.Threading.Tasks;
 
 namespace FabricAPP
 {
@@ -33,6 +29,8 @@ namespace FabricAPP
             services.AddTransient<IAddEmployeesFromXMLViewModel, AddEmployeesFromXMLViewModel>();
             services.AddTransient<IShowEmployeesViewModel, ShowEmployeesViewModel>();
             services.AddTransient<IAddEmployeeViewModel, AddEmployeeViewModel>();
+            services.AddTransient<IInternalLoginControllViewModel, InternalLoginControllViewModel>();
+
 
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
             .AddCookie()

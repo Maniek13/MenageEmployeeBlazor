@@ -1,4 +1,9 @@
-﻿@inherits LayoutComponentBase
+﻿@using System.Security.Claims
+@using Microsoft.AspNetCore.Http
+@using FabricAPP.Interfaces;
+@using FabricAPP.Pages.Identity;
+@inject AuthenticationStateProvider AuthenticationStateProvider;
+@inherits LayoutComponentBase
 
 <div class="page">
 
@@ -8,12 +13,13 @@
 
     <div class="main">
 
-        <ul class="mainmenutop">
-            <li><LoginControl/></li>
-        </ul>
+        <div class="mainmenutop">
+             <LoginControl />
+        </div>
 
         <div class="content px-4">
             @Body
         </div>
     </div>
 </div>
+
