@@ -2,7 +2,7 @@
     
     width: 25px;
     height: 25px;
-    margin-right: 5px;
+    margin-left: 5px;
 }
 
 .user-info {
@@ -10,14 +10,17 @@
     margin-top: auto;
     width: 100%;
     text-align: center;
+    padding: 5px !important;
+    background-color: transparent;
 }
 a b{
     color: black;
-    margin-right: 5px;
+    font-weight: bold;
 }
 
-#login-btn {
-    width: 170px;
+#logout-btn {
+    position: absolute;
+    right: 5px;
 }
 
 

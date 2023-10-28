@@ -261,7 +261,7 @@ img[b-ltqmcwehxb] {
     
     width: 25px;
     height: 25px;
-    margin-right: 5px;
+    margin-left: 5px;
 }
 
 .user-info[b-ltqmcwehxb] {
@@ -269,14 +269,17 @@ img[b-ltqmcwehxb] {
     margin-top: auto;
     width: 100%;
     text-align: center;
+    padding: 5px !important;
+    background-color: transparent;
 }
 a b[b-ltqmcwehxb]{
     color: black;
-    margin-right: 5px;
+    font-weight: bold;
 }
 
-#login-btn[b-ltqmcwehxb] {
-    width: 170px;
+#logout-btn[b-ltqmcwehxb] {
+    position: absolute;
+    right: 5px;
 }
 
 
