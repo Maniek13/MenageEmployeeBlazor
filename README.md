@@ -55,6 +55,7 @@ Show employee
 
 Add from xml
 
+
 <img width="600" alt="image" src="https://github.com/Maniek13/MenageEmployeeBlazor/assets/47826375/1f651fe5-a603-4c4d-8cfd-5783da1e944e">
 <img width="600" alt="image" src="https://github.com/Maniek13/MenageEmployeeBlazor/assets/47826375/b217d881-223f-4786-8ef9-7bd84311425c">
 <img width="600" alt="image" src="https://github.com/Maniek13/MenageEmployeeBlazor/assets/47826375/7cd089ca-4c9c-4ab2-9cac-d2a5f5d8a7e0">
@@ -63,6 +64,8 @@ Add user
 
 <img width="600" alt="image" src="https://github.com/Maniek13/MenageEmployeeBlazor/assets/47826375/b45e9f92-5c61-408a-8f0d-a3c3522b5d58">
 <img width="600" alt="image" src="https://github.com/Maniek13/MenageEmployeeBlazor/assets/47826375/49780419-df6f-4708-972b-dc3ba1dd90f3">
+
+
 
 
 
