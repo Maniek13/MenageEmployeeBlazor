@@ -49,14 +49,14 @@ Main page
 <img width="600" alt="image" src="https://github.com/Maniek13/MenageEmployeeBlazor/assets/47826375/05dcb785-32ae-41ce-a738-6ca1bd89e766">
 
 Show employee
-<img width="600" alt="image" src="https://github.com/Maniek13/MenageEmployeeBlazor/assets/47826375/93d1dd1b-68ad-47d6-a00d-5f507d67ccdf">
 
+<img width="600" alt="image" src="https://github.com/Maniek13/MenageEmployeeBlazor/assets/47826375/93d1dd1b-68ad-47d6-a00d-5f507d67ccdf">
 <img width="600" alt="image" src="https://github.com/Maniek13/MenageEmployeeBlazor/assets/47826375/e529a2f9-615f-43b8-bb92-8e8423b0cb6a">
 
 Add from xml
+
 <img width="600" alt="image" src="https://github.com/Maniek13/MenageEmployeeBlazor/assets/47826375/1f651fe5-a603-4c4d-8cfd-5783da1e944e">
 <img width="600" alt="image" src="https://github.com/Maniek13/MenageEmployeeBlazor/assets/47826375/b217d881-223f-4786-8ef9-7bd84311425c">
-
 <img width="600" alt="image" src="https://github.com/Maniek13/MenageEmployeeBlazor/assets/47826375/7cd089ca-4c9c-4ab2-9cac-d2a5f5d8a7e0">
 
 Add user
