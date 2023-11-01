@@ -17,7 +17,7 @@ namespace FabricAPP.Data
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer(@"Server=RAKIETA;Database=FabricDB;Trusted_Connection=True;MultipleActiveResultSets=True;");
+                optionsBuilder.UseSqlServer(Models.Settings.ConnectionString);
             }
         }
 
