@@ -32,7 +32,10 @@ Przeglądanie i dodawania pracowników z pliku xml
       "Microsoft.Hosting.Lifetime": "Information"
     }
   },
-  "AllowedHosts": "*"
+  "AllowedHosts": "*",
+  "ConnectionStrings": {
+    "Default": ""
+  }
 }
 
 

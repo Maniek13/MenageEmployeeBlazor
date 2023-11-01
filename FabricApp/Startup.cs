@@ -1,4 +1,5 @@
 using FabricAPP.Interfaces;
+using FabricAPP.Models;
 using FabricAPP.ViewModels;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
@@ -18,6 +19,7 @@ namespace FabricAPP
         {
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
             Configuration = configuration;
+            Settings.ConnectionString = configuration.GetConnectionString("Default");
         }
 
         public IConfiguration Configuration { get; }
