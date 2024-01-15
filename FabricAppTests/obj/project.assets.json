@@ -12017,11 +12017,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\FabricAppTests\\FabricAppTests.csproj",
+      "projectUniqueName": "H:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\FabricAppTests\\FabricAppTests.csproj",
       "projectName": "FabricAppTests",
-      "projectPath": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\FabricAppTests\\FabricAppTests.csproj",
+      "projectPath": "H:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\FabricAppTests\\FabricAppTests.csproj",
       "packagesPath": "C:\\Users\\mani3\\.nuget\\packages\\",
-      "outputPath": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\FabricAppTests\\obj\\",
+      "outputPath": "H:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\FabricAppTests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -12037,15 +12037,14 @@
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "C:\\Program Files\\dotnet\\library-packs": {},
-        "G:\\Programowanie\\nugetpackages": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\FabricApp\\FabricAPP.csproj": {
-              "projectPath": "G:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\FabricApp\\FabricAPP.csproj"
+            "H:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\FabricApp\\FabricAPP.csproj": {
+              "projectPath": "H:\\Programowanie\\blazor projects\\Menage employee\\MenageEmployeeBlazor\\FabricApp\\FabricAPP.csproj"
             }
           }
         }
@@ -12115,7 +12114,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }

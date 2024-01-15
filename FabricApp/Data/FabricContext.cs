@@ -31,5 +31,7 @@ namespace FabricAPP.Data
 
         public virtual DbSet<Employee> Employees { get; set; }
         public virtual DbSet<Address> Addresses { get; set; }
+
+        public virtual DbSet<User> Users { get; set; }
     }
 }

@@ -6,7 +6,8 @@ https://178.235.60.107:5025/
 
 Przeglądanie i dodawania pracowników z pliku xml
 
-1. Copy and run EntityFrameworkCore\Update-Database
+1. Copy and run EntityFrameworkCore\Update-Database to create database (please commit contructor with parameters in fabricContext first)
+
 2. Add appsettings.json to project or www like
 
 {
